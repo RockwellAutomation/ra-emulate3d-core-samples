@@ -1,0 +1,25 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{14482AE5-50AD-4A70-BB25-2C9952B37612}") = "DocumentScript", "DocumentScript\DocumentScript.csproj", "{14482AE5-50AD-4A70-BB25-2C9952B37612}"
+EndProject
+Project("{34BA961E-C3F8-4090-9B3A-8BD37A95A796}") = "NativeObject", "NativeObject.csproj", "{34BA961E-C3F8-4090-9B3A-8BD37A95A796}"
+EndProject
+Project("{347E378A-650F-4446-B83A-5133C0E95824}") = "SensorScript", "SensorScript.csproj", "{347E378A-650F-4446-B83A-5133C0E95824}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14482AE5-50AD-4A70-BB25-2C9952B37612}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14482AE5-50AD-4A70-BB25-2C9952B37612}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34BA961E-C3F8-4090-9B3A-8BD37A95A796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34BA961E-C3F8-4090-9B3A-8BD37A95A796}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{347E378A-650F-4446-B83A-5133C0E95824}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{347E378A-650F-4446-B83A-5133C0E95824}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

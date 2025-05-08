@@ -1,0 +1,515 @@
+<e3d:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:e3d="uri://emulate3d.com">
+  <e3d:Header>
+    <Version>18.0.1.39</Version>
+    <Id>1544b880-8b08-41b4-b912-7107da3a8d6a</Id>
+  </e3d:Header>
+  <Resources>
+    <MeshLibrary>
+      <Mesh Key="d33e0691-1a1e-4ea2-8783-f696828ac0ec" />
+    </MeshLibrary>
+    <TextureLibrary>
+      <Texture Key="d22a9d2c-7aca-4a65-b9bd-3f41f9f536fb" Name="box2" />
+    </TextureLibrary>
+    <FrictionMaterialLibrary />
+    <ScriptLibrary>
+      <Scripts>
+        <Script Key="14482ae5-50ad-4a70-bb25-2c9952b37612" Info="scripts\DocumentScript\DocumentScript.info" />
+        <Script Key="34ba961e-c3f8-4090-9b3a-8bd37a95a796" Cs="scripts\NativeObject.cs" Info="scripts\NativeObject.info" />
+        <Script Key="347e378a-650f-4446-b83a-5133c0e95824" Cs="scripts\SensorScript.cs" Info="scripts\SensorScript.info" />
+      </Scripts>
+    </ScriptLibrary>
+    <FrictionConfiguration>
+      <FrictionFile>friction.csv</FrictionFile>
+    </FrictionConfiguration>
+  </Resources>
+  <Visuals>
+    <V Name="SceneVisual" Parent="" xsi:type="e3d:SceneVisual">
+      <Id>b6fa8d29-8537-44c9-a2e8-46b7b139fc3d</Id>
+      <Static>1</Static>
+      <P xsi:type="e3d:SceneProperties">
+        <DefaultFloor>
+          <Type>e3d:FloorVisual</Type>
+        </DefaultFloor>
+        <FrictionMaterial>
+          <Name>Concrete</Name>
+        </FrictionMaterial>
+        <GeneratorType>MT19937</GeneratorType>
+        <PhysicsEngineType xsi:type="Demo3D.Visuals.PhysicsEngine+EngineType">PhysX</PhysicsEngineType>
+        <ScriptKey>
+          <Id>14482ae5-50ad-4a70-bb25-2c9952b37612</Id>
+        </ScriptKey>
+        <SOAPServer>
+          <MaxConnections>0</MaxConnections>
+        </SOAPServer>
+      </P>
+      <IgnoreFrictionConfiguration>1</IgnoreFrictionConfiguration>
+    </V>
+    <V Name="Light1" Parent="b6fa8d29-8537-44c9-a2e8-46b7b139fc3d" xsi:type="e3d:LightVisual">
+      <LR>-1|3.4641016|-1.7320508|1.0471976|0.5235988|</LR>
+      <ILR>|||||</ILR>
+      <Id>59aee7b1-576e-47f7-a3d6-ac1bcd18bc92</Id>
+      <P xsi:type="e3d:LightProperties">
+        <CastsShadow>0</CastsShadow>
+        <CastsShadows>1</CastsShadows>
+        <Diffuse>-4934476</Diffuse>
+        <Intensity>1</Intensity>
+        <LightType xsi:type="Microsoft.DirectX.Direct3D.LightType">Directional</LightType>
+        <NewNameExpr>
+          <E>"Light"+ID</E>
+        </NewNameExpr>
+        <Type>Light</Type>
+      </P>
+    </V>
+    <V Name="StraightBeltConveyor1" Parent="b6fa8d29-8537-44c9-a2e8-46b7b139fc3d" xsi:type="e3d:StraightBeltConveyor">
+      <LR>-3.0932784|0.8299995|0.7463994|||</LR>
+      <Id>9f53bffe-652a-4fac-afe6-eba0a4dab9eb</Id>
+      <P xsi:type="e3d:StraightBeltConveyorProperties">
+        <BillOfMaterialsCodeExpr>
+          <E>Owner.Name</E>
+        </BillOfMaterialsCodeExpr>
+        <BillOfMaterialsDescriptionExpr>
+          <E>Owner.Type</E>
+        </BillOfMaterialsDescriptionExpr>
+        <EndStop xsi:type="e3d:ConveyorSideProperties">
+          <FrictionMaterial>
+            <Name>Steel</Name>
+          </FrictionMaterial>
+          <Material>
+            <MeshMaterial xsi:type="e3d:MeshMaterial">
+              <Diffuse>-256</Diffuse>
+            </MeshMaterial>
+          </Material>
+          <SidePhysicsEnabled>0</SidePhysicsEnabled>
+          <SideVisible>0</SideVisible>
+        </EndStop>
+        <FrictionMaterial>
+          <Name>Rubber</Name>
+        </FrictionMaterial>
+        <LeftSide xsi:type="e3d:ConveyorSideProperties">
+          <FrictionMaterial>
+            <Name>Steel</Name>
+          </FrictionMaterial>
+          <Material>
+            <MeshMaterial xsi:type="e3d:MeshMaterial">
+              <Diffuse>-256</Diffuse>
+            </MeshMaterial>
+          </Material>
+        </LeftSide>
+        <Motor xsi:type="e3d:ConveyorMotorProperties">
+          <CurrentSpeed>5</CurrentSpeed>
+          <Speed>
+            <E>5</E>
+          </Speed>
+          <StartSpeed>5</StartSpeed>
+        </Motor>
+        <MotorVisual>
+          <Type>e3d:ConveyorVisual</Type>
+        </MotorVisual>
+        <NewNameExpr>
+          <E>"StraightBeltConveyor"+ID</E>
+        </NewNameExpr>
+        <RightSide xsi:type="e3d:ConveyorSideProperties">
+          <FrictionMaterial>
+            <Name>Steel</Name>
+          </FrictionMaterial>
+          <Material>
+            <MeshMaterial xsi:type="e3d:MeshMaterial">
+              <Diffuse>-256</Diffuse>
+            </MeshMaterial>
+          </Material>
+        </RightSide>
+        <StartStop xsi:type="e3d:ConveyorSideProperties">
+          <FrictionMaterial>
+            <Name>Steel</Name>
+          </FrictionMaterial>
+          <Material>
+            <MeshMaterial xsi:type="e3d:MeshMaterial">
+              <Diffuse>-256</Diffuse>
+            </MeshMaterial>
+          </Material>
+          <SidePhysicsEnabled>0</SidePhysicsEnabled>
+          <SideVisible>0</SideVisible>
+        </StartStop>
+        <SurfaceMaterial>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-8355712</Diffuse>
+          </MeshMaterial>
+        </SurfaceMaterial>
+        <SurfaceSideMaterial>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-4144960</Diffuse>
+          </MeshMaterial>
+        </SurfaceSideMaterial>
+        <ToolTipExpr>
+          <E>Owner.Name+' Pos='+Format('0.###',Position)+' Offset='+Format('0.###',Offset)</E>
+        </ToolTipExpr>
+        <Type>Straight Belt Conveyor</Type>
+      </P>
+      <CN>
+        <e xsi:type="e3d:ConveyorConnector">
+          <Name>Start</Name>
+          <Start>||0.25</Start>
+          <End>||-0.25</End>
+          <Normal>-1||</Normal>
+          <Parent>9f53bffe-652a-4fac-afe6-eba0a4dab9eb</Parent>
+          <STE>1</STE>
+          <TXD>1</TXD>
+        </e>
+        <e xsi:type="e3d:ConveyorConnector">
+          <Name>End</Name>
+          <Start>2||0.25</Start>
+          <End>2||-0.25</End>
+          <Normal>1||</Normal>
+          <Parent>9f53bffe-652a-4fac-afe6-eba0a4dab9eb</Parent>
+          <STE>1</STE>
+          <TXD>2</TXD>
+        </e>
+        <e xsi:type="e3d:ConveyorConnector">
+          <Name>Left</Name>
+          <Start>||0.28</Start>
+          <End>2||0.28</End>
+          <Normal>||1</Normal>
+          <Parent>9f53bffe-652a-4fac-afe6-eba0a4dab9eb</Parent>
+          <STE>1</STE>
+          <KeepInBounds>0</KeepInBounds>
+        </e>
+        <e xsi:type="e3d:ConveyorConnector">
+          <Name>Right</Name>
+          <Start>||-0.28</Start>
+          <End>2||-0.28</End>
+          <Normal>||-1</Normal>
+          <Parent>9f53bffe-652a-4fac-afe6-eba0a4dab9eb</Parent>
+          <STE>1</STE>
+          <KeepInBounds>0</KeepInBounds>
+        </e>
+      </CN>
+    </V>
+    <V Name="PhotoEye1" Parent="9f53bffe-652a-4fac-afe6-eba0a4dab9eb" xsi:type="e3d:PhotoEye">
+      <LR>1.8161035|||||</LR>
+      <Id>2f199376-c052-4e5e-8819-247d60b5cc8b</Id>
+      <P xsi:type="e3d:SensorWithScriptProperties">
+        <AttachDirection xsi:type="Demo3D.Visuals.AttachDirection">Forwards</AttachDirection>
+        <BlockedMaterial>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-65536</Diffuse>
+          </MeshMaterial>
+        </BlockedMaterial>
+        <BoxMaterial>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-13676721</Diffuse>
+          </MeshMaterial>
+        </BoxMaterial>
+        <ClearedMaterial>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-23296</Diffuse>
+          </MeshMaterial>
+        </ClearedMaterial>
+        <CustomProperties>
+          <CP>
+            <e xsi:type="e3d:CustomProperty">
+              <Name>BlockedCount</Name>
+              <CS>
+                <Id>2f199376-c052-4e5e-8819-247d60b5cc8b</Id>
+              </CS>
+              <Type>xsd:int</Type>
+              <Value xsi:type="xsd:int">0</Value>
+            </e>
+          </CP>
+        </CustomProperties>
+        <DisabledMaterial>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-1828</Diffuse>
+          </MeshMaterial>
+        </DisabledMaterial>
+        <NewNameExpr>
+          <E>"PhotoEye"+ID</E>
+        </NewNameExpr>
+        <Position>
+          <E>1.816103458404541</E>
+        </Position>
+        <ScriptKey>
+          <Id>347e378a-650f-4446-b83a-5133c0e95824</Id>
+        </ScriptKey>
+        <Type>Sensor</Type>
+      </P>
+      <AttachedVisual>StraightBeltConveyor1</AttachedVisual>
+    </V>
+    <V Name="LoadCreator1" Parent="9f53bffe-652a-4fac-afe6-eba0a4dab9eb" xsi:type="e3d:LoadCreatorVisual">
+      <LR>1|0.100000024||||</LR>
+      <ILR>|||||</ILR>
+      <Id>f0d6447c-73b3-49b6-968f-d1ebdb63f716</Id>
+      <P xsi:type="e3d:LoadCreatorProperties">
+        <CenterLine>0.5</CenterLine>
+        <CenterLineVariability>0</CenterLineVariability>
+        <DelayDur>2</DelayDur>
+        <DelayRate>3</DelayRate>
+        <InitialHeight>0.1</InitialHeight>
+        <Items valtype="e3d:LoadCreatorItem">
+          <E>
+            <Factory xsi:type="e3d:XmlDocumentVisualFactory">
+              <IsLoad>1</IsLoad>
+              <Folder>/</Folder>
+              <Name>Cardboard Box</Name>
+              <Description></Description>
+              <Tags />
+              <Xml><e3d:Clipboard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:e3d="uri://emulate3d.com"><Visuals><e xsi:type="e3d:ImportedMeshVisual"><N>Box1</N><Id>9aba9298-f62c-4efb-95f5-34a34dca8694</Id><P xsi:type="e3d:ImportedMeshProperties"><BodyType xsi:type="e3d:PhysicsBodyType">Load</BodyType><FrictionMaterial><Name>Corrugated</Name></FrictionMaterial><MaintainAspectRatio>0</MaintainAspectRatio><Materials><MeshMaterials><e xsi:type="e3d:MeshMaterial"><Diffuse>-1</Diffuse><Texture><Id>d22a9d2c-7aca-4a65-b9bd-3f41f9f536fb</Id></Texture></e></MeshMaterials></Materials><Mesh><Id>d33e0691-1a1e-4ea2-8783-f696828ac0ec</Id></Mesh><NewNameExpr><E>"Box"+ID</E></NewNameExpr><Scale>0.6666667|0.6666667|0.6666667</Scale><Type>Cardboard Box</Type></P></e></Visuals><Parents><e xsi:type="e3d:Guid">00000000-0000-0000-0000-000000000000</e></Parents><SerializedObjects valtype="e3d:SerializableObject" /></e3d:Clipboard></Xml>
+              <Version>2</Version>
+              <MeshReferences>
+                <e xsi:type="e3d:MeshReference">
+                  <Id>d33e0691-1a1e-4ea2-8783-f696828ac0ec</Id>
+                </e>
+              </MeshReferences>
+              <TextureReferences>
+                <e xsi:type="e3d:TextureReference">
+                  <Id>d22a9d2c-7aca-4a65-b9bd-3f41f9f536fb</Id>
+                </e>
+              </TextureReferences>
+              <DrawingBlockReferences />
+              <PointCloudReferences />
+              <LayerReferences />
+              <FrictionMaterialReferences>
+                <e xsi:type="e3d:FMR">
+                  <Name>Corrugated</Name>
+                </e>
+              </FrictionMaterialReferences>
+              <SR />
+            </Factory>
+            <Category>Box</Category>
+            <Quantity>1</Quantity>
+          </E>
+        </Items>
+        <NewNameExpr>
+          <E>"LoadCreator"+ID</E>
+        </NewNameExpr>
+        <Ports>
+          <DeliverTo>Parent</DeliverTo>
+        </Ports>
+        <Position>1</Position>
+        <ReleaseRate>1</ReleaseRate>
+        <ReleaseStrategy xsi:type="e3d:LoadReleaseStrategy">Sequence</ReleaseStrategy>
+        <Type>LoadCreator</Type>
+      </P>
+    </V>
+    <V Name="CongestionZone" Parent="f0d6447c-73b3-49b6-968f-d1ebdb63f716" xsi:type="e3d:SphereVisual">
+      <Id>018d6bd6-ff36-4f0a-98c4-697d27bbad28</Id>
+      <P xsi:type="e3d:SphereProperties">
+        <BodyType xsi:type="e3d:PhysicsBodyType">Sensor</BodyType>
+        <CastsShadow>0</CastsShadow>
+        <Color>-922747136</Color>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-922747136</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>CongestionZone</E>
+        </NewNameExpr>
+        <Radius>0.3</Radius>
+        <Type>CongestionZone</Type>
+        <Visible>0</Visible>
+      </P>
+    </V>
+  </Visuals>
+  <TagImporterPropertiesFile></TagImporterPropertiesFile>
+  <TagConfigurationFolder>connections</TagConfigurationFolder>
+  <TagServerConfigurationFolder>serverConfiguration</TagServerConfigurationFolder>
+  <TagServers valtype="e3d:TagServerSerializer" />
+  <TelegramFormats valtype="e3d:TelegramFormat" />
+  <TelegramSymbols valtype="e3d:TelegramSymbolSerializer" />
+  <IOBrowserConfiguration>
+    <GridConfigurations valtype="e3d:GridConfiguration">
+      <E>
+        <Name>MainGrid</Name>
+        <StandardColumns valtype="e3d:StandardColumn">
+          <E>
+            <Name>Active</Name>
+            <Visible>1</Visible>
+            <Position>0</Position>
+          </E>
+          <E>
+            <Name>Address</Name>
+            <Visible>1</Visible>
+            <Position>1</Position>
+          </E>
+          <E>
+            <Name>Name</Name>
+            <Visible>1</Visible>
+            <Position>2</Position>
+          </E>
+          <E>
+            <Name>Type</Name>
+            <Visible>0</Visible>
+            <Position>3</Position>
+          </E>
+          <E>
+            <Name>Server</Name>
+            <Visible>0</Visible>
+            <Position>4</Position>
+          </E>
+          <E>
+            <Name>ServerValue</Name>
+            <Visible>1</Visible>
+            <Position>5</Position>
+          </E>
+          <E>
+            <Name>ModelValue</Name>
+            <Visible>1</Visible>
+            <Position>6</Position>
+          </E>
+          <E>
+            <Name>Description</Name>
+            <Visible>0</Visible>
+            <Position>7</Position>
+          </E>
+          <E>
+            <Name>Access</Name>
+            <Visible>1</Visible>
+            <Position>8</Position>
+          </E>
+          <E>
+            <Name>ScanRate</Name>
+            <Visible>0</Visible>
+            <Position>9</Position>
+          </E>
+          <E>
+            <Name>DisplayName</Name>
+            <Visible>0</Visible>
+            <Position>10</Position>
+          </E>
+          <E>
+            <Name>Visual</Name>
+            <Visible>1</Visible>
+            <Position>11</Position>
+          </E>
+          <E>
+            <Name>Property</Name>
+            <Visible>1</Visible>
+            <Position>12</Position>
+          </E>
+          <E>
+            <Name>Expression</Name>
+            <Visible>1</Visible>
+            <Position>13</Position>
+          </E>
+        </StandardColumns>
+      </E>
+      <E>
+        <Name>IOGrid</Name>
+        <StandardColumns valtype="e3d:StandardColumn">
+          <E>
+            <Name>Active</Name>
+            <Visible>1</Visible>
+            <Position>0</Position>
+          </E>
+          <E>
+            <Name>Address</Name>
+            <Visible>1</Visible>
+            <Position>1</Position>
+          </E>
+          <E>
+            <Name>Name</Name>
+            <Visible>1</Visible>
+            <Position>2</Position>
+          </E>
+          <E>
+            <Name>Type</Name>
+            <Visible>0</Visible>
+            <Position>3</Position>
+          </E>
+          <E>
+            <Name>Server</Name>
+            <Visible>0</Visible>
+            <Position>4</Position>
+          </E>
+          <E>
+            <Name>ServerValue</Name>
+            <Visible>1</Visible>
+            <Position>5</Position>
+          </E>
+          <E>
+            <Name>ModelValue</Name>
+            <Visible>1</Visible>
+            <Position>6</Position>
+          </E>
+          <E>
+            <Name>Description</Name>
+            <Visible>0</Visible>
+            <Position>7</Position>
+          </E>
+          <E>
+            <Name>Access</Name>
+            <Visible>1</Visible>
+            <Position>8</Position>
+          </E>
+          <E>
+            <Name>ScanRate</Name>
+            <Visible>0</Visible>
+            <Position>9</Position>
+          </E>
+          <E>
+            <Name>DisplayName</Name>
+            <Visible>0</Visible>
+            <Position>10</Position>
+          </E>
+          <E>
+            <Name>Visual</Name>
+            <Visible>1</Visible>
+            <Position>11</Position>
+          </E>
+          <E>
+            <Name>Property</Name>
+            <Visible>1</Visible>
+            <Position>12</Position>
+          </E>
+          <E>
+            <Name>Expression</Name>
+            <Visible>1</Visible>
+            <Position>13</Position>
+          </E>
+        </StandardColumns>
+      </E>
+    </GridConfigurations>
+  </IOBrowserConfiguration>
+  <CTRecordsConfiguration />
+  <Fmus />
+  <e3d:DefaultCamera>Default View</e3d:DefaultCamera>
+  <e3d:Cameras>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Default View</key>
+      <val xsi:type="e3d:Camera">
+        <Position>-1.8626308|6.2470317|-4.0000076</Position>
+        <Target>-1.8075827|0.17879534|0.04778242</Target>
+      </val>
+    </e>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Front View</key>
+      <val xsi:type="e3d:Camera">
+        <Position>|1.5|-10</Position>
+        <Target>|1.5|</Target>
+      </val>
+    </e>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Plan View</key>
+      <val xsi:type="e3d:Camera">
+        <PlanView>1</PlanView>
+        <Position>|5|</Position>
+      </val>
+    </e>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Side View</key>
+      <val xsi:type="e3d:Camera">
+        <Position>-10|1.5|</Position>
+        <Target>|1.5|</Target>
+      </val>
+    </e>
+  </e3d:Cameras>
+  <e3d:Notes>
+    <Note Name="Default" File="notes\note01.rtf" />
+  </e3d:Notes>
+  <Experiments>
+    <ExperimentsFile>experiments.csv</ExperimentsFile>
+  </Experiments>
+  <e3d:QuickMovieCameras valtype="e3d:QuickCamera" />
+  <e3d:DocumentScriptId>14482ae5-50ad-4a70-bb25-2c9952b37612</e3d:DocumentScriptId>
+  <FileFormat>2</FileFormat>
+</e3d:Model>
