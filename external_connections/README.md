@@ -3,7 +3,6 @@
 |-|-|
 |**Emulate3D Version**|18.0.1|
 |**Tutorial Link**|[Access External SQL Databases](https://store.sim3d.com/demo3d_2025/access_external_sql_databases)|
-|||
 
 ![alt text](efcore_database.png)
 

@@ -3,7 +3,6 @@
 |-|-|
 |**Emulate3D Version**|18.0.1|
 |**Tutorial Link**|[Scripted Scenario Example](https://store.sim3d.com/demo3d_2025/testrunner_scripted_scenario_example)|
-|||
 
 ![Example Image](ExampleImage.png)
 
