@@ -1,0 +1,14 @@
+{
+  "Key": {
+    "Key": "589ebeee-4aa7-4e86-9c31-c68fd13d317a",
+    "IsNull": false
+  },
+  "DefaultLicense": null,
+  "NativeSourcePaths": [
+    "PythonExample.cs",
+    "PythonExample.csproj",
+    "Scripts"
+  ],
+  "Created": "2024-06-21T13:52:03.1177486Z",
+  "Modified": "2025-05-15T13:36:37.1815884Z"
+}
