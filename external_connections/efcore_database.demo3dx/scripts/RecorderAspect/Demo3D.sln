@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{2357BF56-2A9C-46D1-A8DE-B31E98E1B8F2}") = "RecorderAspect", "RecorderAspect.csproj", "{2357BF56-2A9C-46D1-A8DE-B31E98E1B8F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2357BF56-2A9C-46D1-A8DE-B31E98E1B8F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2357BF56-2A9C-46D1-A8DE-B31E98E1B8F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,14 @@
+{
+  "Key": {
+    "Key": "2357bf56-2a9c-46d1-a8de-b31e98e1b8f2",
+    "IsNull": false
+  },
+  "DefaultLicense": null,
+  "NativeSourcePaths": [
+    "RecorderAspect.cs",
+    "RecorderAspect.csproj",
+    "Data"
+  ],
+  "Created": "2023-07-06T07:44:30.6247368Z",
+  "Modified": "2023-08-01T09:57:45.3076095Z"
+}
