@@ -1,6 +1,8 @@
 # Emulate3D Core Examples
 This GitHub repository contains example Emulate3D models which show cases the features of Emulate3D.
 
+For more information visit [Emulate3D](https://www.emulate3d.com/) and for access to our help site visit [Emulate3D Help](https://store.sim3d.com/help).
+
 ## Folder Structure
 | Folder | Description |
 | - | - |
@@ -9,6 +11,8 @@ This GitHub repository contains example Emulate3D models which show cases the fe
 
 ## Contributing
 We are currently not accepting contributions at this time.
+
+All queries about this repository should be directed to **Emulate3DSupport@rockwellautomation.com**.
 
 ## License
 Permission to modify and redistribute is granted under the terms of the MIT License.  
