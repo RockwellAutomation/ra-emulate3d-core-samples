@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <Compile Include="LoadApplierAspect.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="CT.CIPIO">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Demo3D.AspectLibrary">
+      <Private>False</Private>
+      <ImplicitlyAdded>True</ImplicitlyAdded>
+    </Reference>
+    <Reference Include="Demo3D.Async">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Demo3D.Common">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Demo3D.Core">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Demo3D.EventQueue">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Demo3D.HLE">
+      <Private>False</Private>
+      <ImplicitlyAdded>True</ImplicitlyAdded>
+    </Reference>
+    <Reference Include="Demo3D.IO">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Demo3D.Licensing">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Demo3D.Raw">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Demo3D.Renderers.Common">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Demo3D.Time">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Demo3D.Xml">
+      <Private>False</Private>
+      <ImplicitlyAdded>True</ImplicitlyAdded>
+    </Reference>
+    <Reference Include="Emulate3D.FMI">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Emulate3D.SourceGenerators">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Emulate3DMesh.NET">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PLC">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SmartEdit">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WpfControls">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>LoadApplierAspect</AssemblyName>
+    <RootNamespace>Demo3D.Components</RootNamespace>
+    <OutputType>Library</OutputType>
+    <LangVersion>13.0</LangVersion>
+    <OutputPath>.\.build\bin\</OutputPath>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <ProjectGuid>{89C2B55F-A2F3-4FEF-9180-3E2688D6D520}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="Demo3D.targets" />
+</Project>
