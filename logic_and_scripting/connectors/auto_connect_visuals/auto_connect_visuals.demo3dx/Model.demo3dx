@@ -1,0 +1,1223 @@
+<e3d:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:e3d="uri://emulate3d.com">
+  <e3d:Header>
+    <Version>18.0.2.80</Version>
+    <Id>dfe00ab1-d33e-4e9b-a1cf-e71bae603de1</Id>
+  </e3d:Header>
+  <Resources>
+    <MeshLibrary>
+      <Mesh Key="5d9b9b89-18be-4e7c-9fa3-6f5d23105b5e" />
+    </MeshLibrary>
+    <FrictionMaterialLibrary />
+    <ScriptLibrary>
+      <Scripts>
+        <Script Key="fe1dce45-5419-4283-84bd-569a5d5c8c7b" Cs="scripts\ConnectorExample.cs" Info="scripts\ConnectorExample.info" />
+        <Script Key="34ba961e-c3f8-4090-9b3a-8bd37a95a796" Cs="scripts\NativeObject.cs" Info="scripts\NativeObject.info" />
+      </Scripts>
+    </ScriptLibrary>
+    <FrictionConfiguration>
+      <FrictionFile>friction.csv</FrictionFile>
+    </FrictionConfiguration>
+  </Resources>
+  <Visuals>
+    <V Name="SceneVisual" Parent="" xsi:type="e3d:SceneVisual">
+      <Id>57e334a1-6fb4-4a71-aac3-21fe0505f6a9</Id>
+      <Static>1</Static>
+      <P xsi:type="e3d:SceneProperties">
+        <DefaultFloor>
+          <Type>e3d:FloorVisual</Type>
+        </DefaultFloor>
+        <FrictionMaterial>
+          <Name>Concrete</Name>
+        </FrictionMaterial>
+        <GeneratorType>MT19937</GeneratorType>
+        <PhysicsEngineType xsi:type="Demo3D.Visuals.PhysicsEngine+EngineType">PhysX</PhysicsEngineType>
+        <SOAPServer>
+          <MaxConnections>0</MaxConnections>
+        </SOAPServer>
+      </P>
+      <IgnoreFrictionConfiguration>1</IgnoreFrictionConfiguration>
+    </V>
+    <V Name="Container1" Parent="57e334a1-6fb4-4a71-aac3-21fe0505f6a9" xsi:type="e3d:ContainerVisual">
+      <LR>5.9914193|0.4980916|-2.586937||-3.1415925|</LR>
+      <Id>075fb1d6-feb6-4788-994d-d6234e6e2043</Id>
+      <P xsi:type="e3d:ContainerProperties">
+        <BaseRatio>0.9</BaseRatio>
+        <CollisionType xsi:type="e3d:PhysicsCollisionType">TriMesh</CollisionType>
+        <CustomProperties>
+          <CP>
+            <e xsi:type="e3d:CustomProperty">
+              <Name>ConnectorEnabled</Name>
+              <Description>Toggle snapping behavior.</Description>
+              <CS>
+                <Id>075fb1d6-feb6-4788-994d-d6234e6e2043</Id>
+              </CS>
+              <Category>-Custom</Category>
+              <Type>xsd:Boolean</Type>
+              <Value xsi:type="xsd:Boolean">0</Value>
+            </e>
+          </CP>
+        </CustomProperties>
+        <Depth>0.4</Depth>
+        <FrictionMaterial>
+          <Name>Plastic</Name>
+        </FrictionMaterial>
+        <Height>0.3</Height>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-1</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>"Container"+ID</E>
+        </NewNameExpr>
+        <ScriptKey>
+          <Id>fe1dce45-5419-4283-84bd-569a5d5c8c7b</Id>
+        </ScriptKey>
+        <SimpleProperties>
+          <Aliases>
+            <e xsi:type="e3d:Alias">
+              <Alias>Name</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Name</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>World Location</Alias>
+              <Path>
+                <e xsi:type="xsd:string">VisualLocation</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Depth</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Depth</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Height</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Height</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Width</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Width</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Thickness</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Thickness</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Base Ratio</Alias>
+              <Path>
+                <e xsi:type="xsd:string">BaseRatio</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Color</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Material</e>
+                <e xsi:type="xsd:string">Color</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>ConnectorEnabled</Alias>
+              <Path>
+                <e xsi:type="xsd:string">ConnectorEnabled</e>
+              </Path>
+            </e>
+          </Aliases>
+        </SimpleProperties>
+        <Thickness>0.01</Thickness>
+        <Type>Container</Type>
+        <Width>0.5</Width>
+      </P>
+      <CN>
+        <e>
+          <Name>ConnectorExample</Name>
+          <Start>||0.2</Start>
+          <End>||0.2</End>
+          <Normal>||1</Normal>
+          <Parent>075fb1d6-feb6-4788-994d-d6234e6e2043</Parent>
+          <STE>1</STE>
+          <CPS>0.1</CPS>
+          <R>1</R>
+          <AlignmentStyle xsi:type="Demo3D.Visuals.ConnectorAlignmentStyle">Horizontal</AlignmentStyle>
+        </e>
+      </CN>
+    </V>
+    <V Name="Cylinder1" Parent="57e334a1-6fb4-4a71-aac3-21fe0505f6a9" xsi:type="e3d:CylinderVisual">
+      <LR>7.9997354|0.50000095|-2.6054733||-3.1415925|</LR>
+      <Id>0da9b3f9-8658-437e-b43f-17426c4599ce</Id>
+      <P xsi:type="e3d:CylinderProperties">
+        <CustomProperties>
+          <CP>
+            <e xsi:type="e3d:CustomProperty">
+              <Name>ConnectorEnabled</Name>
+              <Description>Toggle snapping behavior.</Description>
+              <CS>
+                <Id>0da9b3f9-8658-437e-b43f-17426c4599ce</Id>
+              </CS>
+              <Category>-Custom</Category>
+              <Type>xsd:Boolean</Type>
+              <Value xsi:type="xsd:Boolean">0</Value>
+            </e>
+          </CP>
+        </CustomProperties>
+        <ExtraMaterials>
+          <MeshMaterials>
+            <e xsi:type="e3d:MeshMaterial">
+              <Diffuse>-2894893</Diffuse>
+            </e>
+            <e xsi:type="e3d:MeshMaterial">
+              <Diffuse>-5658199</Diffuse>
+            </e>
+            <e xsi:type="e3d:MeshMaterial">
+              <Diffuse>-9868951</Diffuse>
+            </e>
+            <e xsi:type="e3d:MeshMaterial">
+              <Diffuse>-16777216</Diffuse>
+            </e>
+          </MeshMaterials>
+        </ExtraMaterials>
+        <Length>0.5</Length>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-1</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>"Cylinder"+ID</E>
+        </NewNameExpr>
+        <Radius>0.2</Radius>
+        <ScriptKey>
+          <Id>fe1dce45-5419-4283-84bd-569a5d5c8c7b</Id>
+        </ScriptKey>
+        <SimpleProperties>
+          <Aliases>
+            <e xsi:type="e3d:Alias">
+              <Alias>Name</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Name</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>World Location</Alias>
+              <Path>
+                <e xsi:type="xsd:string">VisualLocation</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Radius</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Radius</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>InnerRadius</Alias>
+              <Path>
+                <e xsi:type="xsd:string">InnerRadius</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>RadiusRatio</Alias>
+              <Path>
+                <e xsi:type="xsd:string">RadiusRatio</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>ConeRatio</Alias>
+              <Path>
+                <e xsi:type="xsd:string">ConeRatio</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>StartAngle</Alias>
+              <Path>
+                <e xsi:type="xsd:string">StartAngle</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Angle</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Angle</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Length</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Length</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Color</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Material</e>
+                <e xsi:type="xsd:string">Color</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>ConnectorEnabled</Alias>
+              <Path>
+                <e xsi:type="xsd:string">ConnectorEnabled</e>
+              </Path>
+            </e>
+          </Aliases>
+        </SimpleProperties>
+        <Type>Cylinder</Type>
+      </P>
+      <CN>
+        <e>
+          <Name>ConnectorExample</Name>
+          <Start>||0.2</Start>
+          <End>||0.2</End>
+          <Normal>||1</Normal>
+          <Parent>0da9b3f9-8658-437e-b43f-17426c4599ce</Parent>
+          <STE>1</STE>
+          <CPS>0.1</CPS>
+          <R>1</R>
+          <AlignmentStyle xsi:type="Demo3D.Visuals.ConnectorAlignmentStyle">Horizontal</AlignmentStyle>
+        </e>
+      </CN>
+    </V>
+    <V Name="BoxTube2" Parent="57e334a1-6fb4-4a71-aac3-21fe0505f6a9" xsi:type="e3d:Visual">
+      <LR>4.0011644|0.22250092|-2.5019658||3.1415925|</LR>
+      <Id>2a7cfa1e-97ce-4dbc-92d5-8b5cf8a9f50f</Id>
+      <AS valtype="e3d:Guid">
+        <E>f46e0a57-0039-43c7-9f10-48284a5e2cad</E>
+        <E>78e33b41-30cb-4df8-8f58-be4c6688d0a5</E>
+        <E>0b8e4960-c109-460f-bb4a-442fdcec3ff7</E>
+      </AS>
+      <P xsi:type="e3d:VisualProperties">
+        <CustomProperties>
+          <CP>
+            <e xsi:type="e3d:CustomProperty">
+              <Name>ConnectorEnabled</Name>
+              <Description>Toggle snapping behavior.</Description>
+              <CS>
+                <Id>2a7cfa1e-97ce-4dbc-92d5-8b5cf8a9f50f</Id>
+              </CS>
+              <Category>-Custom</Category>
+              <Type>xsd:Boolean</Type>
+              <Value xsi:type="xsd:Boolean">0</Value>
+            </e>
+          </CP>
+        </CustomProperties>
+        <ScriptKey>
+          <Id>fe1dce45-5419-4283-84bd-569a5d5c8c7b</Id>
+        </ScriptKey>
+        <SimpleProperties>
+          <Aliases>
+            <e xsi:type="e3d:Alias">
+              <Alias>Name</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Name</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>World Location</Alias>
+              <Path>
+                <e xsi:type="xsd:string">VisualLocation</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>ConnectorEnabled</Alias>
+              <Path>
+                <e xsi:type="xsd:string">ConnectorEnabled</e>
+              </Path>
+            </e>
+          </Aliases>
+        </SimpleProperties>
+      </P>
+    </V>
+    <V Name="BoxTube2Text" Parent="2a7cfa1e-97ce-4dbc-92d5-8b5cf8a9f50f" xsi:type="e3d:TextVisual">
+      <LR>0.12599999|-0.057626277|||-1.5707964|</LR>
+      <ILR>|||||</ILR>
+      <Id>8a21f4ba-2f5c-48eb-81c5-84f335391f44</Id>
+      <P xsi:type="e3d:TextProperties">
+        <CastsShadow>0</CastsShadow>
+        <LineHeight>0.1188266412343682</LineHeight>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-16777216</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>"Text"+ID</E>
+        </NewNameExpr>
+        <SelectParentWhenPicked>1</SelectParentWhenPicked>
+        <Text>CAD Visual</Text>
+        <Type>TextVisual</Type>
+      </P>
+    </V>
+    <V Name="Box2" Parent="57e334a1-6fb4-4a71-aac3-21fe0505f6a9" xsi:type="e3d:BoxVisual">
+      <LR>2.009727|0.5000007|-2.2126355||-3.1415925|</LR>
+      <Id>35b366a0-5f0f-4c46-a67b-d8fbdee6dc1e</Id>
+      <P xsi:type="e3d:BoxProperties">
+        <CustomProperties>
+          <CP>
+            <e xsi:type="e3d:CustomProperty">
+              <Name>ConnectorEnabled</Name>
+              <Description>Toggle snapping behavior.</Description>
+              <CS>
+                <Id>35b366a0-5f0f-4c46-a67b-d8fbdee6dc1e</Id>
+              </CS>
+              <Category>-Custom</Category>
+              <Type>xsd:Boolean</Type>
+              <Value xsi:type="xsd:Boolean">1</Value>
+            </e>
+          </CP>
+        </CustomProperties>
+        <Depth>1</Depth>
+        <ExtraMaterials>
+          <MeshMaterials>
+            <e xsi:type="e3d:MeshMaterial">
+              <Diffuse>-9868951</Diffuse>
+            </e>
+            <e xsi:type="e3d:MeshMaterial">
+              <Diffuse>-1</Diffuse>
+            </e>
+          </MeshMaterials>
+        </ExtraMaterials>
+        <FrictionMaterial>
+          <Name>Corrugated</Name>
+        </FrictionMaterial>
+        <Height>1</Height>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-1</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>"Box"+ID</E>
+        </NewNameExpr>
+        <ScriptKey>
+          <Id>fe1dce45-5419-4283-84bd-569a5d5c8c7b</Id>
+        </ScriptKey>
+        <SimpleProperties>
+          <Aliases>
+            <e xsi:type="e3d:Alias">
+              <Alias>Name</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Name</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>World Location</Alias>
+              <Path>
+                <e xsi:type="xsd:string">VisualLocation</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Depth</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Depth</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Height</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Height</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Width</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Width</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Color</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Material</e>
+                <e xsi:type="xsd:string">Color</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>ConnectorEnabled</Alias>
+              <Path>
+                <e xsi:type="xsd:string">ConnectorEnabled</e>
+              </Path>
+            </e>
+          </Aliases>
+        </SimpleProperties>
+        <Type>Box</Type>
+        <Width>1</Width>
+      </P>
+      <CN>
+        <e>
+          <Name>ConnectorExample</Name>
+          <Start>||0.5</Start>
+          <End>||0.5</End>
+          <Normal>||1</Normal>
+          <Parent>35b366a0-5f0f-4c46-a67b-d8fbdee6dc1e</Parent>
+          <STE>1</STE>
+          <CPS>0.1</CPS>
+          <R>1</R>
+          <AlignmentStyle xsi:type="Demo3D.Visuals.ConnectorAlignmentStyle">Horizontal</AlignmentStyle>
+        </e>
+      </CN>
+    </V>
+    <V Name="Text2" Parent="57e334a1-6fb4-4a71-aac3-21fe0505f6a9" xsi:type="e3d:TextVisual">
+      <LR>0.40725362|0.035500947|-3.1088629|1.5707963|-1.5707963|-3.1415925</LR>
+      <Id>7acfe63a-5049-4a2b-9004-5b06a480f4ca</Id>
+      <P xsi:type="e3d:TextProperties">
+        <CastsShadow>0</CastsShadow>
+        <LineHeight>0.2</LineHeight>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-16777216</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>"Text"+ID</E>
+        </NewNameExpr>
+        <Text>To connect any of the above pairs, drag one visual near the other.</Text>
+        <Type>TextVisual</Type>
+      </P>
+    </V>
+    <V Name="Box1" Parent="57e334a1-6fb4-4a71-aac3-21fe0505f6a9" xsi:type="e3d:BoxVisual">
+      <LR>2.0101888|0.5000007|-3.8951957|||</LR>
+      <Id>7b898fa3-a9fd-4554-91c9-7676133883dc</Id>
+      <P xsi:type="e3d:BoxProperties">
+        <CustomProperties>
+          <CP>
+            <e xsi:type="e3d:CustomProperty">
+              <Name>ConnectorEnabled</Name>
+              <Description>Toggle snapping behavior.</Description>
+              <CS>
+                <Id>7b898fa3-a9fd-4554-91c9-7676133883dc</Id>
+              </CS>
+              <Category>-Custom</Category>
+              <Type>xsd:Boolean</Type>
+              <Value xsi:type="xsd:Boolean">1</Value>
+            </e>
+          </CP>
+        </CustomProperties>
+        <Depth>1</Depth>
+        <ExtraMaterials>
+          <MeshMaterials>
+            <e xsi:type="e3d:MeshMaterial">
+              <Diffuse>-9868951</Diffuse>
+            </e>
+            <e xsi:type="e3d:MeshMaterial">
+              <Diffuse>-1</Diffuse>
+            </e>
+          </MeshMaterials>
+        </ExtraMaterials>
+        <FrictionMaterial>
+          <Name>Corrugated</Name>
+        </FrictionMaterial>
+        <Height>1</Height>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-1</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>"Box"+ID</E>
+        </NewNameExpr>
+        <ScriptKey>
+          <Id>fe1dce45-5419-4283-84bd-569a5d5c8c7b</Id>
+        </ScriptKey>
+        <SimpleProperties>
+          <Aliases>
+            <e xsi:type="e3d:Alias">
+              <Alias>Name</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Name</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>World Location</Alias>
+              <Path>
+                <e xsi:type="xsd:string">VisualLocation</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Depth</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Depth</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Height</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Height</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Width</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Width</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Color</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Material</e>
+                <e xsi:type="xsd:string">Color</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>ConnectorEnabled</Alias>
+              <Path>
+                <e xsi:type="xsd:string">ConnectorEnabled</e>
+              </Path>
+            </e>
+          </Aliases>
+        </SimpleProperties>
+        <Type>Box</Type>
+        <Width>1</Width>
+      </P>
+      <CN>
+        <e>
+          <Name>ConnectorExample</Name>
+          <Start>||0.5</Start>
+          <End>||0.5</End>
+          <Normal>||1</Normal>
+          <Parent>7b898fa3-a9fd-4554-91c9-7676133883dc</Parent>
+          <STE>1</STE>
+          <CPS>0.1</CPS>
+          <R>1</R>
+          <AlignmentStyle xsi:type="Demo3D.Visuals.ConnectorAlignmentStyle">Horizontal</AlignmentStyle>
+        </e>
+      </CN>
+    </V>
+    <V Name="Cylinder2" Parent="57e334a1-6fb4-4a71-aac3-21fe0505f6a9" xsi:type="e3d:CylinderVisual">
+      <LR>7.9997354|0.50000095|-3.5178473|||</LR>
+      <Id>97d8c02d-e381-408d-80cf-93ba6e2b2e3b</Id>
+      <P xsi:type="e3d:CylinderProperties">
+        <CustomProperties>
+          <CP>
+            <e xsi:type="e3d:CustomProperty">
+              <Name>ConnectorEnabled</Name>
+              <Description>Toggle snapping behavior.</Description>
+              <CS>
+                <Id>97d8c02d-e381-408d-80cf-93ba6e2b2e3b</Id>
+              </CS>
+              <Category>-Custom</Category>
+              <Type>xsd:Boolean</Type>
+              <Value xsi:type="xsd:Boolean">0</Value>
+            </e>
+          </CP>
+        </CustomProperties>
+        <ExtraMaterials>
+          <MeshMaterials>
+            <e xsi:type="e3d:MeshMaterial">
+              <Diffuse>-2894893</Diffuse>
+            </e>
+            <e xsi:type="e3d:MeshMaterial">
+              <Diffuse>-5658199</Diffuse>
+            </e>
+            <e xsi:type="e3d:MeshMaterial">
+              <Diffuse>-9868951</Diffuse>
+            </e>
+            <e xsi:type="e3d:MeshMaterial">
+              <Diffuse>-16777216</Diffuse>
+            </e>
+          </MeshMaterials>
+        </ExtraMaterials>
+        <Length>0.5</Length>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-1</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>"Cylinder"+ID</E>
+        </NewNameExpr>
+        <Radius>0.2</Radius>
+        <ScriptKey>
+          <Id>fe1dce45-5419-4283-84bd-569a5d5c8c7b</Id>
+        </ScriptKey>
+        <SimpleProperties>
+          <Aliases>
+            <e xsi:type="e3d:Alias">
+              <Alias>Name</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Name</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>World Location</Alias>
+              <Path>
+                <e xsi:type="xsd:string">VisualLocation</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Radius</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Radius</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>InnerRadius</Alias>
+              <Path>
+                <e xsi:type="xsd:string">InnerRadius</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>RadiusRatio</Alias>
+              <Path>
+                <e xsi:type="xsd:string">RadiusRatio</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>ConeRatio</Alias>
+              <Path>
+                <e xsi:type="xsd:string">ConeRatio</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>StartAngle</Alias>
+              <Path>
+                <e xsi:type="xsd:string">StartAngle</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Angle</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Angle</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Length</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Length</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Color</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Material</e>
+                <e xsi:type="xsd:string">Color</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>ConnectorEnabled</Alias>
+              <Path>
+                <e xsi:type="xsd:string">ConnectorEnabled</e>
+              </Path>
+            </e>
+          </Aliases>
+        </SimpleProperties>
+        <Type>Cylinder</Type>
+      </P>
+      <CN>
+        <e>
+          <Name>ConnectorExample</Name>
+          <Start>||0.2</Start>
+          <End>||0.2</End>
+          <Normal>||1</Normal>
+          <Parent>97d8c02d-e381-408d-80cf-93ba6e2b2e3b</Parent>
+          <STE>1</STE>
+          <CPS>0.1</CPS>
+          <R>1</R>
+          <AlignmentStyle xsi:type="Demo3D.Visuals.ConnectorAlignmentStyle">Horizontal</AlignmentStyle>
+        </e>
+      </CN>
+    </V>
+    <V Name="BoxTube1" Parent="57e334a1-6fb4-4a71-aac3-21fe0505f6a9" xsi:type="e3d:Visual">
+      <LR>4.0077734|0.22250092|-3.5912867|||</LR>
+      <Id>a57080c8-94d2-4199-9e8d-05da1b643b2d</Id>
+      <AS valtype="e3d:Guid">
+        <E>e977c9b1-4898-4551-940a-94c02b1968d2</E>
+        <E>b7165dec-8f1a-452d-a04d-1e92aafbd7b3</E>
+        <E>d14d4cff-d5c6-468f-8eca-9bad417a03f5</E>
+      </AS>
+      <P xsi:type="e3d:VisualProperties">
+        <CustomProperties>
+          <CP>
+            <e xsi:type="e3d:CustomProperty">
+              <Name>ConnectorEnabled</Name>
+              <Description>Toggle snapping behavior.</Description>
+              <CS>
+                <Id>a57080c8-94d2-4199-9e8d-05da1b643b2d</Id>
+              </CS>
+              <Category>-Custom</Category>
+              <Type>xsd:Boolean</Type>
+              <Value xsi:type="xsd:Boolean">0</Value>
+            </e>
+          </CP>
+        </CustomProperties>
+        <ScriptKey>
+          <Id>fe1dce45-5419-4283-84bd-569a5d5c8c7b</Id>
+        </ScriptKey>
+        <SimpleProperties>
+          <Aliases>
+            <e xsi:type="e3d:Alias">
+              <Alias>Name</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Name</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>World Location</Alias>
+              <Path>
+                <e xsi:type="xsd:string">VisualLocation</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>ConnectorEnabled</Alias>
+              <Path>
+                <e xsi:type="xsd:string">ConnectorEnabled</e>
+              </Path>
+            </e>
+          </Aliases>
+        </SimpleProperties>
+      </P>
+    </V>
+    <V Name="BoxTube1Text" Parent="a57080c8-94d2-4199-9e8d-05da1b643b2d" xsi:type="e3d:TextVisual">
+      <LR>0.12599999|-0.057626277|||-1.5707964|</LR>
+      <ILR>|||||</ILR>
+      <Id>0b05bfee-e689-4b73-b007-654121c795f1</Id>
+      <P xsi:type="e3d:TextProperties">
+        <CastsShadow>0</CastsShadow>
+        <LineHeight>0.1188266412343682</LineHeight>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-16777216</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>"Text"+ID</E>
+        </NewNameExpr>
+        <SelectParentWhenPicked>1</SelectParentWhenPicked>
+        <Text>CAD Visual</Text>
+        <Type>TextVisual</Type>
+      </P>
+    </V>
+    <V Name="Text1" Parent="57e334a1-6fb4-4a71-aac3-21fe0505f6a9" xsi:type="e3d:TextVisual">
+      <LR>0.8012351|0.035500947|-3.0639687|1.5707963|-1.5707963|-3.1415925</LR>
+      <Id>a92d1a13-c6a8-4df8-95b9-0f54619eafb6</Id>
+      <P xsi:type="e3d:TextProperties">
+        <CastsShadow>0</CastsShadow>
+        <LineHeight>0.35</LineHeight>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-16777216</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>"Text"+ID</E>
+        </NewNameExpr>
+        <Text>Scripted Connector Examples</Text>
+        <Type>TextVisual</Type>
+      </P>
+    </V>
+    <V Name="Container2" Parent="57e334a1-6fb4-4a71-aac3-21fe0505f6a9" xsi:type="e3d:ContainerVisual">
+      <LR>5.991418|0.4980916|-3.4441252|||</LR>
+      <Id>bddf05b0-8a5d-4ee7-9b09-1de6c7ba7d41</Id>
+      <P xsi:type="e3d:ContainerProperties">
+        <BaseRatio>0.9</BaseRatio>
+        <CollisionType xsi:type="e3d:PhysicsCollisionType">TriMesh</CollisionType>
+        <CustomProperties>
+          <CP>
+            <e xsi:type="e3d:CustomProperty">
+              <Name>ConnectorEnabled</Name>
+              <Description>Toggle snapping behavior.</Description>
+              <CS>
+                <Id>bddf05b0-8a5d-4ee7-9b09-1de6c7ba7d41</Id>
+              </CS>
+              <Category>-Custom</Category>
+              <Type>xsd:Boolean</Type>
+              <Value xsi:type="xsd:Boolean">0</Value>
+            </e>
+          </CP>
+        </CustomProperties>
+        <Depth>0.4</Depth>
+        <FrictionMaterial>
+          <Name>Plastic</Name>
+        </FrictionMaterial>
+        <Height>0.3</Height>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-1</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>"Container"+ID</E>
+        </NewNameExpr>
+        <ScriptKey>
+          <Id>fe1dce45-5419-4283-84bd-569a5d5c8c7b</Id>
+        </ScriptKey>
+        <SimpleProperties>
+          <Aliases>
+            <e xsi:type="e3d:Alias">
+              <Alias>Name</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Name</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>World Location</Alias>
+              <Path>
+                <e xsi:type="xsd:string">VisualLocation</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Depth</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Depth</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Height</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Height</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Width</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Width</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Thickness</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Thickness</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Base Ratio</Alias>
+              <Path>
+                <e xsi:type="xsd:string">BaseRatio</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Color</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Material</e>
+                <e xsi:type="xsd:string">Color</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>ConnectorEnabled</Alias>
+              <Path>
+                <e xsi:type="xsd:string">ConnectorEnabled</e>
+              </Path>
+            </e>
+          </Aliases>
+        </SimpleProperties>
+        <Thickness>0.01</Thickness>
+        <Type>Container</Type>
+        <Width>0.5</Width>
+      </P>
+      <CN>
+        <e>
+          <Name>ConnectorExample</Name>
+          <Start>||0.2</Start>
+          <End>||0.2</End>
+          <Normal>||1</Normal>
+          <Parent>bddf05b0-8a5d-4ee7-9b09-1de6c7ba7d41</Parent>
+          <STE>1</STE>
+          <CPS>0.1</CPS>
+          <R>1</R>
+          <AlignmentStyle xsi:type="Demo3D.Visuals.ConnectorAlignmentStyle">Horizontal</AlignmentStyle>
+        </e>
+      </CN>
+    </V>
+    <V Name="Light1" Parent="57e334a1-6fb4-4a71-aac3-21fe0505f6a9" xsi:type="e3d:LightVisual">
+      <LR>-1|3.4641016|-1.7320508|1.0471976|0.5235988|</LR>
+      <ILR>|||||</ILR>
+      <Id>c72539c9-89d1-4ef6-89a1-0a20684b6a15</Id>
+      <P xsi:type="e3d:LightProperties">
+        <CastsShadow>0</CastsShadow>
+        <CastsShadows>1</CastsShadows>
+        <Diffuse>-4934476</Diffuse>
+        <Intensity>1</Intensity>
+        <LightType xsi:type="Microsoft.DirectX.Direct3D.LightType">Directional</LightType>
+        <NewNameExpr>
+          <E>"Light"+ID</E>
+        </NewNameExpr>
+        <Type>Light</Type>
+      </P>
+    </V>
+  </Visuals>
+  <TagImporterPropertiesFile></TagImporterPropertiesFile>
+  <TagConfigurationFolder>connections</TagConfigurationFolder>
+  <TagServerConfigurationFolder>serverConfiguration</TagServerConfigurationFolder>
+  <TagServers valtype="e3d:TagServerSerializer" />
+  <TelegramFormats valtype="e3d:TelegramFormat" />
+  <TelegramSymbols valtype="e3d:TelegramSymbolSerializer" />
+  <IOBrowserConfiguration>
+    <GridConfigurations valtype="e3d:GridConfiguration">
+      <E>
+        <Name>MainGrid</Name>
+        <StandardColumns valtype="e3d:StandardColumn">
+          <E>
+            <Name>Active</Name>
+            <Visible>1</Visible>
+            <Position>0</Position>
+          </E>
+          <E>
+            <Name>Address</Name>
+            <Visible>1</Visible>
+            <Position>1</Position>
+          </E>
+          <E>
+            <Name>Name</Name>
+            <Visible>1</Visible>
+            <Position>2</Position>
+          </E>
+          <E>
+            <Name>Type</Name>
+            <Visible>0</Visible>
+            <Position>3</Position>
+          </E>
+          <E>
+            <Name>Server</Name>
+            <Visible>0</Visible>
+            <Position>4</Position>
+          </E>
+          <E>
+            <Name>ServerValue</Name>
+            <Visible>1</Visible>
+            <Position>5</Position>
+          </E>
+          <E>
+            <Name>ModelValue</Name>
+            <Visible>1</Visible>
+            <Position>6</Position>
+          </E>
+          <E>
+            <Name>Description</Name>
+            <Visible>0</Visible>
+            <Position>7</Position>
+          </E>
+          <E>
+            <Name>Access</Name>
+            <Visible>1</Visible>
+            <Position>8</Position>
+          </E>
+          <E>
+            <Name>ScanRate</Name>
+            <Visible>0</Visible>
+            <Position>9</Position>
+          </E>
+          <E>
+            <Name>DisplayName</Name>
+            <Visible>0</Visible>
+            <Position>10</Position>
+          </E>
+          <E>
+            <Name>Visual</Name>
+            <Visible>1</Visible>
+            <Position>11</Position>
+          </E>
+          <E>
+            <Name>Property</Name>
+            <Visible>1</Visible>
+            <Position>12</Position>
+          </E>
+          <E>
+            <Name>Expression</Name>
+            <Visible>1</Visible>
+            <Position>13</Position>
+          </E>
+        </StandardColumns>
+      </E>
+      <E>
+        <Name>IOGrid</Name>
+        <StandardColumns valtype="e3d:StandardColumn">
+          <E>
+            <Name>Active</Name>
+            <Visible>1</Visible>
+            <Position>0</Position>
+          </E>
+          <E>
+            <Name>Address</Name>
+            <Visible>1</Visible>
+            <Position>1</Position>
+          </E>
+          <E>
+            <Name>Name</Name>
+            <Visible>1</Visible>
+            <Position>2</Position>
+          </E>
+          <E>
+            <Name>Type</Name>
+            <Visible>0</Visible>
+            <Position>3</Position>
+          </E>
+          <E>
+            <Name>Server</Name>
+            <Visible>0</Visible>
+            <Position>4</Position>
+          </E>
+          <E>
+            <Name>ServerValue</Name>
+            <Visible>1</Visible>
+            <Position>5</Position>
+          </E>
+          <E>
+            <Name>ModelValue</Name>
+            <Visible>1</Visible>
+            <Position>6</Position>
+          </E>
+          <E>
+            <Name>Description</Name>
+            <Visible>0</Visible>
+            <Position>7</Position>
+          </E>
+          <E>
+            <Name>Access</Name>
+            <Visible>1</Visible>
+            <Position>8</Position>
+          </E>
+          <E>
+            <Name>ScanRate</Name>
+            <Visible>0</Visible>
+            <Position>9</Position>
+          </E>
+          <E>
+            <Name>DisplayName</Name>
+            <Visible>0</Visible>
+            <Position>10</Position>
+          </E>
+          <E>
+            <Name>Visual</Name>
+            <Visible>1</Visible>
+            <Position>11</Position>
+          </E>
+          <E>
+            <Name>Property</Name>
+            <Visible>1</Visible>
+            <Position>12</Position>
+          </E>
+          <E>
+            <Name>Expression</Name>
+            <Visible>1</Visible>
+            <Position>13</Position>
+          </E>
+        </StandardColumns>
+      </E>
+    </GridConfigurations>
+  </IOBrowserConfiguration>
+  <CTRecordsConfiguration />
+  <Fmus />
+  <e3d:DefaultCamera>Default View</e3d:DefaultCamera>
+  <e3d:Cameras>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Default View</key>
+      <val xsi:type="e3d:Camera">
+        <Position>-2.4228618|4.3702254|-3.1432366</Position>
+        <Target>2.4836705|-0.7688451|-3.1399114</Target>
+      </val>
+    </e>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Front View</key>
+      <val xsi:type="e3d:Camera">
+        <Position>|1.5|-10</Position>
+        <Target>|1.5|</Target>
+      </val>
+    </e>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Plan View</key>
+      <val xsi:type="e3d:Camera">
+        <PlanView>1</PlanView>
+        <Position>|5|</Position>
+      </val>
+    </e>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Side View</key>
+      <val xsi:type="e3d:Camera">
+        <Position>-10|1.5|</Position>
+        <Target>|1.5|</Target>
+      </val>
+    </e>
+  </e3d:Cameras>
+  <e3d:Notes>
+    <Note Name="Default" File="notes\note01.rtf" />
+  </e3d:Notes>
+  <Experiments>
+    <ExperimentsFile>experiments.csv</ExperimentsFile>
+  </Experiments>
+  <e3d:QuickMovieCameras valtype="e3d:QuickCamera" />
+  <e3d:DocumentScriptId>00000000-0000-0000-0000-000000000000</e3d:DocumentScriptId>
+  <FileFormat>2</FileFormat>
+  <e3d:SerializedObjects valtype="e3d:SerializableObject">
+    <E xsi:type="e3d:MeshRendererAspect">
+      <Id>f46e0a57-0039-43c7-9f10-48284a5e2cad</Id>
+      <Renderables valtype="e3d:MeshRenderable">
+        <E>
+          <Id>5d17f089-17c5-4b61-b3cc-db164d228d3a</Id>
+          <MaterialProperties>
+            <e>
+              <MeshMaterial xsi:type="e3d:MeshMaterial">
+                <Diffuse>-1</Diffuse>
+                <Reflectivity>0.05</Reflectivity>
+              </MeshMaterial>
+            </e>
+          </MaterialProperties>
+          <MeshReference>
+            <Id>5d9b9b89-18be-4e7c-9fa3-6f5d23105b5e</Id>
+          </MeshReference>
+        </E>
+      </Renderables>
+    </E>
+    <E xsi:type="e3d:VisualEventsAspect">
+      <Id>78e33b41-30cb-4df8-8f58-be4c6688d0a5</Id>
+    </E>
+    <E xsi:type="e3d:ConnectorsAspect">
+      <Connectors>
+        <e>
+          <Name>ConnectorExample</Name>
+          <Start>||0.3699999</Start>
+          <End>||0.3699999</End>
+          <Normal>||1</Normal>
+          <Parent>2a7cfa1e-97ce-4dbc-92d5-8b5cf8a9f50f</Parent>
+          <STE>1</STE>
+          <CPS>0.1</CPS>
+          <R>1</R>
+          <AlignmentStyle xsi:type="Demo3D.Visuals.ConnectorAlignmentStyle">Horizontal</AlignmentStyle>
+        </e>
+      </Connectors>
+      <Id>0b8e4960-c109-460f-bb4a-442fdcec3ff7</Id>
+    </E>
+    <E xsi:type="e3d:MeshRendererAspect">
+      <Id>e977c9b1-4898-4551-940a-94c02b1968d2</Id>
+      <Renderables valtype="e3d:MeshRenderable">
+        <E>
+          <Id>b537298a-a9b5-4e01-83a5-337d9a7ec31d</Id>
+          <MaterialProperties>
+            <e>
+              <MeshMaterial xsi:type="e3d:MeshMaterial">
+                <Diffuse>-1</Diffuse>
+                <Reflectivity>0.05</Reflectivity>
+              </MeshMaterial>
+            </e>
+          </MaterialProperties>
+          <MeshReference>
+            <Id>5d9b9b89-18be-4e7c-9fa3-6f5d23105b5e</Id>
+          </MeshReference>
+        </E>
+      </Renderables>
+    </E>
+    <E xsi:type="e3d:VisualEventsAspect">
+      <Id>b7165dec-8f1a-452d-a04d-1e92aafbd7b3</Id>
+    </E>
+    <E xsi:type="e3d:ConnectorsAspect">
+      <Connectors>
+        <e>
+          <Name>ConnectorExample</Name>
+          <Start>||0.3699999</Start>
+          <End>||0.3699999</End>
+          <Normal>||1</Normal>
+          <Parent>a57080c8-94d2-4199-9e8d-05da1b643b2d</Parent>
+          <STE>1</STE>
+          <CPS>0.1</CPS>
+          <R>1</R>
+          <AlignmentStyle xsi:type="Demo3D.Visuals.ConnectorAlignmentStyle">Horizontal</AlignmentStyle>
+        </e>
+      </Connectors>
+      <Id>d14d4cff-d5c6-468f-8eca-9bad417a03f5</Id>
+    </E>
+  </e3d:SerializedObjects>
+</e3d:Model>

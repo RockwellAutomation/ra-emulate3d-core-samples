@@ -1,0 +1,16 @@
+{
+  "Key": {
+    "Key": "fe1dce45-5419-4283-84bd-569a5d5c8c7b",
+    "IsNull": false
+  },
+  "DefaultLicense": null,
+  "Aliases": [
+    {
+      "Name": "NativeObject",
+      "Script": "NativeObject",
+      "Key": "34ba961e-c3f8-4090-9b3a-8bd37a95a796"
+    }
+  ],
+  "Created": "2025-07-10T14:59:48.3214651Z",
+  "Modified": "2025-08-15T18:45:23.917018Z"
+}
