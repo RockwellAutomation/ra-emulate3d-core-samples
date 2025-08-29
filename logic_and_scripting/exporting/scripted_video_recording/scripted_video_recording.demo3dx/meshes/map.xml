@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-16"?>
+<MeshMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>1</Version>
+  <Meshes>
+    <Mesh VertexBuffer="0" IndexBuffers="0" Sections="0" Id="39e6c3c4-ca4e-4b3e-a38e-ba6c08ec0ae5" />
+  </Meshes>
+  <Vertices>
+    <VertexBuffer Path="v0.dat">
+      <Attribute Usage="Position" />
+      <Attribute Usage="Normal" />
+      <Attribute Usage="Texture" Type="Vector2" />
+    </VertexBuffer>
+  </Vertices>
+  <Indices>
+    <IndexBuffer Path="i0.dat" />
+  </Indices>
+  <Subsets>
+    <int>0</int>
+  </Subsets>
+</MeshMap>
