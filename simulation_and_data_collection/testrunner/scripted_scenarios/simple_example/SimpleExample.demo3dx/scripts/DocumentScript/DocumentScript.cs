@@ -35,6 +35,7 @@ public class Tests : Emulate3DTestFixture {
             SetInitialParameters(5f);
         });
         await RunModelForSecondsAsync(ModelRunLength, -1);
+        EvaluateModel();
     }
 
     private void SetInitialParameters(float convSpeed) {
