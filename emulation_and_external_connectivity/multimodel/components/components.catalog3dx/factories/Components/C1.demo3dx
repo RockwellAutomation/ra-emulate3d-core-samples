@@ -1,0 +1,75 @@
+<e3d:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:e3d="uri://emulate3d.com">
+  <e3d:Header xsi:type="e3d:DocumentHeader">
+    <Hwid>ANPx3dapM3JjYHFJY0+ImvEC8kWfkE8JCyVqnm92qmB1Von/zz9Q8c07TKQgvByzk</Hwid>
+    <Id>0c8cdb06-d5ca-460a-bef6-f66ae4dc63cf</Id>
+    <Locale>English (United Kingdom)</Locale>
+    <Product>Demo3D 2025</Product>
+    <Version>18.0.2.81</Version>
+    <Edition>Emulate3D Ultimate Edition 2025</Edition>
+  </e3d:Header>
+  <Resources />
+  <Visuals>
+    <V Name="Sphere1" Parent="" xsi:type="e3d:SphereVisual">
+      <LR>-3.3727033|0.5|-0.052690506|||</LR>
+      <Id>1ac2ae5e-f747-4105-994b-aa0aacd50289</Id>
+      <P xsi:type="e3d:SphereProperties">
+        <Color>-65536</Color>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-65536</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>"Sphere"+ID</E>
+        </NewNameExpr>
+        <Radius>0.1</Radius>
+        <Type>C1</Type>
+      </P>
+    </V>
+  </Visuals>
+  <TagImporterPropertiesFile></TagImporterPropertiesFile>
+  <TagConfigurationFolder>connections</TagConfigurationFolder>
+  <TagServerConfigurationFolder>serverConfiguration</TagServerConfigurationFolder>
+  <TagServers valtype="e3d:TagServerSerializer" />
+  <TelegramFormats valtype="e3d:TelegramFormat" />
+  <TelegramSymbols valtype="e3d:TelegramSymbolSerializer" />
+  <IOBrowserConfiguration>
+    <GridConfigurations valtype="e3d:GridConfiguration" />
+  </IOBrowserConfiguration>
+  <CTRecordsConfiguration />
+  <Fmus />
+  <e3d:DefaultCamera>Default View</e3d:DefaultCamera>
+  <e3d:Cameras>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Default View</key>
+      <val xsi:type="e3d:Camera">
+        <Position>-3.955127|6.299038|-6.85048</Position>
+      </val>
+    </e>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Front View</key>
+      <val xsi:type="e3d:Camera">
+        <Position>|1.5|-10</Position>
+        <Target>|1.5|</Target>
+      </val>
+    </e>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Plan View</key>
+      <val xsi:type="e3d:Camera">
+        <PlanView>1</PlanView>
+        <Position>|5|</Position>
+      </val>
+    </e>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Side View</key>
+      <val xsi:type="e3d:Camera">
+        <Position>-10|1.5|</Position>
+        <Target>|1.5|</Target>
+      </val>
+    </e>
+  </e3d:Cameras>
+  <e3d:Notes />
+  <e3d:QuickMovieCameras valtype="e3d:QuickCamera" />
+  <e3d:DocumentScriptId>00000000-0000-0000-0000-000000000000</e3d:DocumentScriptId>
+  <FileFormat>3</FileFormat>
+</e3d:Model>

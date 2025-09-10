@@ -1,0 +1,211 @@
+<e3d:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:e3d="uri://emulate3d.com">
+  <e3d:Header xsi:type="e3d:DocumentHeader">
+    <Hwid>ANPx3dapM3JjYHFJY0+ImvEC8kWfkE8JCyVqnm92qmB1Von/zz9Q8c07TKQgvByzk</Hwid>
+    <Id>0c8cdb06-d5ca-460a-bef6-f66ae4dc63cf</Id>
+    <Locale>English (United Kingdom)</Locale>
+    <Product>Demo3D 2025</Product>
+    <Version>18.0.2.81</Version>
+    <Edition>Emulate3D Ultimate Edition 2025</Edition>
+  </e3d:Header>
+  <Resources>
+    <MeshLibrary>
+      <Mesh Key="dc8202e8-70a7-4ea9-8f6a-75f5f5af2f3c" />
+    </MeshLibrary>
+    <TextureLibrary>
+      <Texture Key="4dfc9834-fc96-4e1e-86c6-e2c9687cfb08" Name="box2" />
+    </TextureLibrary>
+    <LayerLibrary>
+      <LayersFile>layers.csv</LayersFile>
+    </LayerLibrary>
+    <FrictionMaterialLibrary />
+    <ScriptLibrary>
+      <Scripts>
+        <Script Key="406471c4-feb7-4e71-bd88-02ddc2f6c370" Cs="scripts\CardboardBoxWithComponentsScript.cs" Info="scripts\CardboardBoxWithComponentsScript.info" />
+        <Script Key="34ba961e-c3f8-4090-9b3a-8bd37a95a796" Cs="scripts\NativeObject.cs" Info="scripts\NativeObject.info" />
+      </Scripts>
+    </ScriptLibrary>
+  </Resources>
+  <Visuals>
+    <V Name="Box6" Parent="" xsi:type="e3d:ImportedMeshVisual">
+      <LR>-0.88770807|1.0310004|-1.946075|5.4571724E-06|4.8496313E-05|-1.0667321E-05</LR>
+      <Id>29a8d459-b8a9-461b-9599-5ee837d26568</Id>
+      <P xsi:type="e3d:ImportedMeshProperties">
+        <BodyType xsi:type="e3d:PhysicsBodyType">Load</BodyType>
+        <CustomProperties>
+          <CP>
+            <e xsi:type="e3d:CustomProperty">
+              <Name>HasC1</Name>
+              <Type>xsd:Boolean</Type>
+              <Value xsi:type="xsd:Boolean">0</Value>
+            </e>
+            <e xsi:type="e3d:CustomProperty">
+              <Name>HasC2</Name>
+              <Type>xsd:Boolean</Type>
+              <Value xsi:type="xsd:Boolean">0</Value>
+            </e>
+          </CP>
+        </CustomProperties>
+        <FrictionMaterial>
+          <Name>Corrugated</Name>
+        </FrictionMaterial>
+        <Layer>Loads</Layer>
+        <MaintainAspectRatio>0</MaintainAspectRatio>
+        <Materials>
+          <MeshMaterials>
+            <e xsi:type="e3d:MeshMaterial">
+              <Diffuse>-1</Diffuse>
+              <Texture>
+                <Id>4dfc9834-fc96-4e1e-86c6-e2c9687cfb08</Id>
+              </Texture>
+            </e>
+          </MeshMaterials>
+        </Materials>
+        <Mesh>
+          <Id>dc8202e8-70a7-4ea9-8f6a-75f5f5af2f3c</Id>
+        </Mesh>
+        <NewNameExpr>
+          <E>"Box"+ID</E>
+        </NewNameExpr>
+        <Scale>0.6666667|0.6666667|0.6666667</Scale>
+        <ScriptKey>
+          <Id>406471c4-feb7-4e71-bd88-02ddc2f6c370</Id>
+        </ScriptKey>
+        <SendMessagesAutomaticallyEnabled>0</SendMessagesAutomaticallyEnabled>
+        <SimpleProperties>
+          <Aliases>
+            <e xsi:type="e3d:Alias">
+              <Alias>Name</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Name</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>World Location</Alias>
+              <Path>
+                <e xsi:type="xsd:string">VisualLocation</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Depth</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Depth</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Height</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Height</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Width</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Width</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Materials</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Materials</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>HasC1</Alias>
+              <Path>
+                <e xsi:type="xsd:string">HasC1</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>HasC2</Alias>
+              <Path>
+                <e xsi:type="xsd:string">HasC2</e>
+              </Path>
+            </e>
+          </Aliases>
+        </SimpleProperties>
+        <Type>CardboardBoxWithComponents</Type>
+      </P>
+    </V>
+    <V Name="C1" Parent="29a8d459-b8a9-461b-9599-5ee837d26568" xsi:type="e3d:SphereVisual">
+      <LR>0.2|||-5.456655E-06|-4.849637E-05|1.0667585E-05</LR>
+      <Id>270cd88e-fcb2-4e4f-8960-c67c7eb84960</Id>
+      <P xsi:type="e3d:SphereProperties">
+        <Color>-16711936</Color>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-16711936</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>"Sphere"+ID</E>
+        </NewNameExpr>
+        <Radius>0.1</Radius>
+        <Type>Sphere</Type>
+        <Visible>0</Visible>
+      </P>
+    </V>
+    <V Name="C2" Parent="29a8d459-b8a9-461b-9599-5ee837d26568" xsi:type="e3d:SphereVisual">
+      <LR>|0.2||-5.456655E-06|-4.849637E-05|1.0667585E-05</LR>
+      <Id>52701c48-6e4f-49dc-a184-15747d3f0136</Id>
+      <P xsi:type="e3d:SphereProperties">
+        <Color>-65536</Color>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-65536</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>"Sphere"+ID</E>
+        </NewNameExpr>
+        <Radius>0.1</Radius>
+        <Type>C1</Type>
+        <Visible>0</Visible>
+      </P>
+    </V>
+  </Visuals>
+  <TagImporterPropertiesFile></TagImporterPropertiesFile>
+  <TagConfigurationFolder>connections</TagConfigurationFolder>
+  <TagServerConfigurationFolder>serverConfiguration</TagServerConfigurationFolder>
+  <TagServers valtype="e3d:TagServerSerializer" />
+  <TelegramFormats valtype="e3d:TelegramFormat" />
+  <TelegramSymbols valtype="e3d:TelegramSymbolSerializer" />
+  <IOBrowserConfiguration>
+    <GridConfigurations valtype="e3d:GridConfiguration" />
+  </IOBrowserConfiguration>
+  <CTRecordsConfiguration />
+  <Fmus />
+  <e3d:DefaultCamera>Default View</e3d:DefaultCamera>
+  <e3d:Cameras>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Default View</key>
+      <val xsi:type="e3d:Camera">
+        <Position>-3.955127|6.299038|-6.85048</Position>
+      </val>
+    </e>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Front View</key>
+      <val xsi:type="e3d:Camera">
+        <Position>|1.5|-10</Position>
+        <Target>|1.5|</Target>
+      </val>
+    </e>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Plan View</key>
+      <val xsi:type="e3d:Camera">
+        <PlanView>1</PlanView>
+        <Position>|5|</Position>
+      </val>
+    </e>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Side View</key>
+      <val xsi:type="e3d:Camera">
+        <Position>-10|1.5|</Position>
+        <Target>|1.5|</Target>
+      </val>
+    </e>
+  </e3d:Cameras>
+  <e3d:Notes />
+  <e3d:QuickMovieCameras valtype="e3d:QuickCamera" />
+  <e3d:DocumentScriptId>00000000-0000-0000-0000-000000000000</e3d:DocumentScriptId>
+  <FileFormat>3</FileFormat>
+</e3d:Model>

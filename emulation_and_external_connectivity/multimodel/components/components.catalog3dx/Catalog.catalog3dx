@@ -1,0 +1,44 @@
+<e3d:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:e3d="uri://emulate3d.com">
+  <Header xsi:type="e3d:DocumentHeader">
+    <Hwid>ANPx3dapM3JjYHFJY0+ImvEC8kWfkE8JCyVqnm92qmB1Von/zz9Q8c07TKQgvByzk</Hwid>
+    <Id>0c8cdb06-d5ca-460a-bef6-f66ae4dc63cf</Id>
+    <Locale>English (United Kingdom)</Locale>
+    <Product>Demo3D 2025</Product>
+    <Version>18.0.2.81</Version>
+    <Edition>Emulate3D Ultimate Edition 2025</Edition>
+  </Header>
+  <Resources>
+    <MeshLibrary>
+      <Mesh Key="dc8202e8-70a7-4ea9-8f6a-75f5f5af2f3c" />
+    </MeshLibrary>
+    <TextureLibrary>
+      <Texture Key="4dfc9834-fc96-4e1e-86c6-e2c9687cfb08" Name="box2" />
+    </TextureLibrary>
+    <LayerLibrary>
+      <LayersFile>layers.csv</LayersFile>
+    </LayerLibrary>
+    <FrictionMaterialLibrary />
+    <ScriptLibrary>
+      <Scripts>
+        <Script Key="406471c4-feb7-4e71-bd88-02ddc2f6c370" Cs="scripts\CardboardBoxWithComponentsScript.cs" Info="scripts\CardboardBoxWithComponentsScript.info" />
+        <Script Key="34ba961e-c3f8-4090-9b3a-8bd37a95a796" Cs="scripts\NativeObject.cs" Info="scripts\NativeObject.info" />
+      </Scripts>
+    </ScriptLibrary>
+    <FrictionConfiguration>
+      <FrictionFile>friction.csv</FrictionFile>
+    </FrictionConfiguration>
+  </Resources>
+  <Notes>
+    <Note Name="Default" File="notes\note01.rtf" />
+  </Notes>
+  <Folders>
+    <Folder Name="" />
+    <Folder Name="Components" Parent="/" />
+  </Folders>
+  <FileFormat>2</FileFormat>
+  <Factories>
+    <Factory File="factories\CardboardBoxWithComponents.demo3dx" Folder="/" Type="CardboardBoxWithComponents" IsLoad="True" />
+    <Factory File="factories\Components\C1.demo3dx" Folder="/Components" Type="C1" />
+    <Factory File="factories\Components\C2.demo3dx" Folder="/Components" Type="C2" />
+  </Factories>
+</e3d:Catalog>
