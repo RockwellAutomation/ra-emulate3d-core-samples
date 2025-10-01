@@ -1,0 +1,20 @@
+{
+  "Key": {
+    "Key": "db4ae118-e248-4920-9fde-24b08652e813",
+    "IsNull": false
+  },
+  "DefaultLicense": null,
+  "Aliases": [
+    {
+      "Name": "NativeObject",
+      "Script": "NativeObject",
+      "Key": "34ba961e-c3f8-4090-9b3a-8bd37a95a796"
+    }
+  ],
+  "NativeSourcePaths": [
+    "CustomSelectionLogic.cs",
+    "CustomSelectionLogic.csproj"
+  ],
+  "Created": "2025-09-16T17:33:35.1157853Z",
+  "Modified": "2025-09-18T18:08:53.2788603Z"
+}
