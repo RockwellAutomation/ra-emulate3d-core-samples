@@ -1,0 +1,575 @@
+<e3d:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:e3d="uri://emulate3d.com">
+  <e3d:Header>
+    <Version>18.0.2.81</Version>
+    <Id>f45d6652-5107-4a29-b5fa-abd4a8abbcd8</Id>
+  </e3d:Header>
+  <Resources>
+    <LayerLibrary>
+      <LayersFile>layers.csv</LayersFile>
+    </LayerLibrary>
+    <FrictionMaterialLibrary />
+    <ScriptLibrary>
+      <Scripts>
+        <Script Key="db4ae118-e248-4920-9fde-24b08652e813" Info="scripts\CustomSelectionLogic\CustomSelectionLogic.info" />
+        <Script Key="34ba961e-c3f8-4090-9b3a-8bd37a95a796" Cs="scripts\NativeObject.cs" Info="scripts\NativeObject.info" />
+      </Scripts>
+    </ScriptLibrary>
+    <FrictionConfiguration>
+      <FrictionFile>friction.csv</FrictionFile>
+    </FrictionConfiguration>
+  </Resources>
+  <Visuals>
+    <V Name="SceneVisual" Parent="" xsi:type="e3d:SceneVisual">
+      <Id>63319a67-8bae-4ac4-a3ad-4c9e85339cff</Id>
+      <Static>1</Static>
+      <AS valtype="e3d:Guid">
+        <E>c26502b9-cf6e-423a-b241-0dfbca964b6a</E>
+      </AS>
+      <P xsi:type="e3d:SceneProperties">
+        <DefaultFloor>
+          <Type>e3d:FloorVisual</Type>
+        </DefaultFloor>
+        <FrictionMaterial>
+          <Name>Concrete</Name>
+        </FrictionMaterial>
+        <GeneratorType>MT19937</GeneratorType>
+        <PhysicsEngineType xsi:type="Demo3D.Visuals.PhysicsEngine+EngineType">PhysX</PhysicsEngineType>
+        <SimpleProperties>
+          <Aliases>
+            <e xsi:type="e3d:Alias">
+              <Alias>Delete Loads After</Alias>
+              <Path>
+                <e xsi:type="xsd:string">DeleteLoadsAfter</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Align Offset</Alias>
+              <Path>
+                <e xsi:type="xsd:string">AlignOffset</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Paste Offset</Alias>
+              <Path>
+                <e xsi:type="xsd:string">PasteOffset</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Ambient Light</Alias>
+              <Path>
+                <e xsi:type="xsd:string">AmbientLight</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Default Floor</Alias>
+              <Path>
+                <e xsi:type="xsd:string">DefaultFloor</e>
+              </Path>
+            </e>
+          </Aliases>
+        </SimpleProperties>
+        <SOAPServer>
+          <MaxConnections>0</MaxConnections>
+        </SOAPServer>
+      </P>
+      <IgnoreFrictionConfiguration>1</IgnoreFrictionConfiguration>
+    </V>
+    <V Name="Box2" Parent="63319a67-8bae-4ac4-a3ad-4c9e85339cff" xsi:type="e3d:BoxVisual">
+      <LR>|0.5|1.5|||</LR>
+      <Id>3bf35e96-00e8-49ca-8d09-f40d79c7bd18</Id>
+      <P xsi:type="e3d:BoxProperties">
+        <Depth>1</Depth>
+        <ExtraMaterials>
+          <MeshMaterials>
+            <e xsi:type="e3d:MeshMaterial">
+              <Diffuse>-9868951</Diffuse>
+            </e>
+            <e xsi:type="e3d:MeshMaterial">
+              <Diffuse>-1</Diffuse>
+            </e>
+          </MeshMaterials>
+        </ExtraMaterials>
+        <FrictionMaterial>
+          <Name>Corrugated</Name>
+        </FrictionMaterial>
+        <Height>1</Height>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-1</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>"Box"+ID</E>
+        </NewNameExpr>
+        <Type>Box</Type>
+        <Width>1</Width>
+      </P>
+    </V>
+    <V Name="Light1" Parent="63319a67-8bae-4ac4-a3ad-4c9e85339cff" xsi:type="e3d:LightVisual">
+      <LR>-1.4142135|2.828427|-2.4494898|0.7853981|0.5235988|</LR>
+      <ILR>|||||</ILR>
+      <Id>4bde6215-a550-49ea-9a11-2220554b0041</Id>
+      <P xsi:type="e3d:LightProperties">
+        <CastsShadow>1</CastsShadow>
+        <CastsShadows>1</CastsShadows>
+        <Diffuse>-4934476</Diffuse>
+        <Intensity>1</Intensity>
+        <LightType xsi:type="Microsoft.DirectX.Direct3D.LightType">Directional</LightType>
+        <NewNameExpr>
+          <E>"Light"+ID</E>
+        </NewNameExpr>
+        <Type>Light</Type>
+      </P>
+    </V>
+    <V Name="SelectionController" Parent="63319a67-8bae-4ac4-a3ad-4c9e85339cff" xsi:type="e3d:BoxTubeVisual">
+      <LR>|0.004999999||||</LR>
+      <ILR>|0.05||||</ILR>
+      <Id>56362c20-efab-4121-9e20-d6b0e7df2e97</Id>
+      <P xsi:type="e3d:BoxTubeProperties">
+        <CastsShadow>0</CastsShadow>
+        <CentreX>
+          <Material>
+            <MeshMaterial xsi:type="e3d:MeshMaterial">
+              <Diffuse>-4144960</Diffuse>
+              <Reflectivity>0.05</Reflectivity>
+            </MeshMaterial>
+          </Material>
+        </CentreX>
+        <CentreZ>
+          <Material>
+            <MeshMaterial xsi:type="e3d:MeshMaterial">
+              <Diffuse>-4144960</Diffuse>
+              <Reflectivity>0.05</Reflectivity>
+            </MeshMaterial>
+          </Material>
+        </CentreZ>
+        <CornerXmaxZmax>
+          <Radius>0.175</Radius>
+        </CornerXmaxZmax>
+        <CornerXmaxZmin>
+          <Radius>0.175</Radius>
+        </CornerXmaxZmin>
+        <CornerXminZmax>
+          <Radius>0.175</Radius>
+        </CornerXminZmax>
+        <CornerXminZmin>
+          <Radius>0.175</Radius>
+        </CornerXminZmin>
+        <CurveRadius>1</CurveRadius>
+        <CustomProperties>
+          <CP>
+            <e xsi:type="e3d:CustomProperty">
+              <Name>LastVisualSelected</Name>
+              <Description>The last visual selected.</Description>
+              <ReadOnly>1</ReadOnly>
+              <CS>
+                <Id>56362c20-efab-4121-9e20-d6b0e7df2e97</Id>
+              </CS>
+              <Category>-Custom</Category>
+              <Type>e3d:VisualReference</Type>
+              <Value xsi:type="e3d:VisualReference">
+                <Visual>cda94dcc-0e5c-4c76-84fe-4078c3814111</Visual>
+                <Type>e3d:BoxVisual</Type>
+              </Value>
+            </e>
+          </CP>
+        </CustomProperties>
+        <Depth>0.35</Depth>
+        <EndYmax>
+          <Material>
+            <MeshMaterial xsi:type="e3d:MeshMaterial">
+              <Diffuse>-16728065</Diffuse>
+              <Reflectivity>0.05</Reflectivity>
+            </MeshMaterial>
+          </Material>
+          <Thickness>0.005</Thickness>
+          <Visible>1</Visible>
+        </EndYmax>
+        <EndYmin>
+          <Material>
+            <MeshMaterial xsi:type="e3d:MeshMaterial">
+              <Diffuse>-4144960</Diffuse>
+              <Reflectivity>0.05</Reflectivity>
+            </MeshMaterial>
+          </Material>
+        </EndYmin>
+        <FrictionMaterial>
+          <Name>Corrugated</Name>
+        </FrictionMaterial>
+        <Height>0.01</Height>
+        <Layer>Controllers</Layer>
+        <NewNameExpr>
+          <E>"SelectionController"+ID</E>
+        </NewNameExpr>
+        <OuterMaterial>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-16728065</Diffuse>
+            <Reflectivity>0.05</Reflectivity>
+          </MeshMaterial>
+        </OuterMaterial>
+        <ScriptKey>
+          <Id>db4ae118-e248-4920-9fde-24b08652e813</Id>
+        </ScriptKey>
+        <ShowControlPoints>0</ShowControlPoints>
+        <StyleName>Controller</StyleName>
+        <StyleSetName>BoxTubeVisual</StyleSetName>
+        <Type>BoxTube</Type>
+        <Width>1.35</Width>
+      </P>
+    </V>
+    <V Name="Text1" Parent="56362c20-efab-4121-9e20-d6b0e7df2e97" xsi:type="e3d:TextVisual">
+      <LR>|0.01||1.5707963|-3.1415925|-3.1415925</LR>
+      <Id>bdd2712b-d7cd-4777-8c81-35c913a948ce</Id>
+      <P xsi:type="e3d:TextProperties">
+        <CastsShadow>0</CastsShadow>
+        <Depth>0</Depth>
+        <LineHeight>0.08</LineHeight>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-16777216</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>"Text"+ID</E>
+        </NewNameExpr>
+        <SelectParentWhenPicked>1</SelectParentWhenPicked>
+        <Text>Custom Selection Script Example</Text>
+        <Type>TextVisual</Type>
+        <VerticalAlign xsi:type="e3d:VAlign">Center</VerticalAlign>
+      </P>
+    </V>
+    <V Name="Text3" Parent="63319a67-8bae-4ac4-a3ad-4c9e85339cff" xsi:type="e3d:TextVisual">
+      <LR>0.0043|1.001|1.5084|1.5707963|-3.1415925|-3.1415925</LR>
+      <Id>66813b6d-ae99-4fc6-9183-d39ec318beef</Id>
+      <P xsi:type="e3d:TextProperties">
+        <CastsShadow>0</CastsShadow>
+        <Depth>0</Depth>
+        <LineHeight>0.08</LineHeight>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-16777216</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>"Text"+ID</E>
+        </NewNameExpr>
+        <SelectParentWhenPicked>1</SelectParentWhenPicked>
+        <Text>Select me to turn purple!</Text>
+        <Type>TextVisual</Type>
+        <VerticalAlign xsi:type="e3d:VAlign">Center</VerticalAlign>
+      </P>
+    </V>
+    <V Name="Text2" Parent="63319a67-8bae-4ac4-a3ad-4c9e85339cff" xsi:type="e3d:TextVisual">
+      <LR>-2.4957|1.001|1.5084|1.5707963|-3.1415925|-3.1415925</LR>
+      <Id>7b1ad461-0cd9-437a-8284-c14d969baf99</Id>
+      <P xsi:type="e3d:TextProperties">
+        <CastsShadow>0</CastsShadow>
+        <Depth>0</Depth>
+        <LineHeight>0.08</LineHeight>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-16777216</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>"Text"+ID</E>
+        </NewNameExpr>
+        <SelectParentWhenPicked>1</SelectParentWhenPicked>
+        <Text>Select me to turn green!</Text>
+        <Type>TextVisual</Type>
+        <VerticalAlign xsi:type="e3d:VAlign">Center</VerticalAlign>
+      </P>
+    </V>
+    <V Name="Box3" Parent="63319a67-8bae-4ac4-a3ad-4c9e85339cff" xsi:type="e3d:BoxVisual">
+      <LR>2.5|0.5|1.5|||</LR>
+      <Id>9dfbd8c5-90d5-4c26-9c96-10e636db542e</Id>
+      <P xsi:type="e3d:BoxProperties">
+        <Depth>1</Depth>
+        <ExtraMaterials>
+          <MeshMaterials>
+            <e xsi:type="e3d:MeshMaterial">
+              <Diffuse>-9868951</Diffuse>
+            </e>
+            <e xsi:type="e3d:MeshMaterial">
+              <Diffuse>-1</Diffuse>
+            </e>
+          </MeshMaterials>
+        </ExtraMaterials>
+        <FrictionMaterial>
+          <Name>Corrugated</Name>
+        </FrictionMaterial>
+        <Height>1</Height>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-1</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>"Box"+ID</E>
+        </NewNameExpr>
+        <Type>Box</Type>
+        <Width>1</Width>
+      </P>
+    </V>
+    <V Name="Box1" Parent="63319a67-8bae-4ac4-a3ad-4c9e85339cff" xsi:type="e3d:BoxVisual">
+      <LR>-2.5|0.5|1.5|||</LR>
+      <Id>cda94dcc-0e5c-4c76-84fe-4078c3814111</Id>
+      <P xsi:type="e3d:BoxProperties">
+        <Depth>1</Depth>
+        <ExtraMaterials>
+          <MeshMaterials>
+            <e xsi:type="e3d:MeshMaterial">
+              <Diffuse>-9868951</Diffuse>
+            </e>
+            <e xsi:type="e3d:MeshMaterial">
+              <Diffuse>-1</Diffuse>
+            </e>
+          </MeshMaterials>
+        </ExtraMaterials>
+        <FrictionMaterial>
+          <Name>Corrugated</Name>
+        </FrictionMaterial>
+        <Height>1</Height>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-1</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>"Box"+ID</E>
+        </NewNameExpr>
+        <Type>Box</Type>
+        <Width>1</Width>
+      </P>
+    </V>
+    <V Name="Text4" Parent="63319a67-8bae-4ac4-a3ad-4c9e85339cff" xsi:type="e3d:TextVisual">
+      <LR>2.5|1.001|1.5|1.5707963|-3.1415925|-3.1415925</LR>
+      <Id>d93506cc-827c-4c3c-9cfb-1de63ee95a74</Id>
+      <P xsi:type="e3d:TextProperties">
+        <CastsShadow>0</CastsShadow>
+        <Depth>0</Depth>
+        <LineHeight>0.08</LineHeight>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-16777216</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>"Text"+ID</E>
+        </NewNameExpr>
+        <SelectParentWhenPicked>1</SelectParentWhenPicked>
+        <Text>No special actions on select.</Text>
+        <Type>TextVisual</Type>
+        <VerticalAlign xsi:type="e3d:VAlign">Center</VerticalAlign>
+      </P>
+    </V>
+  </Visuals>
+  <TagImporterPropertiesFile></TagImporterPropertiesFile>
+  <TagConfigurationFolder>connections</TagConfigurationFolder>
+  <TagServerConfigurationFolder>serverConfiguration</TagServerConfigurationFolder>
+  <TagServers valtype="e3d:TagServerSerializer" />
+  <TelegramFormats valtype="e3d:TelegramFormat" />
+  <TelegramSymbols valtype="e3d:TelegramSymbolSerializer" />
+  <IOBrowserConfiguration>
+    <GridConfigurations valtype="e3d:GridConfiguration">
+      <E>
+        <Name>MainGrid</Name>
+        <StandardColumns valtype="e3d:StandardColumn">
+          <E>
+            <Name>Active</Name>
+            <Visible>1</Visible>
+            <Position>0</Position>
+          </E>
+          <E>
+            <Name>Address</Name>
+            <Visible>1</Visible>
+            <Position>1</Position>
+          </E>
+          <E>
+            <Name>Name</Name>
+            <Visible>1</Visible>
+            <Position>2</Position>
+          </E>
+          <E>
+            <Name>Type</Name>
+            <Visible>0</Visible>
+            <Position>3</Position>
+          </E>
+          <E>
+            <Name>Server</Name>
+            <Visible>0</Visible>
+            <Position>4</Position>
+          </E>
+          <E>
+            <Name>ServerValue</Name>
+            <Visible>1</Visible>
+            <Position>5</Position>
+          </E>
+          <E>
+            <Name>ModelValue</Name>
+            <Visible>1</Visible>
+            <Position>6</Position>
+          </E>
+          <E>
+            <Name>Description</Name>
+            <Visible>0</Visible>
+            <Position>7</Position>
+          </E>
+          <E>
+            <Name>Access</Name>
+            <Visible>1</Visible>
+            <Position>8</Position>
+          </E>
+          <E>
+            <Name>ScanRate</Name>
+            <Visible>0</Visible>
+            <Position>9</Position>
+          </E>
+          <E>
+            <Name>DisplayName</Name>
+            <Visible>0</Visible>
+            <Position>10</Position>
+          </E>
+          <E>
+            <Name>Visual</Name>
+            <Visible>1</Visible>
+            <Position>11</Position>
+          </E>
+          <E>
+            <Name>Property</Name>
+            <Visible>1</Visible>
+            <Position>12</Position>
+          </E>
+          <E>
+            <Name>Expression</Name>
+            <Visible>1</Visible>
+            <Position>13</Position>
+          </E>
+        </StandardColumns>
+      </E>
+      <E>
+        <Name>IOGrid</Name>
+        <StandardColumns valtype="e3d:StandardColumn">
+          <E>
+            <Name>Active</Name>
+            <Visible>1</Visible>
+            <Position>0</Position>
+          </E>
+          <E>
+            <Name>Address</Name>
+            <Visible>1</Visible>
+            <Position>1</Position>
+          </E>
+          <E>
+            <Name>Name</Name>
+            <Visible>1</Visible>
+            <Position>2</Position>
+          </E>
+          <E>
+            <Name>Type</Name>
+            <Visible>0</Visible>
+            <Position>3</Position>
+          </E>
+          <E>
+            <Name>Server</Name>
+            <Visible>0</Visible>
+            <Position>4</Position>
+          </E>
+          <E>
+            <Name>ServerValue</Name>
+            <Visible>1</Visible>
+            <Position>5</Position>
+          </E>
+          <E>
+            <Name>ModelValue</Name>
+            <Visible>1</Visible>
+            <Position>6</Position>
+          </E>
+          <E>
+            <Name>Description</Name>
+            <Visible>0</Visible>
+            <Position>7</Position>
+          </E>
+          <E>
+            <Name>Access</Name>
+            <Visible>1</Visible>
+            <Position>8</Position>
+          </E>
+          <E>
+            <Name>ScanRate</Name>
+            <Visible>0</Visible>
+            <Position>9</Position>
+          </E>
+          <E>
+            <Name>DisplayName</Name>
+            <Visible>0</Visible>
+            <Position>10</Position>
+          </E>
+          <E>
+            <Name>Visual</Name>
+            <Visible>1</Visible>
+            <Position>11</Position>
+          </E>
+          <E>
+            <Name>Property</Name>
+            <Visible>1</Visible>
+            <Position>12</Position>
+          </E>
+          <E>
+            <Name>Expression</Name>
+            <Visible>1</Visible>
+            <Position>13</Position>
+          </E>
+        </StandardColumns>
+      </E>
+    </GridConfigurations>
+  </IOBrowserConfiguration>
+  <CTRecordsConfiguration />
+  <Fmus />
+  <e3d:DefaultCamera>Default View</e3d:DefaultCamera>
+  <e3d:Cameras>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Default View</key>
+      <val xsi:type="e3d:Camera">
+        <Position>0.28125763|7.7494755|-2.6279745</Position>
+        <Target>0.2456944|0.6027758|0.9282186</Target>
+      </val>
+    </e>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Front View</key>
+      <val xsi:type="e3d:Camera">
+        <Position>|1.5|-10</Position>
+        <Target>|1.5|</Target>
+      </val>
+    </e>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Side View</key>
+      <val xsi:type="e3d:Camera">
+        <Position>-10|1.5|</Position>
+        <Target>|1.5|</Target>
+      </val>
+    </e>
+  </e3d:Cameras>
+  <e3d:Notes>
+    <Note Name="Default" File="notes\note01.rtf" />
+  </e3d:Notes>
+  <Experiments>
+    <ExperimentsFile>experiments.csv</ExperimentsFile>
+  </Experiments>
+  <e3d:QuickMovieCameras valtype="e3d:QuickCamera" />
+  <e3d:DocumentScriptId>00000000-0000-0000-0000-000000000000</e3d:DocumentScriptId>
+  <FileFormat>2</FileFormat>
+  <e3d:SerializedObjects valtype="e3d:SerializableObject">
+    <E xsi:type="e3d:DocumentPackages">
+      <Id>c26502b9-cf6e-423a-b241-0dfbca964b6a</Id>
+      <PackageDependencies valtype="e3d:PackageDependency">
+        <E>
+          <Name>Emulate3D.Camcorder</Name>
+          <Version>
+            <Version>&gt;=2.0.2</Version>
+          </Version>
+        </E>
+      </PackageDependencies>
+    </E>
+  </e3d:SerializedObjects>
+</e3d:Model>
