@@ -1,0 +1,701 @@
+<e3d:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:e3d="uri://emulate3d.com">
+  <e3d:Header>
+    <Version>18.3.0.53</Version>
+    <Id>ab757bec-d3d3-4161-b701-151d16b43ae4</Id>
+  </e3d:Header>
+  <Resources>
+    <LayerLibrary>
+      <LayersFile>layers.csv</LayersFile>
+    </LayerLibrary>
+    <FrictionMaterialLibrary />
+    <ScriptLibrary>
+      <Scripts>
+        <Script Key="432485a8-0cf5-4ede-ab0d-f34e5f04e96f" Cs="scripts\ChangeIOBrowserValues.cs" Info="scripts\ChangeIOBrowserValues.info" />
+        <Script Key="34ba961e-c3f8-4090-9b3a-8bd37a95a796" Cs="scripts\NativeObject.cs" Info="scripts\NativeObject.info" />
+      </Scripts>
+    </ScriptLibrary>
+    <FrictionConfiguration>
+      <FrictionFile>friction.csv</FrictionFile>
+    </FrictionConfiguration>
+  </Resources>
+  <Visuals>
+    <V Name="SceneVisual" Parent="" xsi:type="e3d:SceneVisual">
+      <Id>9dafe40a-6402-40cd-bae3-c507fe3af4dc</Id>
+      <Static>1</Static>
+      <P xsi:type="e3d:SceneProperties">
+        <BottomColor>-6241025</BottomColor>
+        <DefaultFloor>
+          <Type>e3d:FloorVisual</Type>
+        </DefaultFloor>
+        <FrictionMaterial>
+          <Name>Concrete</Name>
+        </FrictionMaterial>
+        <GeneratorType>MT19937</GeneratorType>
+        <PhysicsEngineType xsi:type="Demo3D.Visuals.PhysicsEngine+EngineType">PhysX</PhysicsEngineType>
+        <SOAPServer>
+          <MaxConnections>0</MaxConnections>
+        </SOAPServer>
+        <TopColor>-10254120</TopColor>
+      </P>
+      <IgnoreFrictionConfiguration>1</IgnoreFrictionConfiguration>
+    </V>
+    <V Name="Light1" Parent="9dafe40a-6402-40cd-bae3-c507fe3af4dc" xsi:type="e3d:LightVisual">
+      <LR>-1|3.4641016|-1.7320508|1.0471976|0.5235988|</LR>
+      <ILR>|||||</ILR>
+      <Id>23a90c94-2274-4db5-9235-0a4b21764bcf</Id>
+      <P xsi:type="e3d:LightProperties">
+        <CastsShadow>0</CastsShadow>
+        <CastsShadows>1</CastsShadows>
+        <Diffuse>-4934476</Diffuse>
+        <LightType xsi:type="Microsoft.DirectX.Direct3D.LightType">Directional</LightType>
+        <NewNameExpr>
+          <E>"Light"+ID</E>
+        </NewNameExpr>
+        <Type>Light</Type>
+      </P>
+    </V>
+    <V Name="BoxTube1" Parent="9dafe40a-6402-40cd-bae3-c507fe3af4dc" xsi:type="e3d:BoxTubeVisual">
+      <LR>|0.005|-1|||</LR>
+      <Id>36d3433d-7796-4bff-9baf-9c6b7d47a825</Id>
+      <P xsi:type="e3d:BoxTubeProperties">
+        <CastsShadow>0</CastsShadow>
+        <CentreX>
+          <Material>
+            <MeshMaterial xsi:type="e3d:MeshMaterial">
+              <Diffuse>-4144960</Diffuse>
+              <Reflectivity>0.05</Reflectivity>
+            </MeshMaterial>
+          </Material>
+        </CentreX>
+        <CentreZ>
+          <Material>
+            <MeshMaterial xsi:type="e3d:MeshMaterial">
+              <Diffuse>-4144960</Diffuse>
+              <Reflectivity>0.05</Reflectivity>
+            </MeshMaterial>
+          </Material>
+        </CentreZ>
+        <CornerXmaxZmax>
+          <Radius>0.175</Radius>
+        </CornerXmaxZmax>
+        <CornerXmaxZmin>
+          <Radius>0.175</Radius>
+        </CornerXmaxZmin>
+        <CornerXminZmax>
+          <Radius>0.175</Radius>
+        </CornerXminZmax>
+        <CornerXminZmin>
+          <Radius>0.175</Radius>
+        </CornerXminZmin>
+        <CurveRadius>1</CurveRadius>
+        <CustomProperties>
+          <CP>
+            <e xsi:type="e3d:CustomProperty">
+              <Name>I_TestBool_ForceValue</Name>
+              <Description>Set the value of the O_LAMP1 tag server value via script.</Description>
+              <CS>
+                <Id>36d3433d-7796-4bff-9baf-9c6b7d47a825</Id>
+              </CS>
+              <Category>-Force/Unforce IO Values</Category>
+              <Type>xsd:Boolean</Type>
+              <Value xsi:type="xsd:Boolean">0</Value>
+            </e>
+            <e xsi:type="e3d:CustomProperty">
+              <Name>PrintAllBindingInfo</Name>
+              <Description>Print all binding info.</Description>
+              <CS>
+                <Id>36d3433d-7796-4bff-9baf-9c6b7d47a825</Id>
+              </CS>
+              <Category>-Print Info</Category>
+              <Type>xsd:Boolean</Type>
+              <Value xsi:type="xsd:Boolean">0</Value>
+            </e>
+            <e xsi:type="e3d:CustomProperty">
+              <Name>PrintIOBrowserInfo</Name>
+              <Description>Print all IO Browser Info.</Description>
+              <CS>
+                <Id>36d3433d-7796-4bff-9baf-9c6b7d47a825</Id>
+              </CS>
+              <Category>-Print Info</Category>
+              <Type>xsd:Boolean</Type>
+              <Value xsi:type="xsd:Boolean">0</Value>
+            </e>
+            <e xsi:type="e3d:CustomProperty">
+              <Name>UnForceAllBindings</Name>
+              <Description>Unforce all IO Browser bindings.</Description>
+              <CS>
+                <Id>36d3433d-7796-4bff-9baf-9c6b7d47a825</Id>
+              </CS>
+              <Category>-Force/Unforce IO Values</Category>
+              <Type>xsd:Boolean</Type>
+              <Value xsi:type="xsd:Boolean">0</Value>
+            </e>
+          </CP>
+        </CustomProperties>
+        <Depth>0.35</Depth>
+        <EndYmax>
+          <Material>
+            <MeshMaterial xsi:type="e3d:MeshMaterial">
+              <Diffuse>-16728065</Diffuse>
+              <Reflectivity>0.05</Reflectivity>
+            </MeshMaterial>
+          </Material>
+          <Thickness>0.005</Thickness>
+          <Visible>1</Visible>
+        </EndYmax>
+        <EndYmin>
+          <Material>
+            <MeshMaterial xsi:type="e3d:MeshMaterial">
+              <Diffuse>-4144960</Diffuse>
+              <Reflectivity>0.05</Reflectivity>
+            </MeshMaterial>
+          </Material>
+        </EndYmin>
+        <FrictionMaterial>
+          <Name>Corrugated</Name>
+        </FrictionMaterial>
+        <Height>0.01</Height>
+        <Layer>Controllers</Layer>
+        <NativeTypeName>Demo3D.Components.ChangeIOBroswerValues</NativeTypeName>
+        <NewNameExpr>
+          <E>"BoxTube"+ID</E>
+        </NewNameExpr>
+        <OuterMaterial>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-16728065</Diffuse>
+            <Reflectivity>0.05</Reflectivity>
+          </MeshMaterial>
+        </OuterMaterial>
+        <ScriptKey>
+          <Id>432485a8-0cf5-4ede-ab0d-f34e5f04e96f</Id>
+        </ScriptKey>
+        <ShowControlPoints>0</ShowControlPoints>
+        <SimpleProperties>
+          <Aliases>
+            <e xsi:type="e3d:Alias">
+              <Alias>Name</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Name</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>World Location</Alias>
+              <Path>
+                <e xsi:type="xsd:string">VisualLocation</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Depth</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Depth</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Height</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Height</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Width</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Width</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Thickness</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Thickness</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>CornerXminZmin</Alias>
+              <Path>
+                <e xsi:type="xsd:string">CornerXminZmin</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>CornerXminZmax</Alias>
+              <Path>
+                <e xsi:type="xsd:string">CornerXminZmax</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>CornerXmaxZmin</Alias>
+              <Path>
+                <e xsi:type="xsd:string">CornerXmaxZmin</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>CornerXmaxZmax</Alias>
+              <Path>
+                <e xsi:type="xsd:string">CornerXmaxZmax</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>EndYmin</Alias>
+              <Path>
+                <e xsi:type="xsd:string">EndYmin</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>EndYmax</Alias>
+              <Path>
+                <e xsi:type="xsd:string">EndYmax</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>CentreX</Alias>
+              <Path>
+                <e xsi:type="xsd:string">CentreX</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>CentreZ</Alias>
+              <Path>
+                <e xsi:type="xsd:string">CentreZ</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>SideXminVisible</Alias>
+              <Path>
+                <e xsi:type="xsd:string">SideXminVisible</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>SideXmaxVisible</Alias>
+              <Path>
+                <e xsi:type="xsd:string">SideXmaxVisible</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>SideZminVisible</Alias>
+              <Path>
+                <e xsi:type="xsd:string">SideZminVisible</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>SideZmaxVisible</Alias>
+              <Path>
+                <e xsi:type="xsd:string">SideZmaxVisible</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>CornerRadius</Alias>
+              <Path>
+                <e xsi:type="xsd:string">CornerRadius</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>CornerStyle</Alias>
+              <Path>
+                <e xsi:type="xsd:string">CornerStyle</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Style</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Style</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Color</Alias>
+              <Path>
+                <e xsi:type="xsd:string">OuterMaterial</e>
+                <e xsi:type="xsd:string">Color</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>UnForceAllBindings</Alias>
+              <Path>
+                <e xsi:type="xsd:string">UnForceAllBindings</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>PrintIOBrowserInfo</Alias>
+              <Path>
+                <e xsi:type="xsd:string">PrintIOBrowserInfo</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>PrintAllBindingInfo</Alias>
+              <Path>
+                <e xsi:type="xsd:string">PrintAllBindingInfo</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>I_TestBool_ForceValue</Alias>
+              <Path>
+                <e xsi:type="xsd:string">I_TestBool_ForceValue</e>
+              </Path>
+            </e>
+          </Aliases>
+        </SimpleProperties>
+        <StyleName>Controller</StyleName>
+        <StyleSetName>BoxTubeVisual</StyleSetName>
+        <Type>BoxTube</Type>
+        <Width>1.35</Width>
+      </P>
+    </V>
+    <V Name="Text1" Parent="36d3433d-7796-4bff-9baf-9c6b7d47a825" xsi:type="e3d:TextVisual">
+      <LR>|0.006||1.5707964||</LR>
+      <Id>b0407675-c669-429f-bda6-3e9c2429f16e</Id>
+      <P xsi:type="e3d:TextProperties">
+        <CastsShadow>0</CastsShadow>
+        <LineHeight>0.07</LineHeight>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-16777216</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>"Text"+ID</E>
+        </NewNameExpr>
+        <SelectParentWhenPicked>1</SelectParentWhenPicked>
+        <Text>Change IO Browser Values in Script</Text>
+        <Type>TextVisual</Type>
+        <VerticalAlign xsi:type="e3d:VAlign">Center</VerticalAlign>
+      </P>
+    </V>
+    <V Name="Box1" Parent="9dafe40a-6402-40cd-bae3-c507fe3af4dc" xsi:type="e3d:BoxVisual">
+      <LR>|0.5||||</LR>
+      <Id>460830dc-1531-453a-8af2-4373a0f37832</Id>
+      <P xsi:type="e3d:BoxProperties">
+        <CustomProperties>
+          <CP>
+            <e xsi:type="e3d:CustomProperty">
+              <Name>TestBool_In</Name>
+              <Category>-Custom</Category>
+              <Type>xsd:Boolean</Type>
+              <Value xsi:type="xsd:Boolean">0</Value>
+              <BAPI>
+                <SIID>Program:ExampleProgram.I_TestBool</SIID>
+                <SISN>EIP</SISN>
+                <SIDS>Ex descr for I_TestBool</SIDS>
+                <SIAR>WriteToPLC</SIAR>
+              </BAPI>
+            </e>
+            <e xsi:type="e3d:CustomProperty">
+              <Name>TestBool_Out</Name>
+              <Category>-Custom</Category>
+              <Type>xsd:Boolean</Type>
+              <Value xsi:type="xsd:Boolean">0</Value>
+              <BAPI>
+                <SIID>Program:ExampleProgram.O_TestBool</SIID>
+                <SISN>EIP</SISN>
+                <SIDS>Ex descr for O_TestBool</SIDS>
+                <SIAR>ReadFromPLC</SIAR>
+              </BAPI>
+            </e>
+            <e xsi:type="e3d:CustomProperty">
+              <Name>TestDouble</Name>
+              <Category>-Custom</Category>
+              <Type>xsd:double</Type>
+              <Value xsi:type="xsd:double">0</Value>
+              <BAPI>
+                <SIID>TestDouble</SIID>
+                <SISN>EIP</SISN>
+                <SICT>xsd:double</SICT>
+                <SIDS>Ex descr for I_TestDouble</SIDS>
+                <SIAR>WriteToPLC</SIAR>
+                <SIET xsi:type="Demo3D.TagServer.TagExpressionType">Formula</SIET>
+                <SIEX>value + 1</SIEX>
+              </BAPI>
+            </e>
+          </CP>
+        </CustomProperties>
+        <Depth>1</Depth>
+        <ExtraMaterials>
+          <MeshMaterials>
+            <e xsi:type="e3d:MeshMaterial">
+              <Diffuse>-9868951</Diffuse>
+            </e>
+            <e xsi:type="e3d:MeshMaterial">
+              <Diffuse>-1</Diffuse>
+            </e>
+          </MeshMaterials>
+        </ExtraMaterials>
+        <FrictionMaterial>
+          <Name>Corrugated</Name>
+        </FrictionMaterial>
+        <Height>1</Height>
+        <Material>
+          <MeshMaterial xsi:type="e3d:MeshMaterial">
+            <Diffuse>-1</Diffuse>
+          </MeshMaterial>
+        </Material>
+        <NewNameExpr>
+          <E>"Box"+ID</E>
+        </NewNameExpr>
+        <SimpleProperties>
+          <Aliases>
+            <e xsi:type="e3d:Alias">
+              <Alias>Name</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Name</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>World Location</Alias>
+              <Path>
+                <e xsi:type="xsd:string">VisualLocation</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Depth</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Depth</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Height</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Height</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Width</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Width</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>Color</Alias>
+              <Path>
+                <e xsi:type="xsd:string">Material</e>
+                <e xsi:type="xsd:string">Color</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>TestDouble</Alias>
+              <Path>
+                <e xsi:type="xsd:string">TestDouble</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>TestBool_Out</Alias>
+              <Path>
+                <e xsi:type="xsd:string">TestBool_Out</e>
+              </Path>
+            </e>
+            <e xsi:type="e3d:Alias">
+              <Alias>TestBool_In</Alias>
+              <Path>
+                <e xsi:type="xsd:string">TestBool_In</e>
+              </Path>
+            </e>
+          </Aliases>
+        </SimpleProperties>
+        <Type>Box</Type>
+        <Width>1</Width>
+      </P>
+    </V>
+  </Visuals>
+  <TagImporterPropertiesFile></TagImporterPropertiesFile>
+  <TagConfigurationFolder>connections</TagConfigurationFolder>
+  <TagServerConfigurationFolder>serverConfiguration</TagServerConfigurationFolder>
+  <TagServers valtype="e3d:TagServerSerializer">
+    <E>
+      <Name>EIP</Name>
+      <Type>A.ce2c85c3c46953e0a672d6ea5cf430c84</Type>
+    </E>
+  </TagServers>
+  <TelegramFormats valtype="e3d:TelegramFormat" />
+  <TelegramSymbols valtype="e3d:TelegramSymbolSerializer" />
+  <IOBrowserConfiguration>
+    <GridConfigurations valtype="e3d:GridConfiguration">
+      <E>
+        <Name>MainGrid</Name>
+        <StandardColumns valtype="e3d:StandardColumn">
+          <E>
+            <Name>Active</Name>
+            <Visible>1</Visible>
+            <Position>0</Position>
+          </E>
+          <E>
+            <Name>Address</Name>
+            <Visible>1</Visible>
+            <Position>1</Position>
+          </E>
+          <E>
+            <Name>Name</Name>
+            <Visible>1</Visible>
+            <Position>2</Position>
+          </E>
+          <E>
+            <Name>Type</Name>
+            <Visible>1</Visible>
+            <Position>3</Position>
+          </E>
+          <E>
+            <Name>Server</Name>
+            <Visible>1</Visible>
+            <Position>4</Position>
+          </E>
+          <E>
+            <Name>ServerValue</Name>
+            <Visible>1</Visible>
+            <Position>5</Position>
+          </E>
+          <E>
+            <Name>ModelValue</Name>
+            <Visible>1</Visible>
+            <Position>6</Position>
+          </E>
+          <E>
+            <Name>Description</Name>
+            <Visible>1</Visible>
+            <Position>7</Position>
+          </E>
+          <E>
+            <Name>Access</Name>
+            <Visible>1</Visible>
+            <Position>8</Position>
+          </E>
+          <E>
+            <Name>ScanRate</Name>
+            <Visible>1</Visible>
+            <Position>9</Position>
+          </E>
+          <E>
+            <Name>DisplayName</Name>
+            <Visible>1</Visible>
+            <Position>10</Position>
+          </E>
+          <E>
+            <Name>Visual</Name>
+            <Visible>1</Visible>
+            <Position>11</Position>
+          </E>
+          <E>
+            <Name>Property</Name>
+            <Visible>1</Visible>
+            <Position>12</Position>
+          </E>
+          <E>
+            <Name>Expression</Name>
+            <Visible>1</Visible>
+            <Position>13</Position>
+          </E>
+        </StandardColumns>
+      </E>
+      <E>
+        <Name>IOGrid</Name>
+        <StandardColumns valtype="e3d:StandardColumn">
+          <E>
+            <Name>Active</Name>
+            <Visible>1</Visible>
+            <Position>0</Position>
+          </E>
+          <E>
+            <Name>Address</Name>
+            <Visible>1</Visible>
+            <Position>1</Position>
+          </E>
+          <E>
+            <Name>Name</Name>
+            <Visible>1</Visible>
+            <Position>2</Position>
+          </E>
+          <E>
+            <Name>Type</Name>
+            <Visible>0</Visible>
+            <Position>3</Position>
+          </E>
+          <E>
+            <Name>Server</Name>
+            <Visible>0</Visible>
+            <Position>4</Position>
+          </E>
+          <E>
+            <Name>ServerValue</Name>
+            <Visible>1</Visible>
+            <Position>5</Position>
+          </E>
+          <E>
+            <Name>ModelValue</Name>
+            <Visible>1</Visible>
+            <Position>6</Position>
+          </E>
+          <E>
+            <Name>Description</Name>
+            <Visible>0</Visible>
+            <Position>7</Position>
+          </E>
+          <E>
+            <Name>Access</Name>
+            <Visible>1</Visible>
+            <Position>8</Position>
+          </E>
+          <E>
+            <Name>ScanRate</Name>
+            <Visible>0</Visible>
+            <Position>9</Position>
+          </E>
+          <E>
+            <Name>DisplayName</Name>
+            <Visible>0</Visible>
+            <Position>10</Position>
+          </E>
+          <E>
+            <Name>Visual</Name>
+            <Visible>1</Visible>
+            <Position>11</Position>
+          </E>
+          <E>
+            <Name>Property</Name>
+            <Visible>1</Visible>
+            <Position>12</Position>
+          </E>
+          <E>
+            <Name>Expression</Name>
+            <Visible>1</Visible>
+            <Position>13</Position>
+          </E>
+        </StandardColumns>
+      </E>
+    </GridConfigurations>
+  </IOBrowserConfiguration>
+  <CTRecordsConfiguration />
+  <Fmus />
+  <e3d:DefaultCamera>Default View</e3d:DefaultCamera>
+  <e3d:Cameras>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Default View</key>
+      <val xsi:type="e3d:Camera">
+        <Position>0.12739754|3.3401027|-3.485005</Position>
+        <Target>0.12739754|-0.99110985|0.8462076</Target>
+      </val>
+    </e>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Front View</key>
+      <val xsi:type="e3d:Camera">
+        <Position>|1.5|-10</Position>
+        <Target>|1.5|</Target>
+      </val>
+    </e>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Plan View</key>
+      <val xsi:type="e3d:Camera">
+        <PlanView>1</PlanView>
+        <Position>|5|</Position>
+      </val>
+    </e>
+    <e xsi:type="e3d:DictionaryEntry">
+      <key xsi:type="xsd:string">Side View</key>
+      <val xsi:type="e3d:Camera">
+        <Position>-10|1.5|</Position>
+        <Target>|1.5|</Target>
+      </val>
+    </e>
+  </e3d:Cameras>
+  <e3d:Notes>
+    <Note Name="Default" File="notes\note01.rtf" />
+  </e3d:Notes>
+  <Experiments>
+    <ExperimentsFile>experiments.csv</ExperimentsFile>
+  </Experiments>
+  <e3d:QuickMovieCameras valtype="e3d:QuickCamera" />
+  <e3d:DocumentScriptId>00000000-0000-0000-0000-000000000000</e3d:DocumentScriptId>
+  <FileFormat>2</FileFormat>
+</e3d:Model>
