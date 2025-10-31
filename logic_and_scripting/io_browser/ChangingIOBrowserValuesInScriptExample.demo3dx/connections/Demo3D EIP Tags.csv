@@ -1,0 +1,4 @@
+Item,Server,Description,Access,Address,Type,ExpressionType,Expression,Visual,Property
+TestDouble,EIP,Ex descr for I_TestDouble,WriteToPLC,Ex address for I_TestDouble,Double,Formula,value + 1,Box1,TestDouble
+"Program:ExampleProgram.I_TestBool",EIP,Ex descr for I_TestBool,WriteToPLC,Ex address for I_TestBool,,VisualBinding,"Box1.TestBool_In",Box1,TestBool_In
+"Program:ExampleProgram.O_TestBool",EIP,Ex descr for O_TestBool,ReadFromPLC,Ex address for O_TestBool,,VisualBinding,"Box1.TestBool_Out",Box1,TestBool_Out

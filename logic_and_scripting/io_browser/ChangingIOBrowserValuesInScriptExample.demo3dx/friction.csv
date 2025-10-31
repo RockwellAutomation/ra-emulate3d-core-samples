@@ -1,0 +1,2229 @@
+Material1,Material2,Coefficient
+"0.01",2,2
+"0.35","0.35",0.35
+"0.35",1,1
+"0.35",2,2
+"0.35",Acetal,0.35
+"0.35",ACETAL,0.35
+"0.35",ACETAL RUN,0.35
+"0.35",Air,0.35
+"0.35",Aluminium,0.35
+"0.35",AR NYLON,0.35
+"0.35",ARB_DZ_ff,0.35
+"0.35",Avanti Friction 1,0.35
+"0.35",BeltRollerARB,0.35
+"0.35",BeltRollerNarrow,0.35
+"0.35",BeltRollerS7000,0.35
+"0.35",Black PU,0.35
+"0.35",Bread,0.35
+"0.35",CardBoard,0.35
+"0.35",Chocolate,0.35
+"0.35",Concrete,0.35
+"0.35",Corrugated,0.35
+"0.35",DETECTABLE PE,0.35
+"0.35",DZ_ff,0.35
+"0.35",EASY RELEASE PLUS,0.35
+"0.35",EASY RELEASE TRACEABLE PP,0.35
+"0.35",Elastomer,0.35
+"0.35",ELEC COND ACTL,0.35
+"0.35",ELEC COND PP COMPOSITE,0.35
+"0.35",ENDURALOX PP,0.35
+"0.35",F&N,0.35
+"0.35",F&N Can Conv Plastic,0.35
+"0.35",F&N Plastic Incline,0.35
+"0.35","ff 0.01",0.35
+"0.35","ff 0.02",0.35
+"0.35","ff 0.05",0.35
+"0.35","ff 0.1",0.35
+"0.35","ff 0.2",0.35
+"0.35","ff 0.3",35
+"0.35","ff 0.4",0.35
+"0.35","ff 0.5",0.35
+"0.35","ff 0.6",0.35
+"0.35","ff 0.8",0.35
+"0.35","ff 1.0",0.35
+"0.35","ff.15",0.15
+"0.35","ff1.0",1
+"0.35","FLAME RET. TPES",0.35
+"0.35",Free Roller,0.35
+"0.35",Frictionless,0
+"0.35",fullfriction,1
+"0.35",GavityRoller,0.35
+"0.35",Glass,0.35
+"0.35",Glue,0.35
+"0.35",Grey PU,0.35
+"0.35",HIGH STRENGTH EC ACETAL,0.35
+"0.35",Luggage,0.35
+"0.35",Narrow Roller,0.35
+"0.35",Nestle Plastic,0.35
+"0.35",NYLON,0.35
+"0.35",NYLON (FDA),0.35
+"0.35",NYLON (NON-FDA),0.35
+"0.35",Passive,0.35
+"0.35",PE Plastic,0.35
+"0.35",Plastic,0.35
+"0.35",Polyethylene,0.35
+"0.35",POLYETHYLENE,0.35
+"0.35",Polypropylene,0.35
+"0.35",POLYPROPYLENE,0.35
+"0.35",POLYPROPYLENE COMPOSITE,0.35
+"0.35",Polyurethane,0.35
+"0.35",PVDF,0.35
+"0.35",RollerBelt,0.35
+"0.35",Rollers,0.35
+"0.35",Rubber,0.35
+"0.35",S7000_DZ_ff,0.35
+"0.35",SELF EXTINGUISHING LOW MOISTURE,0.35
+"0.35",Soft Bag,0.35
+"0.35",Steel,0.35
+"0.35",TP package,0.35
+"0.35",TransverseFriction,0.35
+"0.35",UHMW,0.35
+"0.35",UV RESISTANT ACETAL,0.35
+"0.35",UV RESISTANT PP,0.35
+"0.35",VeryStickyCardboard,0.35
+"0.35",Wood,0.35
+1,"0.01",1
+1,1,1
+1,2,1
+1,CustomMaterial1,1
+1,DETECTABLE PE,1
+1,DZ_ff,1
+1,EASY RELEASE PLUS,1
+1,EASY RELEASE TRACEABLE PP,1
+1,Elastomer,1
+1,ELEC COND ACTL,1
+1,ELEC COND PP COMPOSITE,1
+1,ENDURALOX PP,1
+1,F&N,1
+1,F&N Can Conv Plastic,1
+1,F&N Plastic Incline,1
+1,"ff 0.01",1
+1,"ff 0.02",1
+1,"ff 0.05",1
+1,"ff 0.1",1
+1,"ff 0.2",1
+1,"ff 0.3",1
+1,"ff 0.4",1
+1,"ff 0.5",1
+1,"ff 0.6",1
+1,"ff 0.8",1
+1,"ff 1.0",1
+1,"FLAME RET. TPES",1
+1,Free Roller,1
+1,Frictionless,1
+1,GavityRoller,1
+1,Glass,1
+1,Glue,1
+1,GravityRoller,1
+1,Grey PU,1
+1,Gum Rubber,1
+1,HIGH STRENGTH EC ACETAL,1
+1,HighFriction,1
+1,JNDK,1
+1,LowFriction,1
+1,Luggage,1
+1,MARS_CC1,1
+1,MPX,1
+1,Mpx,1
+1,Narrow Roller,1
+1,Nestle Plastic,1
+1,NYLON,1
+1,NYLON (FDA),1
+1,NYLON (NON-FDA),1
+1,P&G Wipe Pack,1
+1,Passive,1
+1,pbTest,1
+1,PE Plastic,1
+1,Plastic,1
+1,POLYETHYLENE,1
+1,Polyethylene,1
+1,POLYPROPYLENE,1
+1,Polypropylene,1
+1,POLYPROPYLENE COMPOSITE,1
+1,Polyurethane,1
+1,PVDF,1
+1,Roellchen,1
+1,RollerBelt,1
+1,Rollers,1
+1,ROUGH TOP,1
+1,Rubber,1
+1,"Rubber 0.1",1
+1,"Rubber 0.3",1
+1,Rubber_2,1
+1,S1400 FFT,1
+1,S1400 FFT PP,1
+1,S1400 FT Acetal,1
+1,S400 RT Acetal,1
+1,S7000_DZ_ff,1
+1,S800 RT Acetal,1
+1,SELF EXTINGUISHING LOW MOISTURE,1
+1,Soft Bag,1
+1,Special Metal,1
+1,Steel,1
+1,Stickum,1
+1,sticky,1
+1,StopMaterial,1
+1,Test,1
+1,test,1
+1,TP package,1
+1,TransverseFriction,1
+1,UHMW,1
+1,UV RESISTANT ACETAL,1
+1,UV RESISTANT PP,1
+1,VeryStickyCardboard,1
+1,water,1
+1,Wood,1
+1,woody,1
+1,Zobbiness,1
+2,2,2
+2,"ff.15",0.15
+2,Wood,2
+A,Chain,0.5
+aaa,bbb,7
+ACETAL,1,1
+Acetal,1,1
+Acetal,2,2
+ACETAL,2,2
+ACETAL,ACETAL,0.2
+Acetal,Acetal,0.2
+Acetal,ACETAL,0.2
+ACETAL,Aluminium,0.27
+Acetal,BeltRollerARB,0.2
+ACETAL,BeltRollerARB,0.2
+Acetal,Black PU,0.3
+ACETAL,Black PU,0.3
+Acetal,Bread,0.25
+ACETAL,Bread,0.25
+ACETAL,Corrugated,0.18
+Acetal,Corrugated,0.18
+ACETAL,DZ_ff,0.08
+Acetal,DZ_ff,0.08
+ACETAL,"ff 0.02",0.02
+Acetal,"ff 0.02",0.02
+ACETAL,"ff 0.05",0.05
+ACETAL,"ff 0.1",0.1
+Acetal,"ff 0.1",0.1
+ACETAL,"ff 0.2",0.2
+ACETAL,"ff 0.3",0.3
+Acetal,"ff 0.3",0.3
+ACETAL,"ff 0.4",0.4
+Acetal,"ff 0.4",0.4
+ACETAL,"ff 0.5",0.5
+Acetal,"ff 0.5",0.5
+ACETAL,"ff 0.6",0.6
+Acetal,"ff 0.6",0.6
+Acetal,"ff.15",0.15
+ACETAL,"ff.15",0.15
+ACETAL,Frictionless,0
+ACETAL,Glass,0.14
+Acetal,Glass,0.14
+Acetal,Glue,1.5
+ACETAL,HIGH STRENGTH EC ACETAL,0.2
+ACETAL,PE Plastic,0.16
+Acetal,PE Plastic,0.16
+Acetal,Plastic,0.1
+ACETAL,Plastic,0.1
+ACETAL,POLYETHYLENE,0.18
+ACETAL,Rubber,0.6
+Acetal,Rubber,0.6
+Acetal,"Rubber 0.1",0.1
+ACETAL,"Rubber 0.1",0.1
+Acetal,"Rubber 0.3",0.3
+ACETAL,"Rubber 0.3",0.3
+ACETAL,S7000_DZ_ff,0.08
+Acetal,S7000_DZ_ff,0.08
+ACETAL,Steel,0.14
+Acetal,Steel,0.14
+Acetal,Tire,0.4
+ACETAL,Tire,0.4
+ACETAL,UHMW,0.16
+ACETAL RUN,1,1
+ACETAL RUN,2,2
+ACETAL RUN,"ff.15",0.15
+ACETAL RUN,Tire,0.4
+Air,1,1
+Air,2,2
+Air,Air,1
+Air,Chain,9999
+Air,Corrugated,0.1
+Air,"ff 0.1",0.1
+Air,"ff.15",0.15
+Air,"ff1.0",1
+Air,Free Roller,0
+Air,Frictionless,0
+Air,fullfriction,1
+Air,Plastic,0
+Air,Rubber,0
+Air,Steel,0
+Air,Z,1
+Aluminium,1,1
+Aluminium,2,2
+Aluminium,Acetal,0.27
+Aluminium,ACETAL RUN,0
+Aluminium,Aluminium,0.1
+Aluminium,Concrete,0.5
+Aluminium,Corrugated,0.1
+Aluminium,DZ_ff,0.08
+Aluminium,ENDURALOX PP,0.4
+Aluminium,"ff 0.02",0.02
+Aluminium,"ff.15",0.15
+Aluminium,Glue,1.5
+Aluminium,PE Plastic,0.23
+Aluminium,Polyethylene,0.24
+Aluminium,POLYETHYLENE,0.24
+Aluminium,S7000_DZ_ff,0.08
+Aluminium,SELF EXTINGUISHING LOW MOISTURE,0.28
+Aluminium,Steel,0.6
+Aluminium,TransverseFriction,0
+Aluminium,UHMW,0.23
+AR NYLON,1,1
+AR NYLON,2,2
+AR NYLON,Aluminium,0.28
+AR NYLON,Bread,0.25
+AR NYLON,Corrugated,0.19
+AR NYLON,DZ_ff,0.08
+AR NYLON,"ff 0.1",0.01
+AR NYLON,"ff 0.2",0.2
+AR NYLON,"ff 0.3",0.3
+AR NYLON,"ff 0.4",0.4
+AR NYLON,"ff 0.5",0.5
+AR NYLON,"ff 0.6",0.6
+AR NYLON,"ff.15",0.15
+AR NYLON,Glue,1.5
+AR NYLON,PE Plastic,0.16
+AR NYLON,Plastic,0.1
+AR NYLON,S7000_DZ_ff,0.08
+AR NYLON,Steel,0.27
+ARB_DZ_ff,1,1
+ARB_DZ_ff,2,2
+ARB_DZ_ff,Bread,0.12
+ARB_DZ_ff,Corrugated,0.1
+ARB_DZ_ff,"ff 0.05",0.08
+ARB_DZ_ff,"ff 0.1",0.08
+ARB_DZ_ff,"ff 0.2",0.08
+ARB_DZ_ff,"ff 0.3",0.08
+ARB_DZ_ff,"ff 0.4",0.08
+ARB_DZ_ff,"ff 0.5",0.08
+ARB_DZ_ff,"ff 0.6",0.08
+ARB_DZ_ff,"ff.15",0.15
+ARB_DZ_ff,Frictionless,0
+ARB_DZ_ff,Plastic,0.1
+ARB_DZ_ff,Rubber,0.6
+ARB_DZ_ff,"Rubber 0.1",0.3
+ARB_DZ_ff,"Rubber 0.3",0.1
+BeltRollerARB,1,1
+BeltRollerARB,2,2
+BeltRollerARB,Aluminium,0.28
+BeltRollerARB,Black PU,0.8
+BeltRollerARB,Bread,0.1
+BeltRollerARB,Corrugated,0.08
+BeltRollerARB,"ff 0.05",0.08
+BeltRollerARB,"ff 0.1",0.08
+BeltRollerARB,"ff 0.2",0.08
+BeltRollerARB,"ff 0.3",0.08
+BeltRollerARB,"ff 0.4",0.08
+BeltRollerARB,"ff 0.5",0.08
+BeltRollerARB,"ff 0.6",0.08
+BeltRollerARB,"ff.15",0.15
+BeltRollerARB,Frictionless,0
+BeltRollerARB,PE Plastic,0.08
+BeltRollerARB,POLYPROPYLENE COMPOSITE,0.2
+BeltRollerARB,Rubber,0.08
+BeltRollerARB,"Rubber 0.1",0.08
+BeltRollerARB,"Rubber 0.3",0.08
+BeltRollerARB,Steel,0.08
+BeltRollerNarrow,1,1
+BeltRollerNarrow,2,2
+BeltRollerNarrow,Aluminium,0.28
+BeltRollerNarrow,Bread,0.15
+BeltRollerNarrow,Corrugated,0.13
+BeltRollerNarrow,"ff 0.1",0.1
+BeltRollerNarrow,"ff.15",0.15
+BeltRollerNarrow,Frictionless,0
+BeltRollerNarrow,PE Plastic,0.1
+BeltRollerNarrow,Plastic,0.1
+BeltRollerNarrow,Rubber,0.13
+BeltRollerNarrow,Steel,0.13
+BeltRollerS7000,1,1
+BeltRollerS7000,2,2
+BeltRollerS7000,Aluminium,0.28
+BeltRollerS7000,Bread,0.1
+BeltRollerS7000,Corrugated,0.08
+BeltRollerS7000,"ff 0.05",0.08
+BeltRollerS7000,"ff 0.1",0.08
+BeltRollerS7000,"ff 0.2",0.08
+BeltRollerS7000,"ff 0.3",0.08
+BeltRollerS7000,"ff 0.4",0.08
+BeltRollerS7000,"ff 0.5",0.08
+BeltRollerS7000,"ff 0.6",0.08
+BeltRollerS7000,"ff.15",0.15
+BeltRollerS7000,Frictionless,0
+BeltRollerS7000,PE Plastic,0.08
+BeltRollerS7000,Plastic,0
+BeltRollerS7000,Rubber,0.08
+BeltRollerS7000,Steel,0.08
+BetonPlex,Corrugated,0.1
+BetonPlex,Plastic,0.05
+BigFrictionPlate,"ff.15",0.15
+Black PU,1,1
+Black PU,2,2
+Black PU,Aluminium,0.6
+Black PU,BeltRollerNarrow,0.1
+Black PU,BeltRollerS7000,0.6
+Black PU,Black PU,1
+Black PU,Bread,0.6
+Black PU,Corrugated,0.6
+Black PU,DZ_ff,0.08
+Black PU,"ff 0.1",0.1
+Black PU,"ff 0.4",0.4
+Black PU,"ff 0.5",0.5
+Black PU,"ff 0.6",0.6
+Black PU,"ff.15",0.15
+Black PU,Glue,1.5
+Black PU,PE Plastic,0.32
+Black PU,Plastic,0.6
+Black PU,Polypropylene,1
+Black PU,Rollers,0.1
+Black PU,Rubber,0.6
+Black PU,"Rubber 0.1",0.1
+Black PU,"Rubber 0.3",0.3
+Black PU,S7000_DZ_ff,0.08
+BlueBelt,"ff.15",0.15
+Bread,1,1
+Bread,2,2
+Bread,Bread,0.8
+Bread,"ff.15",0.15
+brev,1,1
+brev,2,2
+brev,brev,1
+brev,"ff.15",0.15
+CardBoard,1,1
+CardBoard,2,2
+CardBoard,BlueBelt,0.15
+CardBoard,"ff 0.1",0.1
+CardBoard,"ff.15",0.15
+CardBoard,"ff1.0",1
+CardBoard,fullfriction,1
+CardBoard,GrayBelt,0.4
+CardBoard,pbTest,0.3
+ccc,ddd,5
+Chain,"0.35",0.35
+Chain,1,1
+Chain,2,2
+Chain,Bread,1
+Chain,brev,1.1
+Chain,CardBoard,1
+Chain,Chain,0
+Chain,Corrugated_UPS Tote,1
+Chain,"ff 0.1",0.1
+Chain,"ff 1,0",1
+Chain,"ff.15",0.15
+Chain,"ff1.0",1
+Chain,Frictionless,0
+Chain,fullfriction,1
+Chain,GavityRoller,0.02
+Chain,HighFriction,9999
+Chain,LowAccum,0.03
+Chain,NewMaterial,1
+Chain,P&G Wipe Pack,0.8
+Chain,PTFE,0.04
+Chain,RollerBelt,0.1
+Chain,SmoothSteel,0
+Chain,Stickum,2
+Chain,sticky,2
+Chain,Sticky,0.4
+Chain,SuperStickyFloor,10
+Chain,TEMP,0
+Chain,test,0.5
+Chain,Vertibelt,8
+Chocolate,1,1
+Chocolate,2,2
+Chocolate,"ff 0.1",0.1
+Chocolate,"ff.15",0.15
+Chocolate,"ff1.0",1
+Chocolate,fullfriction,1
+Chocolate,Nestle Plastic,0.4
+Chute,"ff.15",0.15
+chute,Plastic,0.35
+Concrete,1,1
+Concrete,2,2
+Concrete,BigFrictionPlate,2
+Concrete,Black PU,0.8
+Concrete,Bread,0.6
+Concrete,brev,1.2
+Concrete,CardBoard,0.6
+Concrete,Chain,1
+Concrete,Concrete,0.3
+Concrete,Corrugated_UPS Tote,0.6
+Concrete,"ff 0,08",75
+Concrete,"ff 0,8",8
+Concrete,"ff 0.08",75
+Concrete,"ff 0.1",1
+Concrete,"ff 0.2",2
+Concrete,"ff 0.3",3
+Concrete,"ff 0.4",4
+Concrete,"ff 0.5",5
+Concrete,"ff 0.6",6
+Concrete,"ff 1,0",1
+Concrete,"ff.15",0.15
+Concrete,"ff1.0",1
+Concrete,Free Roller,5
+Concrete,Frictionless,0
+Concrete,fullfriction,1
+Concrete,GavityRoller,0.02
+Concrete,Glue,20
+Concrete,GravityRoller,2
+Concrete,HighFriction,9999
+Concrete,LowAccum,0.03
+Concrete,Luggage,0.1
+Concrete,NewMaterial,1
+Concrete,P&G Wipe Pack,0.7
+Concrete,PE Plastic,0.6
+Concrete,Polyethylene,0.15
+Concrete,POLYETHYLENE,0.6
+Concrete,POLYPROPYLENE,0.4
+Concrete,Polypropylene,0.5
+Concrete,POLYPROPYLENE COMPOSITE,0.4
+Concrete,PTFE,0.04
+Concrete,"Roller 0,075",75
+Concrete,RollerBelt,0.1
+Concrete,Rubber,2
+Concrete,Rubber_2,10
+Concrete,SmoothSteel,0
+Concrete,Steel,0.4
+Concrete,Stickum,2
+Concrete,sticky,2
+Concrete,Sticky,0.4
+Concrete,SuperStickyFloor,10
+Concrete,TEMP,0
+Concrete,test,0.4
+Concrete,Vertibelt,2
+Concrete,VeryStickyCardboard,1
+Concrete,Wood 1,1.2
+Concrete,Wood 2,1.2
+Concrete,woody,1
+Conveyor Belt,1,1
+Conveyor Belt,2,2
+Conveyor Belt,"ff.15",0.15
+Corrugated,"0.01",0.01
+Corrugated,"0.05",0.05
+Corrugated,1,1
+Corrugated,2,2
+Corrugated,Avanti Friction 1,0.03
+Corrugated,BigFrictionPlate,2
+Corrugated,Bread,0.4
+Corrugated,brev,1.3
+Corrugated,CardBoard,0.3
+Corrugated,Chain,1
+Corrugated,Chute,0.15
+Corrugated,Concrete,0.6
+Corrugated,Corrugated,0.3
+Corrugated,Corrugated_UPS Tote,0.3
+Corrugated,CustomMaterial1,0.08
+Corrugated,Dynamic,0
+Corrugated,F&N Can Conv Plastic,0.1
+Corrugated,"ff 0,08",75
+Corrugated,"ff 0,8",8
+Corrugated,"ff 0.02",0.02
+Corrugated,"ff 0.08",75
+Corrugated,"ff 0.1",0.1
+Corrugated,"ff 0.2",0.2
+Corrugated,"ff 0.3",0.3
+Corrugated,"ff 0.4",0.4
+Corrugated,"ff 0.5",0.5
+Corrugated,"ff 0.6",0.6
+Corrugated,"ff 1,0",1
+Corrugated,"ff.15",0.15
+Corrugated,"ff1.0",1
+Corrugated,Fixed,50
+Corrugated,Free Roller,0.05
+Corrugated,FreeTrack,-1
+Corrugated,Frictionless,0
+Corrugated,fullfriction,1
+Corrugated,GavityRoller,0.02
+Corrugated,GlassBottle,0.5
+Corrugated,Gliederband,0.7
+Corrugated,Glue,5
+Corrugated,Gum Rubber,0.8
+Corrugated,HighFriction,9999
+Corrugated,Kelloggs2,0
+Corrugated,LowAccum,0.03
+Corrugated,Merge Seitenwand,0.1
+Corrugated,Modular belt 2,0.1
+Corrugated,Modular belt Accumulation rollers,0.15
+Corrugated,MRT Belting,1.5
+Corrugated,NewMaterial,1
+Corrugated,Passive,0.05
+Corrugated,pbTest,0.3
+Corrugated,Plastic,0.2
+Corrugated,PowerRoller,1
+Corrugated,PTFE,0.04
+Corrugated,"Roller 0,075",75
+Corrugated,RollerBelt,0.1
+Corrugated,ROUGH TOP,50
+Corrugated,Rubber,0.4
+Corrugated,Rubber_2,10
+Corrugated,S1400 FFT,0
+Corrugated,S1400 FFT PP,0.5
+Corrugated,S1400 FT Acetal,0.21
+Corrugated,S400 RT Acetal,0.18
+Corrugated,S800 RT Acetal,0.08
+Corrugated,SELF EXTINGUISHING LOW MOISTURE,0.19
+Corrugated,SmoothSteel,0
+Corrugated,Steel,0.2
+Corrugated,Stickum,2
+Corrugated,sticky,2
+Corrugated,Sticky,0.4
+Corrugated,StopMaterial,0.01
+Corrugated,SuperStickyFloor,10
+Corrugated,TEMP,0
+Corrugated,Test,1
+Corrugated,Tire,0.4
+Corrugated,Vertibelt,8
+Corrugated,Wood,0.3
+Corrugated,Wood 1,0.25
+Corrugated,Wood 2,0.15
+Corrugated_UPS Tote,Corrugated_UPS Tote,0.3
+CustomMaterial1,"ff.15",0.15
+DETECTABLE PE,Aluminium,0.4
+DETECTABLE PE,Bread,0.28
+DETECTABLE PE,Corrugated,0.21
+DETECTABLE PE,DZ_ff,0.08
+DETECTABLE PE,"ff 0.1",0.1
+DETECTABLE PE,"ff 0.2",0.2
+DETECTABLE PE,"ff 0.3",0.3
+DETECTABLE PE,"ff 0.4",0.4
+DETECTABLE PE,"ff 0.5",0.5
+DETECTABLE PE,"ff 0.6",0.6
+DETECTABLE PE,"ff.15",0.15
+DETECTABLE PE,Glass,0.19
+DETECTABLE PE,Glue,1.5
+DETECTABLE PE,PE Plastic,0.17
+DETECTABLE PE,Plastic,0.2
+DETECTABLE PE,Rubber,0.6
+DETECTABLE PE,S7000_DZ_ff,0.08
+DZ_ff,Bread,0.1
+DZ_ff,Corrugated,0.08
+DZ_ff,DZ_ff,0.08
+DZ_ff,"ff 0.02",0.02
+DZ_ff,"ff.15",0.15
+DZ_ff,Glue,0.08
+DZ_ff,PE Plastic,0.08
+DZ_ff,Plastic,0.1
+DZ_ff,Rubber,0.08
+DZ_ff,SELF EXTINGUISHING LOW MOISTURE,0.08
+E50 Rubber,"ff.15",0.15
+E50 Rubber,Rubber,1
+EASY RELEASE PLUS,"ff.15",0.15
+EASY RELEASE TRACEABLE PP,"ff.15",0.15
+Elastomer,BigFrictionPlate,2
+Elastomer,Bread,0.6
+Elastomer,Corrugated,0.6
+Elastomer,DZ_ff,0.08
+Elastomer,"ff 0,08",75
+Elastomer,"ff 0,8",8
+Elastomer,"ff 0.02",0.02
+Elastomer,"ff 0.08",75
+Elastomer,"ff 0.1",0.1
+Elastomer,"ff 0.2",0.2
+Elastomer,"ff 0.3",0.3
+Elastomer,"ff 0.4",0.4
+Elastomer,"ff 0.5",0.5
+Elastomer,"ff 0.6",0.6
+Elastomer,"ff 1,0",1
+Elastomer,"ff.15",0.15
+Elastomer,"ff1.0",1
+Elastomer,Free Roller,5
+Elastomer,fullfriction,1
+Elastomer,Glue,1.5
+Elastomer,GravityRoller,2
+Elastomer,PE Plastic,0.32
+Elastomer,Plastic,0.6
+Elastomer,"Roller 0,075",75
+Elastomer,RollerBelt,1
+Elastomer,Rubber,0.6
+Elastomer,S7000_DZ_ff,0.08
+ELEC COND ACTL,Aluminium,0.27
+ELEC COND ACTL,Bread,0.25
+ELEC COND ACTL,Corrugated,0.18
+ELEC COND ACTL,DZ_ff,0.08
+ELEC COND ACTL,"ff 0.1",0.1
+ELEC COND ACTL,"ff 0.2",0.2
+ELEC COND ACTL,"ff 0.3",0.3
+ELEC COND ACTL,"ff 0.4",0.4
+ELEC COND ACTL,"ff 0.5",0.5
+ELEC COND ACTL,"ff 0.6",0.6
+ELEC COND ACTL,"ff.15",0.15
+ELEC COND ACTL,Glass,0.14
+ELEC COND ACTL,Glue,1.5
+ELEC COND ACTL,HIGH STRENGTH EC ACETAL,0.2
+ELEC COND ACTL,PE Plastic,0.16
+ELEC COND ACTL,Plastic,0.1
+ELEC COND ACTL,Rubber,0.6
+ELEC COND ACTL,S7000_DZ_ff,0.08
+ELEC COND ACTL,Steel,0.14
+ELEC COND PP COMPOSITE,Aluminium,0.45
+ELEC COND PP COMPOSITE,Corrugated,0.21
+ELEC COND PP COMPOSITE,DZ_ff,0.08
+ELEC COND PP COMPOSITE,"ff 0.1",0.1
+ELEC COND PP COMPOSITE,"ff 0.2",0.2
+ELEC COND PP COMPOSITE,"ff 0.3",0.3
+ELEC COND PP COMPOSITE,"ff 0.4",0.4
+ELEC COND PP COMPOSITE,"ff 0.5",0.5
+ELEC COND PP COMPOSITE,"ff 0.6",0.6
+ELEC COND PP COMPOSITE,"ff.15",0.15
+ELEC COND PP COMPOSITE,Glass,0.23
+ELEC COND PP COMPOSITE,Glue,1.5
+ELEC COND PP COMPOSITE,PE Plastic,0.21
+ELEC COND PP COMPOSITE,Plastic,0.2
+ELEC COND PP COMPOSITE,Rubber,0.6
+ELEC COND PP COMPOSITE,S7000_DZ_ff,0.08
+ELEC COND PP COMPOSITE,Steel,0.32
+ENDURALOX PP,Corrugated,0.21
+ENDURALOX PP,"ff 0.1",0.1
+ENDURALOX PP,"ff.15",0.15
+ENDURALOX PP,Frictionless,0
+ENDURALOX PP,Plastic,0.2
+ENDURALOX PP,Rubber,0.6
+F&N,Corrugated,0.1
+F&N,"ff 0.1",0.1
+F&N,"ff.15",0.15
+F&N,"ff1.0",1
+F&N Can Conv Plastic,"ff 0.1",0.1
+F&N Can Conv Plastic,"ff.15",0.15
+F&N Can Conv Plastic,"ff1.0",1
+F&N Plastic Incline,Corrugated,0.1
+F&N Plastic Incline,"ff 0.1",0.1
+F&N Plastic Incline,"ff.15",0.15
+F&N Plastic Incline,"ff1.0",1
+F&N Plastic Incline,Frictionless,0
+"ff 0,08","ff.15",0.15
+"ff 0,8","ff.15",0.15
+"ff 0.01",Corrugated,0.01
+"ff 0.01","ff.15",0.15
+"ff 0.01",Glass,0.01
+"ff 0.02",Air,0.02
+"ff 0.02",AR NYLON,0.02
+"ff 0.02",ARB_DZ_ff,0.02
+"ff 0.02",BeltRollerARB,0.02
+"ff 0.02",BeltRollerNarrow,0.02
+"ff 0.02",BeltRollerS7000,0.02
+"ff 0.02",Black PU,0.02
+"ff 0.02",Bread,0.02
+"ff 0.02",CardBoard,0.02
+"ff 0.02",Chain,0.02
+"ff 0.02",Chocolate,0.02
+"ff 0.02",Concrete,1
+"ff 0.02",DETECTABLE PE,0.02
+"ff 0.02",ELEC COND ACTL,0.02
+"ff 0.02",ELEC COND PP COMPOSITE,0.02
+"ff 0.02",ENDURALOX PP,0.02
+"ff 0.02",F&N,0.02
+"ff 0.02",F&N Can Conv Plastic,0.02
+"ff 0.02",F&N Plastic Incline,0.02
+"ff 0.02","ff 0.02",0.02
+"ff 0.02","ff 0.05",0.02
+"ff 0.02","ff.15",0.15
+"ff 0.02","FLAME RET. TPES",0.02
+"ff 0.02",Free Roller,0.01
+"ff 0.02",Frictionless,0
+"ff 0.02",GavityRoller,0.02
+"ff 0.02",Gliederband,0.02
+"ff 0.02",Glue,0.02
+"ff 0.02",Grey PU,0.02
+"ff 0.02",High Friction Rubber,0.02
+"ff 0.02",HIGH STRENGTH EC ACETAL,0.02
+"ff 0.02",Luggage,0.02
+"ff 0.02",Merge Roller,0.02
+"ff 0.02",Merge Seitenwand,0.02
+"ff 0.02",Narrow Roller,0.02
+"ff 0.02",Nestle Plastic,0.02
+"ff 0.02",NYLON,0.02
+"ff 0.02",NYLON (FDA),0.02
+"ff 0.02",NYLON (NON-FDA),0.02
+"ff 0.02",Passive,0.02
+"ff 0.02",Plastic,0.02
+"ff 0.02",Polyethylene,0.02
+"ff 0.02",POLYETHYLENE,0.02
+"ff 0.02",Rolle Rutsche,0.02
+"ff 0.02",Rollers,0.01
+"ff 0.02",Rubber,1
+"ff 0.02",S7000_DZ_ff,0.02
+"ff 0.02",Schwerkraftrolle,0.02
+"ff 0.02",Soft Bag,0.02
+"ff 0.02",Steel,0.3
+"ff 0.02",TP package,0.02
+"ff 0.02",UHMW,0.02
+"ff 0.02",UV RESISTANT PP,0.02
+"ff 0.02",VeryStickyCardboard,0.02
+"ff 0.02",Wood,0.02
+"ff 0.02",Wood 1,0.02
+"ff 0.02",Wood 2,0.02
+"ff 0.02",Zobbiness,0.02
+"ff 0.05",Acetal,0.05
+"ff 0.05",Air,0.05
+"ff 0.05",Aluminium,0.05
+"ff 0.05",AR NYLON,0.05
+"ff 0.05",BeltRollerNarrow,0.05
+"ff 0.05",Black PU,0.05
+"ff 0.05",Bread,0.05
+"ff 0.05",CardBoard,0.05
+"ff 0.05",Chain,0.05
+"ff 0.05",Chocolate,0.05
+"ff 0.05",Concrete,0.05
+"ff 0.05",Corrugated,0.05
+"ff 0.05",DETECTABLE PE,0.05
+"ff 0.05",DZ_ff,0.08
+"ff 0.05",Elastomer,0.05
+"ff 0.05",ELEC COND ACTL,0.05
+"ff 0.05",ELEC COND PP COMPOSITE,0.05
+"ff 0.05",ENDURALOX PP,0.05
+"ff 0.05",F&N,0.05
+"ff 0.05",F&N Can Conv Plastic,0.05
+"ff 0.05",F&N Plastic Incline,0.05
+"ff 0.05","ff 0.05",0.05
+"ff 0.05","ff 0.1",0.1
+"ff 0.05","ff 0.3",0.3
+"ff 0.05","ff 0.4",0.05
+"ff 0.05","ff.15",0.15
+"ff 0.05","FLAME RET. TPES",0.05
+"ff 0.05",Free Roller,0
+"ff 0.05",Frictionless,0
+"ff 0.05",GavityRoller,0.05
+"ff 0.05",Gliederband,0.05
+"ff 0.05",Glue,0.05
+"ff 0.05",High Friction Rubber,0.05
+"ff 0.05",Luggage,0.05
+"ff 0.05",Merge Roller,0.05
+"ff 0.05",Merge Seitenwand,0.05
+"ff 0.05",Narrow Roller,0.05
+"ff 0.05",Nestle Plastic,0.05
+"ff 0.05",Passive,0.05
+"ff 0.05",Plastic,0.05
+"ff 0.05",Polyethylene,0.05
+"ff 0.05",POLYETHYLENE,0.05
+"ff 0.05",Rolle Rutsche,0.05
+"ff 0.05",RollerBelt,0.05
+"ff 0.05",Schwerkraftrolle,0.05
+"ff 0.05",SELF EXTINGUISHING LOW MOISTURE,0.05
+"ff 0.05",Soft Bag,0.05
+"ff 0.05",TP package,0.05
+"ff 0.05",VeryStickyCardboard,0.05
+"ff 0.05",Wood,0.05
+"ff 0.05",Wood 1,0.05
+"ff 0.05",Wood 2,0.05
+"ff 0.05",Zobbiness,0.05
+"ff 0.08","ff.15",0.15
+"ff 0.1",Aluminium,0.1
+"ff 0.1",Bread,0.1
+"ff 0.1",DZ_ff,0.08
+"ff 0.1","ff 0.02",0.02
+"ff 0.1","ff 0.1",0.1
+"ff 0.1","ff 0.2",0.2
+"ff 0.1","ff.15",0.15
+"ff 0.1","ff1.0",1
+"ff 0.1",Free Roller,0
+"ff 0.1",High Friction Rubber,0.1
+"ff 0.1",PE Plastic,0.1
+"ff 0.1",Plastic,0.1
+"ff 0.1",Polypropylene,0.1
+"ff 0.1",POLYPROPYLENE,0.1
+"ff 0.1",S7000_DZ_ff,0.08
+"ff 0.1",SELF EXTINGUISHING LOW MOISTURE,0.1
+"ff 0.1",Wood,0.1
+"ff 0.1",Wood 1,0.1
+"ff 0.1",Wood 2,0.1
+"ff 0.2",Acetal,0.2
+"ff 0.2",Air,0.2
+"ff 0.2",Aluminium,0.2
+"ff 0.2",BeltRollerNarrow,0.2
+"ff 0.2",Black PU,0.2
+"ff 0.2",Bread,0.2
+"ff 0.2",CardBoard,0.2
+"ff 0.2",Chain,0.2
+"ff 0.2",Chocolate,0.2
+"ff 0.2",DZ_ff,0.08
+"ff 0.2",ENDURALOX PP,0.2
+"ff 0.2",F&N,0.02
+"ff 0.2",F&N Can Conv Plastic,0.02
+"ff 0.2",F&N Plastic Incline,0.02
+"ff 0.2","ff 0.02",0.02
+"ff 0.2","ff 0.05",0.05
+"ff 0.2","ff 0.2",0.2
+"ff 0.2","ff 0.3",3
+"ff 0.2","ff 0.4",4
+"ff 0.2","ff 0.5",5
+"ff 0.2","ff 0.6",6
+"ff 0.2","ff 1,0",1
+"ff 0.2","ff 1.0",1
+"ff 0.2","ff.15",0.15
+"ff 0.2","ff1.0",1
+"ff 0.2",Free Roller,0
+"ff 0.2",GavityRoller,0.2
+"ff 0.2",Gliederband,0.2
+"ff 0.2",Glue,0.2
+"ff 0.2",High Friction Rubber,0.2
+"ff 0.2",Merge Roller,0.2
+"ff 0.2",Merge Seitenwand,0.2
+"ff 0.2",Narrow Roller,0.2
+"ff 0.2",Nestle Plastic,0.2
+"ff 0.2",Passive,0.2
+"ff 0.2",PE Plastic,0.2
+"ff 0.2",Plastic,0.2
+"ff 0.2",Polyethylene,0.2
+"ff 0.2",POLYETHYLENE,0.2
+"ff 0.2",Polypropylene,0.2
+"ff 0.2",POLYPROPYLENE,0.2
+"ff 0.2",Rolle Rutsche,0.2
+"ff 0.2",RollerBelt,0.2
+"ff 0.2",Rollers,0.05
+"ff 0.2",Rubber,0.2
+"ff 0.2",S7000_DZ_ff,0.08
+"ff 0.2",Schwerkraftrolle,0.2
+"ff 0.2",SELF EXTINGUISHING LOW MOISTURE,0.2
+"ff 0.2",TP package,0.2
+"ff 0.2",VeryStickyCardboard,0.2
+"ff 0.2",Wood,0.2
+"ff 0.2",Wood 1,0.2
+"ff 0.2",Wood 2,0.2
+"ff 0.2",Zobbiness,0.2
+"ff 0.3",Air,0.3
+"ff 0.3",Aluminium,0.3
+"ff 0.3",BeltRollerNarrow,0.3
+"ff 0.3",Black PU,0.3
+"ff 0.3",Bread,0.3
+"ff 0.3",CardBoard,0.3
+"ff 0.3",Chain,0.3
+"ff 0.3",Chocolate,0.3
+"ff 0.3",DZ_ff,0.08
+"ff 0.3",ENDURALOX PP,0.3
+"ff 0.3",F&N,0.3
+"ff 0.3",F&N Can Conv Plastic,0.3
+"ff 0.3",F&N Plastic Incline,0.3
+"ff 0.3","ff 0.02",0.02
+"ff 0.3","ff 0.1",3
+"ff 0.3","ff 0.3",0.3
+"ff 0.3","ff 1.0",1
+"ff 0.3","ff.15",0.15
+"ff 0.3","ff1.0",1
+"ff 0.3",Free Roller,0
+"ff 0.3",GavityRoller,0.3
+"ff 0.3",Gliederband,0.3
+"ff 0.3",Glue,0.3
+"ff 0.3",High Friction Rubber,0.3
+"ff 0.3",Merge Roller,0.3
+"ff 0.3",Merge Seitenwand,0.3
+"ff 0.3",Narrow Roller,0.3
+"ff 0.3",Nestle Plastic,0.3
+"ff 0.3",Passive,0.3
+"ff 0.3",PE Plastic,0.3
+"ff 0.3",Plastic,0.3
+"ff 0.3",Polyethylene,0.3
+"ff 0.3",POLYETHYLENE,0.3
+"ff 0.3",Polypropylene,0.3
+"ff 0.3",POLYPROPYLENE,0.3
+"ff 0.3",Rolle Rutsche,0.3
+"ff 0.3",RollerBelt,0.3
+"ff 0.3",Rollers,0.05
+"ff 0.3",Rubber,0.3
+"ff 0.3",S7000_DZ_ff,0.08
+"ff 0.3",Schwerkraftrolle,0.3
+"ff 0.3",SELF EXTINGUISHING LOW MOISTURE,0.3
+"ff 0.3",TP package,0.3
+"ff 0.3",VeryStickyCardboard,0.3
+"ff 0.3",Wood,0.3
+"ff 0.3",Wood 1,0.3
+"ff 0.3",Wood 2,0.3
+"ff 0.3",Zobbiness,0.3
+"ff 0.4",Aluminium,0.4
+"ff 0.4",Bread,0.4
+"ff 0.4",DZ_ff,0.08
+"ff 0.4","ff 0.02",0.02
+"ff 0.4","ff 0.1",4
+"ff 0.4","ff 0.3",4
+"ff 0.4","ff 0.4",0.4
+"ff 0.4","ff 0.5",5
+"ff 0.4","ff 0.6",6
+"ff 0.4","ff 1.0",1
+"ff 0.4","ff.15",0.15
+"ff 0.4","ff1.0",1
+"ff 0.4",Free Roller,0
+"ff 0.4",High Friction Rubber,0.4
+"ff 0.4",PE Plastic,0.4
+"ff 0.4",Plastic,0.4
+"ff 0.4",Polypropylene,0.4
+"ff 0.4",POLYPROPYLENE,0.4
+"ff 0.4",S7000_DZ_ff,0.08
+"ff 0.4",SELF EXTINGUISHING LOW MOISTURE,0.4
+"ff 0.4",Wood,0.4
+"ff 0.5",Air,0.5
+"ff 0.5",Aluminium,0.5
+"ff 0.5",BeltRollerNarrow,0.5
+"ff 0.5",Bread,0.5
+"ff 0.5",CardBoard,0.5
+"ff 0.5",Chain,0.5
+"ff 0.5",Chocolate,0.5
+"ff 0.5",DZ_ff,0.08
+"ff 0.5",ENDURALOX PP,0.5
+"ff 0.5",F&N,0.5
+"ff 0.5",F&N Can Conv Plastic,0.5
+"ff 0.5",F&N Plastic Incline,0.5
+"ff 0.5","ff 0.02",0.02
+"ff 0.5","ff 0.05",0.5
+"ff 0.5","ff 0.1",5
+"ff 0.5","ff 0.3",5
+"ff 0.5","ff 0.5",0.5
+"ff 0.5","ff 1.0",1
+"ff 0.5","ff.15",0.15
+"ff 0.5","ff1.0",1
+"ff 0.5",Free Roller,0
+"ff 0.5",GavityRoller,0.5
+"ff 0.5",Gliederband,0.5
+"ff 0.5",Glue,0.5
+"ff 0.5",High Friction Rubber,0.5
+"ff 0.5",Merge Roller,0.5
+"ff 0.5",Merge Seitenwand,0.5
+"ff 0.5",Narrow Roller,0.5
+"ff 0.5",Nestle Plastic,0.5
+"ff 0.5",Passive,0.5
+"ff 0.5",PE Plastic,0.5
+"ff 0.5",Plastic,0.5
+"ff 0.5",Polyethylene,0.5
+"ff 0.5",POLYETHYLENE,0.5
+"ff 0.5",Polypropylene,0.5
+"ff 0.5",POLYPROPYLENE,0.5
+"ff 0.5",RollerBelt,0.5
+"ff 0.5",S7000_DZ_ff,0.08
+"ff 0.5",SELF EXTINGUISHING LOW MOISTURE,0.5
+"ff 0.5",TP package,0.5
+"ff 0.5",VeryStickyCardboard,0.5
+"ff 0.5",Wood,0.5
+"ff 0.5",Zobbiness,0.5
+"ff 0.6",Aluminium,0.6
+"ff 0.6",Bread,0.6
+"ff 0.6",CardBoard,0.6
+"ff 0.6",Chain,0.6
+"ff 0.6",Chocolate,0.6
+"ff 0.6",DZ_ff,0.08
+"ff 0.6",ENDURALOX PP,0.6
+"ff 0.6",F&N,0.6
+"ff 0.6",F&N Can Conv Plastic,0.6
+"ff 0.6",F&N Plastic Incline,0.6
+"ff 0.6","ff 0.02",0.02
+"ff 0.6","ff 0.05",0.6
+"ff 0.6","ff 0.1",6
+"ff 0.6","ff 0.3",6
+"ff 0.6","ff 0.5",6
+"ff 0.6","ff 0.6",0.6
+"ff 0.6","ff 1.0",1
+"ff 0.6","ff.15",0.15
+"ff 0.6","ff1.0",1
+"ff 0.6",Free Roller,0
+"ff 0.6",GavityRoller,0.6
+"ff 0.6",Gliederband,0.6
+"ff 0.6",Glue,0.6
+"ff 0.6",High Friction Rubber,0.6
+"ff 0.6",Merge Roller,0.6
+"ff 0.6",Merge Seitenwand,0.6
+"ff 0.6",Narrow Roller,0.6
+"ff 0.6",Nestle Plastic,0.6
+"ff 0.6",Passive,0.6
+"ff 0.6",PE Plastic,0.6
+"ff 0.6",Plastic,0.6
+"ff 0.6",POLYETHYLENE,0.6
+"ff 0.6",Polyethylene,0.6
+"ff 0.6",Polypropylene,0.6
+"ff 0.6",POLYPROPYLENE,0.6
+"ff 0.6",RollerBelt,0.6
+"ff 0.6",S7000_DZ_ff,0.08
+"ff 0.6",SELF EXTINGUISHING LOW MOISTURE,0.6
+"ff 0.6",TP package,0.6
+"ff 0.6",VeryStickyCardboard,0.6
+"ff 0.6",Wood,0.6
+"ff 0.6",Zobbiness,0.6
+"ff 0.8",ACETAL,0.8
+"ff 0.8",Acetal,0.8
+"ff 0.8",Aluminium,0.8
+"ff 0.8",AR NYLON,0.8
+"ff 0.8",ARB_DZ_ff,0.9
+"ff 0.8",BeltRollerARB,0.9
+"ff 0.8",BeltRollerS7000,0.9
+"ff 0.8",Black PU,0.8
+"ff 0.8",CardBoard,0.8
+"ff 0.8",Chain,0.8
+"ff 0.8",Chocolate,0.8
+"ff 0.8",Concrete,0.8
+"ff 0.8",Corrugated,0.8
+"ff 0.8",DETECTABLE PE,0.8
+"ff 0.8",DZ_ff,0.9
+"ff 0.8",Elastomer,0.8
+"ff 0.8",ELEC COND ACTL,0.8
+"ff 0.8",ELEC COND PP COMPOSITE,0.8
+"ff 0.8",ENDURALOX PP,0.8
+"ff 0.8",F&N,0.8
+"ff 0.8",F&N Can Conv Plastic,0.8
+"ff 0.8",F&N Plastic Incline,0.8
+"ff 0.8","ff 0.02",0.02
+"ff 0.8","ff 0.05",0.8
+"ff 0.8","ff 0.1",0.1
+"ff 0.8","ff 0.2",0.8
+"ff 0.8","ff 0.3",0.8
+"ff 0.8","ff 0.4",0.8
+"ff 0.8","ff 0.5",0.5
+"ff 0.8","ff 0.6",0.8
+"ff 0.8","ff 0.8",0.8
+"ff 0.8","ff.15",0.15
+"ff 0.8","FLAME RET. TPES",0.8
+"ff 0.8",Free Roller,0
+"ff 0.8",Frictionless,0
+"ff 0.8",GavityRoller,0.8
+"ff 0.8",Glass,0.8
+"ff 0.8",Gliederband,0.8
+"ff 0.8",Glue,0.8
+"ff 0.8",Grey PU,0.8
+"ff 0.8",High Friction Rubber,0.8
+"ff 0.8",HIGH STRENGTH EC ACETAL,0.8
+"ff 0.8",Luggage,0.8
+"ff 0.8",Merge Roller,0.8
+"ff 0.8",Merge Seitenwand,0.8
+"ff 0.8",Narrow Roller,0.8
+"ff 0.8",Nestle Plastic,0.8
+"ff 0.8",NYLON,0.8
+"ff 0.8",NYLON (FDA),0.8
+"ff 0.8",NYLON (NON-FDA),0.8
+"ff 0.8",Passive,0.8
+"ff 0.8",PE Plastic,0.8
+"ff 0.8",Plastic,0.8
+"ff 0.8",Polyethylene,0.8
+"ff 0.8",POLYETHYLENE,0.8
+"ff 0.8",Polypropylene,0.8
+"ff 0.8",POLYPROPYLENE,0.8
+"ff 0.8",POLYPROPYLENE COMPOSITE,0.8
+"ff 0.8",Polyurethane,0.8
+"ff 0.8",RollerBelt,0.8
+"ff 0.8",Rollers,0.05
+"ff 0.8",Rubber,0.8
+"ff 0.8",S7000_DZ_ff,0.08
+"ff 0.8",Soft Bag,0.8
+"ff 0.8",Steel,0.8
+"ff 0.8",TP package,0.8
+"ff 0.8",UHMW,0.8
+"ff 0.8",UV RESISTANT PP,0.8
+"ff 0.8",VeryStickyCardboard,0.8
+"ff 0.8",Wood,0.8
+"ff 0.8",Zobbiness,0.8
+"ff 1,0","ff 0.1",1
+"ff 1,0","ff 0.3",1
+"ff 1,0","ff 0.4",1
+"ff 1,0","ff 0.5",1
+"ff 1,0","ff 0.6",1
+"ff 1,0","ff 1,0",1
+"ff 1,0","ff.15",0.15
+"ff 1,0","Roller 0,075",75
+"ff 1.0",Acetal,1
+"ff 1.0",ACETAL,1
+"ff 1.0",Aluminium,1
+"ff 1.0",AR NYLON,1
+"ff 1.0",ARB_DZ_ff,1
+"ff 1.0",BeltRollerARB,1
+"ff 1.0",BeltRollerS7000,1
+"ff 1.0",Black PU,1
+"ff 1.0",Chain,1
+"ff 1.0",Concrete,1
+"ff 1.0",Corrugated,1
+"ff 1.0",DETECTABLE PE,1
+"ff 1.0",DZ_ff,0
+"ff 1.0",Elastomer,1
+"ff 1.0",ELEC COND ACTL,1
+"ff 1.0",ELEC COND PP COMPOSITE,1
+"ff 1.0",ENDURALOX PP,1
+"ff 1.0","ff 0.1",1
+"ff 1.0","ff 1.0",1
+"ff 1.0","ff.15",0.15
+"ff 1.0","FLAME RET. TPES",1
+"ff 1.0",Free Roller,0
+"ff 1.0",Frictionless,0
+"ff 1.0",Glass,1
+"ff 1.0",Grey PU,1
+"ff 1.0",HIGH STRENGTH EC ACETAL,1
+"ff 1.0",NYLON (FDA),1
+"ff 1.0",NYLON (NON-FDA),1
+"ff 1.0",PE Plastic,1
+"ff 1.0",Plastic,1
+"ff 1.0",Polypropylene,1
+"ff 1.0",POLYPROPYLENE COMPOSITE,1
+"ff 1.0",Polyurethane,1
+"ff 1.0",Rollers,0
+"ff 1.0",Rubber,1
+"ff 1.0",S7000_DZ_ff,0
+"ff 1.0",Steel,1
+"ff 1.0",UHMW,1
+"ff 1.0",UV RESISTANT PP,1
+"ff 1.0",Wood,1
+"ff.15","ff.15",0.15
+"ff1.0","ff.15",0.15
+"ff1.0","ff1.0",1
+"ff1.5","0.35",1.5
+"ff1.5",Acetal,1.5
+"ff1.5",ACETAL,1.5
+"ff1.5",Air,1.5
+"ff1.5",Aluminium,1.5
+"ff1.5",AR NYLON,1.5
+"ff1.5",ARB_DZ_ff,1.5
+"ff1.5",BeltRollerARB,1.5
+"ff1.5",BeltRollerNarrow,1.5
+"ff1.5",BeltRollerS7000,1.5
+"ff1.5",Black PU,1.5
+"ff1.5",CardBoard,1.5
+"ff1.5",Chain,1.5
+"ff1.5",Chocolate,1.5
+"ff1.5",Concrete,1.5
+"ff1.5",Corrugated,1.5
+"ff1.5",DETECTABLE PE,1.5
+"ff1.5",DZ_ff,1.5
+"ff1.5",Elastomer,1.5
+"ff1.5",ELEC COND ACTL,1.5
+"ff1.5",ELEC COND PP COMPOSITE,1.5
+"ff1.5",ENDURALOX PP,1.5
+"ff1.5",F&N,1.5
+"ff1.5",F&N Can Conv Plastic,1.5
+"ff1.5",F&N Plastic Incline,1.5
+"ff1.5","ff 0.02",1.5
+"ff1.5","ff 0.05",1.5
+"ff1.5","ff 0.1",1.5
+"ff1.5","ff 0.2",1.5
+"ff1.5","ff 0.3",1.5
+"ff1.5","ff 0.4",1.5
+"ff1.5","ff 0.5",1.5
+"ff1.5","ff 0.6",1.5
+"ff1.5","ff 0.8",1.5
+"ff1.5","ff1.5",1.5
+"ff1.5","FLAME RET. TPES",1.5
+"ff1.5",Free Roller,1.5
+"ff1.5",Frictionless,1.5
+"ff1.5",GavityRoller,1.5
+"ff1.5",Glass,1.5
+"ff1.5",Gliederband,1.5
+"ff1.5",Glue,1.5
+"ff1.5",Grey PU,1.5
+"ff1.5",High Friction Rubber,1.5
+"ff1.5",HIGH STRENGTH EC ACETAL,1.5
+"ff1.5",Luggage,1.5
+"ff1.5",Merge Roller,1.5
+"ff1.5",Merge Seitenwand,1.5
+"ff1.5",Narrow Roller,1.5
+"ff1.5",Nestle Plastic,1.5
+"ff1.5",NYLON,1.5
+"ff1.5",NYLON (FDA),1.5
+"ff1.5",NYLON (NON-FDA),1.5
+"ff1.5",Passive,1.5
+"ff1.5",PE Plastic,1.5
+"ff1.5",Plastic,1.5
+"ff1.5",Polyethylene,1.5
+"ff1.5",POLYETHYLENE,1.5
+"ff1.5",Polypropylene,1.5
+"ff1.5",POLYPROPYLENE,1.5
+"ff1.5",POLYPROPYLENE COMPOSITE,1.5
+"ff1.5",Polyurethane,1.5
+"ff1.5",Rolle Rutsche,1.5
+"ff1.5",RollerBelt,1.5
+"ff1.5",Rollers,1.5
+"ff1.5",Rubber,1.5
+"ff1.5",S7000_DZ_ff,1.5
+"ff1.5",Schwerkraftrolle,1.5
+"ff1.5",Soft Bag,1.5
+"ff1.5",Steel,1.5
+"ff1.5",TP package,1.5
+"ff1.5",UHMW,1.5
+"ff1.5",UV RESISTANT PP,1.5
+"ff1.5",VeryStickyCardboard,1.5
+"ff1.5",Wood,1.5
+"ff1.5",Wood 1,1.5
+"ff1.5",Wood 2,1.5
+"ff1.5",Zobbiness,1.5
+Fixed,Fixed,50
+"FLAME RET. TPES",Aluminium,0.3
+"FLAME RET. TPES",Corrugated,0.1
+"FLAME RET. TPES",DZ_ff,0.08
+"FLAME RET. TPES","ff 0.1",0.1
+"FLAME RET. TPES","ff 0.2",0.2
+"FLAME RET. TPES","ff 0.3",0.3
+"FLAME RET. TPES","ff 0.4",0.4
+"FLAME RET. TPES","ff 0.5",0.5
+"FLAME RET. TPES","ff 0.6",0.6
+"FLAME RET. TPES","ff.15",0.15
+"FLAME RET. TPES",Glue,1.5
+"FLAME RET. TPES",Rubber,0.6
+"FLAME RET. TPES",S7000_DZ_ff,0.08
+"FLAME RET. TPES",Steel,0.18
+Free Roller,ACETAL,0.05
+Free Roller,Bread,0.07
+Free Roller,brev,1.4
+Free Roller,CardBoard,0
+Free Roller,Corrugated_UPS Tote,0.05
+Free Roller,F&N Can Conv Plastic,0.05
+Free Roller,"ff 1,0",5
+Free Roller,"ff.15",0.15
+Free Roller,"ff1.0",1
+Free Roller,Free Roller,5
+Free Roller,Frictionless,0
+Free Roller,GavityRoller,0.02
+Free Roller,Glass,0.05
+Free Roller,HighFriction,9999
+Free Roller,LowAccum,0.03
+Free Roller,NewMaterial,1
+Free Roller,PE Plastic,0.05
+Free Roller,PTFE,0.04
+Free Roller,Roller Track,-1
+Free Roller,RollerBelt,0.1
+Free Roller,Rubber,0.1
+Free Roller,Rubber_2,10
+Free Roller,Stickum,0.05
+Free Roller,sticky,2
+Free Roller,Sticky,0.4
+Free Roller,SuperStickyFloor,10
+Free Roller,TEMP,0
+Free Roller,Test,1
+Free Roller,Tire,0.01
+Free Roller,Vertibelt,8
+Free Roller,Z,1
+Frictionless,Acetal,0
+Frictionless,Aluminium,0
+Frictionless,AR NYLON,0
+Frictionless,Black PU,0
+Frictionless,Bread,0
+Frictionless,brev,1.5
+Frictionless,CardBoard,0
+Frictionless,Chocolate,0
+Frictionless,Corrugated_UPS Tote,0
+Frictionless,DETECTABLE PE,0
+Frictionless,DZ_ff,0
+Frictionless,Elastomer,0
+Frictionless,ELEC COND ACTL,0
+Frictionless,ELEC COND PP COMPOSITE,0
+Frictionless,F&N,0
+Frictionless,F&N Can Conv Plastic,0
+Frictionless,"ff 0.1",0
+Frictionless,"ff 0.2",0
+Frictionless,"ff 0.3",0
+Frictionless,"ff 0.4",0
+Frictionless,"ff 0.5",0
+Frictionless,"ff 0.6",0
+Frictionless,"ff 1,0",0
+Frictionless,"ff.15",0.15
+Frictionless,"ff1.0",1
+Frictionless,"FLAME RET. TPES",0
+Frictionless,Frictionless,0
+Frictionless,GavityRoller,0.02
+Frictionless,Glass,0
+Frictionless,Greased Lighting,-10
+Frictionless,Grey PU,0
+Frictionless,High Friction Rubber,0
+Frictionless,HIGH STRENGTH EC ACETAL,0
+Frictionless,HighFriction,9999
+Frictionless,LowAccum,0
+Frictionless,Luggage,0
+Frictionless,Merge Roller,0
+Frictionless,Merge Seitenwand,0
+Frictionless,Narrow Roller,0
+Frictionless,Nestle Plastic,0
+Frictionless,NewMaterial,1
+Frictionless,NYLON,0
+Frictionless,NYLON (FDA),0
+Frictionless,NYLON (NON-FDA),0
+Frictionless,Passive,0
+Frictionless,pbTest,0
+Frictionless,PE Plastic,0
+Frictionless,Polyethylene,0
+Frictionless,POLYETHYLENE,0
+Frictionless,Polypropylene,0
+Frictionless,POLYPROPYLENE,0
+Frictionless,POLYPROPYLENE COMPOSITE,0
+Frictionless,Polyurethane,0
+Frictionless,PTFE,0.04
+Frictionless,Roellchen,0.01
+Frictionless,Roller Track,-0.05
+Frictionless,RollerBelt,0.1
+Frictionless,Rollers,0
+Frictionless,Rubber,0
+Frictionless,Rubber_2,10
+Frictionless,S7000_DZ_ff,0
+Frictionless,SELF EXTINGUISHING LOW MOISTURE,0
+Frictionless,Soft Bag,0
+Frictionless,Stickum,0
+Frictionless,sticky,2
+Frictionless,Sticky,0.4
+Frictionless,SuperStickyFloor,10
+Frictionless,TEMP,0
+Frictionless,Test,1
+Frictionless,TP package,0
+Frictionless,UV RESISTANT PP,0
+Frictionless,Vertibelt,8
+Frictionless,VeryStickyCardboard,0
+Frictionless,Wood 1,0
+Frictionless,Wood 2,0
+Frictionless,Zobbiness,0
+GavityRoller,"ff 0.1",0.1
+GavityRoller,"ff 1,0",2
+GavityRoller,"ff.15",0.15
+GavityRoller,"ff1.0",1
+GavityRoller,GavityRoller,0.02
+GavityRoller,PE Plastic,0.5
+GavityRoller,POLYPROPYLENE,0.5
+Glad,Glad,0
+Glass,Avanti Friction 1,0.03
+Glass,Chain,0.05
+Glass,Concrete,0.05
+Glass,Corrugated,0.1
+Glass,DZ_ff,0.08
+Glass,"ff 0.02",0.02
+Glass,"ff 0.05",0.05
+Glass,"ff 0.1",0.1
+Glass,"ff 0.2",0.2
+Glass,"ff 0.3",0.3
+Glass,"ff 0.4",0.4
+Glass,"ff 0.5",0.5
+Glass,"ff 0.6",0.6
+Glass,"ff.15",0.15
+Glass,Glass,0.15
+Glass,Glue,1.5
+Glass,LowFriction,0.01
+Glass,Polyethylene,0.09
+Glass,POLYETHYLENE,0.09
+Glass,Rubber,0.05
+Glass,S7000_DZ_ff,0.08
+Glass,SELF EXTINGUISHING LOW MOISTURE,0.16
+Glass,SoapConveyor,0.1
+Glass,TableTopConveyor,0.1
+Glass,Wood,0.05
+Gliederband,"ff 0.1",0.1
+Gliederband,Frictionless,0
+Gliederband,Plastic,0.9
+Glue,Bread,2
+Glue,"ff 0.1",0.1
+Glue,"ff.15",0.15
+Glue,Frictionless,0
+Glue,Glue,1.5
+Glue,Plastic,1.5
+Glue,Tire,5
+Glue,Wood,1.5
+GravityRoller,Corrugated,0.17
+GravityRoller,"ff 1,0",2
+GravityRoller,"ff.15",0.15
+GrayBelt,"ff.15",0.15
+Greased Lighting,Free Roller,0
+Greased Lighting,Wood,-10
+Grey PU,Aluminium,0.27
+Grey PU,Black PU,0.3
+Grey PU,Bread,0.38
+Grey PU,Corrugated,0.32
+Grey PU,DZ_ff,0.08
+Grey PU,"ff 0.05",0.05
+Grey PU,"ff 0.1",0.1
+Grey PU,"ff 0.2",0.2
+Grey PU,"ff 0.3",0.3
+Grey PU,"ff 0.4",0.4
+Grey PU,"ff 0.5",0.5
+Grey PU,"ff 0.6",0.6
+Grey PU,"ff.15",0.15
+Grey PU,Glue,1.5
+Grey PU,PE Plastic,0.17
+Grey PU,Plastic,0.3
+Grey PU,Rubber,0.6
+Grey PU,S7000_DZ_ff,0.08
+Grey PU,Steel,0.2
+GrippyRubber,Corrugated,0.8
+Gum Rubber,"ff.15",0.15
+High belt,high product,10000
+High Friction Rubber,Corrugated,0.8
+High Friction Rubber,Plastic,0.9
+HIGH STRENGTH EC ACETAL,Acetal,0.2
+HIGH STRENGTH EC ACETAL,Aluminium,0.27
+HIGH STRENGTH EC ACETAL,Bread,0.25
+HIGH STRENGTH EC ACETAL,Corrugated,0.18
+HIGH STRENGTH EC ACETAL,DZ_ff,0.08
+HIGH STRENGTH EC ACETAL,"ff 0.05",0.05
+HIGH STRENGTH EC ACETAL,"ff 0.1",0.1
+HIGH STRENGTH EC ACETAL,"ff 0.2",0.2
+HIGH STRENGTH EC ACETAL,"ff 0.3",0.3
+HIGH STRENGTH EC ACETAL,"ff 0.4",0.4
+HIGH STRENGTH EC ACETAL,"ff 0.5",0.5
+HIGH STRENGTH EC ACETAL,"ff 0.6",0.6
+HIGH STRENGTH EC ACETAL,"ff.15",0.15
+HIGH STRENGTH EC ACETAL,Glass,0.14
+HIGH STRENGTH EC ACETAL,Glue,1.5
+HIGH STRENGTH EC ACETAL,HIGH STRENGTH EC ACETAL,0.2
+HIGH STRENGTH EC ACETAL,PE Plastic,0.16
+HIGH STRENGTH EC ACETAL,Rubber,0.6
+HIGH STRENGTH EC ACETAL,S7000_DZ_ff,0.08
+HIGH STRENGTH EC ACETAL,Steel,0.14
+HighFriction,"ff.15",0.15
+HighFriction,HighFriction,9999
+HighFriction,Luggage,9999
+Ice,Concrete,1
+Ice,"ff.15",0.15
+JNDK,Chain,1
+JNDK,Concrete,0.1
+JNDK,"ff.15",0.15
+KÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã,GPSConveyor,1
+KÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã,Rubber,1
+Käse,GPSConveyor,1
+Käse,Rubber,1
+Laine,PlaqueAcier,0.241
+Laine,RouleauxAcier,0.3
+Laine,Steel,0.3
+LowAccum,LowAccum,0.03
+LowFriction,Chain,0.01
+LowFriction,Concrete,0.01
+LowFriction,Corrugated,0.01
+LowFriction,"ff.15",0.15
+LowFriction,Free Roller,0.01
+LowFriction,Frictionless,0
+LowFriction,LowFriction,0.01
+LowFriction,Plastic,0.01
+LowFriction,Rubber,0.01
+LowFriction,Steel,0.01
+LowFriction,Wood,0.01
+Luggage,BigFrictionPlate,2
+Luggage,Corrugated,0.1
+Luggage,"ff 0,08",75
+Luggage,"ff 0,8",8
+Luggage,"ff 0.08",75
+Luggage,"ff 0.1",1
+Luggage,"ff 0.2",2
+Luggage,"ff 0.3",3
+Luggage,"ff 0.4",4
+Luggage,"ff 0.5",5
+Luggage,"ff 0.6",6
+Luggage,"ff 1,0",1
+Luggage,"ff 1.0",1
+Luggage,"ff.15",0.15
+Luggage,"ff1.0",1
+Luggage,Free Roller,5
+Luggage,GravityRoller,2
+Luggage,pbTest,0.3
+Luggage,"Roller 0,075",75
+Luggage,RollerBelt,1
+Luggage,TEMP,0
+MARS_CC1,Corrugated,0.75
+MARS_CC1,"ff.15",0.15
+Merge Roller,Corrugated,0.6
+Merge Roller,"ff 0.1",0.1
+Merge Roller,Plastic,0.6
+Merge Seitenwand,"ff 0.1",0.1
+Merge Seitenwand,Plastic,0.1
+Mpx,"ff.15",0.15
+MPX,"ff.15",0.15
+Narrow Roller,Black PU,0.1
+Narrow Roller,Bread,0.12
+Narrow Roller,Corrugated,0.1
+Narrow Roller,"ff 0.1",0.1
+Narrow Roller,"ff.15",0.15
+Narrow Roller,Plastic,0.1
+Nestle Plastic,"ff 0.1",0.1
+Nestle Plastic,"ff.15",0.15
+Nestle Plastic,"ff1.0",1
+NewMaterial,NewMaterial,1
+NYLON,Aluminium,0.28
+NYLON,Corrugated,0.19
+NYLON,DZ_ff,0.08
+NYLON,"ff 0.05",0.05
+NYLON,"ff 0.1",0.1
+NYLON,"ff 0.2",0.2
+NYLON,"ff 0.3",0.3
+NYLON,"ff 0.4",0.4
+NYLON,"ff 0.5",0.5
+NYLON,"ff 0.6",0.6
+NYLON,"ff.15",0.15
+NYLON,Glass,0.16
+NYLON,PE Plastic,0.16
+NYLON,POLYETHYLENE,0.3
+NYLON,POLYPROPYLENE COMPOSITE,0.25
+NYLON,Rubber,0.6
+NYLON,Rubber_2,0.3
+NYLON,S7000_DZ_ff,0.08
+NYLON,Steel,0.27
+NYLON,UHMW,0.16
+NYLON,Wood,0.35
+NYLON (FDA),Aluminium,0.28
+NYLON (FDA),Bread,0.25
+NYLON (FDA),Corrugated,0.19
+NYLON (FDA),DZ_ff,0.08
+NYLON (FDA),"ff 0.05",0.05
+NYLON (FDA),"ff 0.1",0.1
+NYLON (FDA),"ff 0.2",0.2
+NYLON (FDA),"ff 0.3",0.3
+NYLON (FDA),"ff 0.4",0.4
+NYLON (FDA),"ff 0.5",0.5
+NYLON (FDA),"ff 0.6",0.6
+NYLON (FDA),"ff.15",0.15
+NYLON (FDA),Glass,0.16
+NYLON (FDA),Glue,1.5
+NYLON (FDA),PE Plastic,0.16
+NYLON (FDA),Rubber,0.6
+NYLON (FDA),S7000_DZ_ff,0.08
+NYLON (FDA),Steel,0.27
+NYLON (NON-FDA),Aluminium,0.28
+NYLON (NON-FDA),Bread,0.25
+NYLON (NON-FDA),Corrugated,0.19
+NYLON (NON-FDA),DZ_ff,0.08
+NYLON (NON-FDA),"ff 0.05",0.05
+NYLON (NON-FDA),"ff 0.1",0.1
+NYLON (NON-FDA),"ff 0.2",0.2
+NYLON (NON-FDA),"ff 0.3",0.3
+NYLON (NON-FDA),"ff 0.4",0.4
+NYLON (NON-FDA),"ff 0.5",0.5
+NYLON (NON-FDA),"ff 0.6",0.6
+NYLON (NON-FDA),"ff.15",0.15
+NYLON (NON-FDA),Glass,0.16
+NYLON (NON-FDA),Glue,1.5
+NYLON (NON-FDA),PE Plastic,0.16
+NYLON (NON-FDA),POLYETHYLENE,0.3
+NYLON (NON-FDA),Rubber,0.6
+NYLON (NON-FDA),S7000_DZ_ff,0.08
+NYLON (NON-FDA),Steel,0.27
+P&G Wipe Pack,"ff.15",0.15
+Paper,Paper,0.5
+Passive,"ff 0.1",0.1
+Passive,"ff.15",0.15
+Passive,"ff1.0",1
+pbTest,"ff.15",0.15
+PE Plastic,BigFrictionPlate,2
+PE Plastic,Bread,0.3
+PE Plastic,Corrugated,0.27
+PE Plastic,"ff 0,08",75
+PE Plastic,"ff 0,8",8
+PE Plastic,"ff 0.02",0.02
+PE Plastic,"ff 0.05",0.05
+PE Plastic,"ff 0.08",75
+PE Plastic,"ff 1,0",1
+PE Plastic,"ff.15",0.15
+PE Plastic,"ff1.0",1
+PE Plastic,Glue,1.5
+PE Plastic,GravityRoller,2
+PE Plastic,High Friction Rubber,0.6
+PE Plastic,Merge Roller,0.5
+PE Plastic,PE Plastic,0.16
+PE Plastic,Plastic,0.2
+PE Plastic,"Roller 0,075",75
+PE Plastic,SELF EXTINGUISHING LOW MOISTURE,0.16
+Plastic,BeltRollerARB,0.3
+Plastic,BigFrictionPlate,2
+Plastic,BlueBelt,0.15
+Plastic,Bread,0.25
+Plastic,brev,1.6
+Plastic,CardBoard,0.2
+Plastic,Chain,1.5
+Plastic,Chute,0.2
+Plastic,Concrete,0.9
+Plastic,Conveyor Belt,1
+Plastic,Corrugated_UPS Tote,0.2
+Plastic,CustomMaterial1,1
+Plastic,Dynamic,0
+Plastic,"ff 0,08",75
+Plastic,"ff 0,8",8
+Plastic,"ff 0.08",75
+Plastic,"ff 1,0",1
+Plastic,"ff.15",0.15
+Plastic,"ff1.0",1
+Plastic,Free Roller,0.05
+Plastic,FreeTrack,-1
+Plastic,Frictionless,0
+Plastic,GavityRoller,0.02
+Plastic,Glass,0.35
+Plastic,GravityRoller,2
+Plastic,GrayBelt,0.4
+Plastic,HighFriction,9999
+Plastic,LowAccum,0.03
+Plastic,Luggage,0.3
+Plastic,MergeBelt,1.5
+Plastic,MPX,0.25
+Plastic,Mpx,0.25
+Plastic,MRT Belting,1.5
+Plastic,NewMaterial,1
+Plastic,Passive,0.05
+Plastic,pbTest,0.45
+Plastic,Plastic,0.2
+Plastic,Polypropylene,0.15
+Plastic,POLYPROPYLENE COMPOSITE,0.2
+Plastic,PTFE,0.04
+Plastic,Roellchen,0.15
+Plastic,"Roller 0,075",75
+Plastic,RollerBelt,0.1
+Plastic,Rubber,0.6
+Plastic,"Rubber 0.3",0.3
+Plastic,Rubber_2,10
+Plastic,Silver Foil,285
+Plastic,Softshell Polyesther,0.05
+Plastic,Steel,0.3
+Plastic,Stickum,2
+Plastic,sticky,2
+Plastic,Sticky,0.4
+Plastic,StopMaterial,10000
+Plastic,SuperStickyFloor,10
+Plastic,TEMP,0
+Plastic,Test,1
+Plastic,Tire,0.4
+Plastic,TP package,0.1
+Plastic,UnloadBelt,0.2
+Plastic,Vertibelt,8
+Plastic,Wedge,1
+Plastic,Wood,0.6
+Plastic,Wood 1,0.6
+Plastic,Wood 2,0.6
+Plastic,Z,1
+Poly,Plastic,0.4
+Polyethylene,ACETAL,0.2
+POLYETHYLENE,Corrugated,0.15
+Polyethylene,"ff 0.1",0.1
+POLYETHYLENE,"ff 0.1",0.1
+Polyethylene,"ff.15",0.15
+POLYETHYLENE,"ff.15",0.15
+POLYETHYLENE,NYLON (FDA),0.3
+POLYETHYLENE,POLYETHYLENE,0.25
+Polyethylene,Tire,0.2
+POLYETHYLENE,Tire,0.2
+POLYPROPYLENE,ACETAL,0.2
+Polypropylene,ACETAL,0.2
+Polypropylene,Aluminium,0.4
+POLYPROPYLENE,Aluminium,0.4
+Polypropylene,BeltRollerARB,0.2
+POLYPROPYLENE,BeltRollerARB,0.2
+POLYPROPYLENE,Black PU,0.6
+Polypropylene,Bread,0.27
+Polypropylene,Corrugated,0.21
+POLYPROPYLENE,Corrugated,0.21
+Polypropylene,DZ_ff,0.08
+POLYPROPYLENE,DZ_ff,0.08
+Polypropylene,"ff 0.02",0.02
+POLYPROPYLENE,"ff 0.02",0.02
+Polypropylene,"ff 0.05",0.05
+POLYPROPYLENE,"ff 0.05",0.05
+Polypropylene,"ff.15",0.15
+POLYPROPYLENE,"ff.15",0.15
+Polypropylene,Glass,0.19
+POLYPROPYLENE,Glass,0.19
+Polypropylene,Glue,1.5
+POLYPROPYLENE,Glue,1.5
+Polypropylene,PE Plastic,0.17
+POLYPROPYLENE,PE Plastic,0.17
+POLYPROPYLENE,POLYPROPYLENE,0.2
+POLYPROPYLENE,Polypropylene,0.2
+POLYPROPYLENE,POLYPROPYLENE COMPOSITE,0.2
+Polypropylene,"Rubber 0.1",0.1
+POLYPROPYLENE,"Rubber 0.1",0.1
+Polypropylene,"Rubber 0.3",0.3
+POLYPROPYLENE,"Rubber 0.3",0.3
+Polypropylene,S7000_DZ_ff,0.08
+POLYPROPYLENE,S7000_DZ_ff,0.08
+Polypropylene,Steel,0.26
+POLYPROPYLENE,Steel,0.26
+Polypropylene,Tire,0.2
+POLYPROPYLENE,Tire,0.2
+POLYPROPYLENE COMPOSITE,ACETAL,0.2
+POLYPROPYLENE COMPOSITE,Aluminium,0.4
+POLYPROPYLENE COMPOSITE,Black PU,0.6
+POLYPROPYLENE COMPOSITE,Bread,0.27
+POLYPROPYLENE COMPOSITE,Corrugated,0.21
+POLYPROPYLENE COMPOSITE,DZ_ff,0.08
+POLYPROPYLENE COMPOSITE,"ff 0.02",0.02
+POLYPROPYLENE COMPOSITE,"ff 0.05",0.05
+POLYPROPYLENE COMPOSITE,"ff 0.1",0.1
+POLYPROPYLENE COMPOSITE,"ff 0.2",0.2
+POLYPROPYLENE COMPOSITE,"ff 0.3",0.3
+POLYPROPYLENE COMPOSITE,"ff 0.4",0.4
+POLYPROPYLENE COMPOSITE,"ff 0.5",0.5
+POLYPROPYLENE COMPOSITE,"ff 0.6",0.6
+POLYPROPYLENE COMPOSITE,"ff.15",0.15
+POLYPROPYLENE COMPOSITE,Glass,0.19
+POLYPROPYLENE COMPOSITE,NYLON (FDA),0.25
+POLYPROPYLENE COMPOSITE,NYLON (NON-FDA),0.25
+POLYPROPYLENE COMPOSITE,PE Plastic,0.17
+POLYPROPYLENE COMPOSITE,Polypropylene,0.2
+POLYPROPYLENE COMPOSITE,POLYPROPYLENE COMPOSITE,0.2
+POLYPROPYLENE COMPOSITE,Rubber,0.6
+POLYPROPYLENE COMPOSITE,S7000_DZ_ff,0.08
+POLYPROPYLENE COMPOSITE,SELF EXTINGUISHING LOW MOISTURE,0.25
+POLYPROPYLENE COMPOSITE,Steel,0.32
+POLYPROPYLENE COMPOSITE,Tire,0.2
+Polyurethane,BigFrictionPlate,2
+Polyurethane,Black PU,0.4
+Polyurethane,Bread,0.37
+Polyurethane,Corrugated,0.32
+Polyurethane,DZ_ff,0.08
+Polyurethane,"ff 0,08",75
+Polyurethane,"ff 0,8",8
+Polyurethane,"ff 0.02",0.02
+Polyurethane,"ff 0.05",0.05
+Polyurethane,"ff 0.08",75
+Polyurethane,"ff 0.1",0.1
+Polyurethane,"ff 0.2",0.2
+Polyurethane,"ff 0.3",0.3
+Polyurethane,"ff 0.4",0.4
+Polyurethane,"ff 0.5",0.5
+Polyurethane,"ff 0.6",0.6
+Polyurethane,"ff 1,0",1
+Polyurethane,"ff.15",0.15
+Polyurethane,"ff1.0",1
+Polyurethane,Free Roller,5
+Polyurethane,Glass,0.1
+Polyurethane,Glue,1.5
+Polyurethane,GravityRoller,2
+Polyurethane,PE Plastic,0.17
+Polyurethane,POLYPROPYLENE,0.2
+Polyurethane,Polypropylene,0.2
+Polyurethane,POLYPROPYLENE COMPOSITE,0.2
+Polyurethane,"Roller 0,075",75
+Polyurethane,RollerBelt,1
+Polyurethane,Rubber,0.6
+Polyurethane,S7000_DZ_ff,0.08
+Polyurethane,Steel,0.4
+Polyurethane,Tire,0.2
+PowerRoller,"ff.15",0.15
+PTFE,PTFE,0.04
+PTFE,Softshell Polyesther,0.037
+PVDF,"ff.15",0.15
+Roellchen,"ff.15",0.15
+Roellchen,"ff1.0",1
+Rolle Rutsche,Corrugated,0.5
+"Roller 0,075","ff.15",0.15
+RollerBelt,"ff 0.02",0.02
+RollerBelt,"ff 0.1",0.1
+RollerBelt,"ff 1,0",1
+RollerBelt,"ff.15",0.15
+RollerBelt,"ff1.0",1
+RollerBelt,pbTest,0.075
+RollerBelt,PE Plastic,1
+RollerBelt,POLYPROPYLENE,0.2
+RollerBelt,Polypropylene,0.2
+RollerBelt,POLYPROPYLENE COMPOSITE,0.2
+RollerBelt,RollerBelt,0.1
+Rollers,Aluminium,0.05
+Rollers,Bread,0.05
+Rollers,Chain,2
+Rollers,Corrugated,0.05
+Rollers,DZ_ff,0.08
+Rollers,"ff 0.05",0.05
+Rollers,"ff 0.1",0.05
+Rollers,"ff 0.4",0.05
+Rollers,"ff 0.5",0.05
+Rollers,"ff 0.6",0.05
+Rollers,"ff.15",0.15
+Rollers,"ff1.0",1
+Rollers,pbTest,0.08
+Rollers,PE Plastic,0.05
+Rollers,Plastic,0
+Rollers,Polypropylene,0.05
+Rollers,POLYPROPYLENE,0.05
+Rollers,POLYPROPYLENE COMPOSITE,0.05
+Rollers,Rubber,0.1
+Rollers,"Rubber 0.1",0.1
+Rollers,"Rubber 0.3",0.1
+Rollers,S7000_DZ_ff,0.08
+ROUGH TOP,"ff.15",0.15
+ROUGH TOP,ROUGH TOP,50
+Rubber,Aluminium,0.6
+Rubber,BigFrictionPlate,2
+Rubber,Bread,0.48
+Rubber,brev,1.2
+Rubber,CardBoard,0.4
+Rubber,Chain,8
+Rubber,Cookie,1
+Rubber,Corrugated_UPS Tote,0.3
+Rubber,EASY RELEASE PLUS,0.6
+Rubber,EASY RELEASE TRACEABLE PP,0.6
+Rubber,"ff 0,08",75
+Rubber,"ff 0,8",8
+Rubber,"ff 0.05",0.05
+Rubber,"ff 0.08",75
+Rubber,"ff 0.1",0.1
+Rubber,"ff 0.4",0.4
+Rubber,"ff 0.5",0.5
+Rubber,"ff 0.6",0.6
+Rubber,"ff 1,0",1
+Rubber,"ff.15",0.15
+Rubber,"ff1.0",1
+Rubber,GavityRoller,0.02
+Rubber,GlassBottle,0.8
+Rubber,Glue,1.5
+Rubber,GravityRoller,2
+Rubber,HighFriction,9999
+Rubber,LowAccum,0.03
+Rubber,Luggage,0.4
+Rubber,NewMaterial,1
+Rubber,Pastry,0.2
+Rubber,PE Plastic,0.4
+Rubber,POLYETHYLENE,0.6
+Rubber,Polyethylene,0.6
+Rubber,Polypropylene,0.6
+Rubber,POLYPROPYLENE,0.6
+Rubber,PTFE,0.04
+Rubber,"Roller 0,075",75
+Rubber,RollerBelt,0.1
+Rubber,Rubber,3
+Rubber,Rubber_2,10
+Rubber,S7000_DZ_ff,0.08
+Rubber,SELF EXTINGUISHING LOW MOISTURE,0.6
+Rubber,Soft Bag,0.5
+Rubber,Stickum,2
+Rubber,sticky,2
+Rubber,Sticky,0.4
+Rubber,Straw,0.3
+Rubber,SuperStickyFloor,10
+Rubber,TEMP,0
+Rubber,Test,1
+Rubber,Tire,0.4
+Rubber,TP package,0.5
+Rubber,UltraFreeRoller,0.05
+Rubber,Vertibelt,8
+Rubber,VeryStickyCardboard,0.8
+Rubber,Wood 1,0.8
+Rubber,Wood 2,0.8
+Rubber,Z,1
+"Rubber 0.1","ff.15",0.15
+"Rubber 0.3","ff.15",0.15
+Rubber_2,"ff.15",0.15
+Rubber_2,"ff1.0",1
+Rubber_2,Rubber_2,10
+S1400 FFT,"ff.15",0.15
+S1400 FFT PP,"ff.15",0.15
+S1400 FT Acetal,"ff.15",0.15
+S400 RT Acetal,"ff.15",0.15
+S7000_DZ_ff,Bread,0.1
+S7000_DZ_ff,Corrugated,0.08
+S7000_DZ_ff,DZ_ff,0.08
+S7000_DZ_ff,"ff 0.05",0.08
+S7000_DZ_ff,"ff.15",0.15
+S7000_DZ_ff,PE Plastic,0.08
+S7000_DZ_ff,S7000_DZ_ff,0.08
+S800 RT Acetal,"ff.15",0.15
+SCACO Divert,Corrugated,0.8
+SCACO Divert,"ff.15",0.15
+Schwerkraftrolle,Corrugated,0.05
+SELF EXTINGUISHING LOW MOISTURE,"ff.15",0.15
+SmoothSteel,Free Roller,0
+SmoothSteel,Frictionless,0
+SmoothSteel,Plastic,0.1
+SmoothSteel,Rubber,0
+SmoothSteel,SmoothSteel,0
+SmoothSteel,Steel,0
+SmoothSteel,Wood,0
+SoapConveyor,Chain,0.1
+SoapConveyor,Concrete,0.1
+SoapConveyor,Corrugated,0.2
+SoapConveyor,Free Roller,0.1
+SoapConveyor,Frictionless,0
+SoapConveyor,Plastic,0.1
+SoapConveyor,Polyurethane,0.1
+SoapConveyor,Rubber,0.1
+SoapConveyor,SoapConveyor,0.1
+SoapConveyor,Steel,0.1
+SoapConveyor,TableTopConveyor,0.1
+SoapConveyor,UHMW,0.1
+SoapConveyor,Wood,0.1
+Soft Bag,BigFrictionPlate,2
+Soft Bag,Conveyor Belt,1.1
+Soft Bag,Corrugated,0.1
+Soft Bag,"ff 0,08",75
+Soft Bag,"ff 0,8",8
+Soft Bag,"ff 0.08",75
+Soft Bag,"ff 0.1",1
+Soft Bag,"ff 0.2",2
+Soft Bag,"ff 0.3",3
+Soft Bag,"ff 0.4",4
+Soft Bag,"ff 0.5",5
+Soft Bag,"ff 0.6",6
+Soft Bag,"ff 1,0",1
+Soft Bag,"ff 1.0",1
+Soft Bag,"ff.15",0.15
+Soft Bag,"ff1.0",1
+Soft Bag,Free Roller,5
+Soft Bag,GravityRoller,2
+Soft Bag,MergeBelt,2
+Soft Bag,pbTest,0.53
+Soft Bag,Plastic,0.3
+Soft Bag,"Roller 0,075",75
+Soft Bag,RollerBelt,1
+Soft Bag,TEMP,0
+Soft Bag,UnloadBelt,0.4
+Softside,Plastic,0.3
+Softside,Rubber,0.7
+Softside,Softside,0.4
+Softside,Steel,0.35
+Special Metal,"ff.15",0.15
+Special Metal,Rubber,1
+Special Metal,Special Metal,2
+Steel,BigFrictionPlate,2
+Steel,Black PU,0.8
+Steel,Bread,0.25
+Steel,brev,1.5
+Steel,CardBoard,0.2
+Steel,Corrugated_UPS Tote,0.1
+Steel,Dynamic,0
+Steel,DZ_ff,0.08
+Steel,F&N,0.15
+Steel,F&N Can Conv Plastic,0.05
+Steel,F&N Plastic Incline,0.15
+Steel,"ff 0,08",75
+Steel,"ff 0,8",8
+Steel,"ff 0.05",0.05
+Steel,"ff 0.08",75
+Steel,"ff 0.1",0.1
+Steel,"ff 0.2",0.2
+Steel,"ff 0.3",0.3
+Steel,"ff 0.4",0.4
+Steel,"ff 0.5",0.5
+Steel,"ff 0.6",0.6
+Steel,"ff 1,0",1
+Steel,"ff.15",0.15
+Steel,"ff1.0",1
+Steel,Free Roller,5
+Steel,FreeTrack,-1
+Steel,Frictionless,0
+Steel,GavityRoller,0.02
+Steel,Glass,0.19
+Steel,Glue,1.5
+Steel,GravityRoller,2
+Steel,Greased Lighting,-10
+Steel,HighFriction,9999
+Steel,LowAccum,0.03
+Steel,Luggage,0.1
+Steel,NewMaterial,1
+Steel,PE Plastic,0.4
+Steel,Polyethylene,0.13
+Steel,POLYETHYLENE,0.13
+Steel,PTFE,0.04
+Steel,"Roller 0,075",75
+Steel,Roller Track,-0.05
+Steel,RollerBelt,0.1
+Steel,Rubber,0.3
+Steel,"Rubber 0.1",0.6
+Steel,"Rubber 0.3",0.6
+Steel,Rubber_2,10
+Steel,S7000_DZ_ff,0.08
+Steel,SELF EXTINGUISHING LOW MOISTURE,0.27
+Steel,Soft Bag,0.1
+Steel,Steel,0.5
+Steel,Stickum,2
+Steel,sticky,2
+Steel,Sticky,0.4
+Steel,SuperStickyFloor,10
+Steel,TEMP,0
+Steel,Test,1
+Steel,Tire,2
+Steel,Tire2,1.2
+Steel,Vertibelt,8
+Steel,water,0.1
+Steel,Wood 1,0.4
+Steel,Wood 2,0.4
+Steel,Z,1
+Stickum,"ff.15",0.15
+Stickum,Stickum,2
+sticky,brev,1.5
+sticky,"ff.15",0.15
+sticky,sticky,2
+Sticky,Sticky,5
+StickyFloor,Chain,5
+StickyFloor,Concrete,5
+StickyFloor,Corrugated,5
+StickyFloor,Free Roller,5
+StickyFloor,Frictionless,5
+StickyFloor,Plastic,5
+StickyFloor,Rubber,5
+StickyFloor,Steel,5
+StickyFloor,StickyFloor,5
+StickyFloor,Wood,5
+StopMaterial,"ff.15",0.15
+StopMaterial,"ff1.0",1
+Straw,Steel,0.25
+Straw,Straw,0.2
+STRONG,Corrugated,5
+SUPER RUBBER,Chain,2
+SUPER RUBBER,Concrete,2
+SUPER RUBBER,Corrugated,2
+SUPER RUBBER,Free Roller,2
+SUPER RUBBER,Frictionless,2
+SUPER RUBBER,Plastic,2
+SUPER RUBBER,Rubber,2
+SUPER RUBBER,Steel,2
+SUPER RUBBER,SUPER RUBBER,2
+SUPER RUBBER,Wood,2
+SuperStickyFloor,SuperStickyFloor,10
+TableTopConveyor,Chain,0.1
+TableTopConveyor,Concrete,0.1
+TableTopConveyor,Corrugated,0.3
+TableTopConveyor,Free Roller,0.1
+TableTopConveyor,Frictionless,0
+TableTopConveyor,Plastic,0.1
+TableTopConveyor,Polyurethane,0.1
+TableTopConveyor,Rubber,0.1
+TableTopConveyor,Steel,0.1
+TableTopConveyor,TableTopConveyor,0.1
+TableTopConveyor,UHMW,0.1
+TableTopConveyor,Wood,0.1
+TEMP,TEMP,10
+Test,Chain,0.3
+Test,Concrete,0.4
+test,"ff.15",0.15
+Test,"ff.15",0.15
+Test,Test,1
+ThomasFriction,Chain,5
+ThomasFriction,Concrete,5
+ThomasFriction,Corrugated,5
+ThomasFriction,Free Roller,5
+ThomasFriction,Frictionless,5
+ThomasFriction,Plastic,5
+ThomasFriction,Rubber,5
+ThomasFriction,Steel,5
+ThomasFriction,ThomasFriction,5
+ThomasFriction,Wood,5
+Tire,Concrete,2
+Tire,"ff.15",0.15
+Tire,RollerBelt,0.0614
+Tire,Tire,2
+Tire,TRT_Belt,0.2
+Tire2,Concrete,1.2
+Tire2,"ff.15",0.15
+TP package,Corrugated,0.1
+TP package,"ff 0.1",0.1
+TP package,"ff.15",0.15
+TP package,"ff1.0",1
+TP package,pbTest,0.53
+TransverseFriction,"ff.15",0.15
+UHMW,Acetal,0.16
+UHMW,AR NYLON,0.16
+UHMW,Black PU,0.32
+UHMW,Bread,0.32
+UHMW,Chain,0.1
+UHMW,Concrete,0.1
+UHMW,Corrugated,0.27
+UHMW,DETECTABLE PE,0.17
+UHMW,DZ_ff,0.08
+UHMW,Elastomer,0.32
+UHMW,ELEC COND ACTL,0.16
+UHMW,ELEC COND PP COMPOSITE,0.21
+UHMW,"ff 0.05",0.05
+UHMW,"ff 0.1",0.1
+UHMW,"ff 0.2",0.2
+UHMW,"ff 0.3",0.3
+UHMW,"ff 0.4",0.4
+UHMW,"ff 0.5",0.5
+UHMW,"ff 0.6",0.6
+UHMW,"ff.15",0.15
+UHMW,Free Roller,0.1
+UHMW,Frictionless,0
+UHMW,Glass,0.15
+UHMW,Glue,1.5
+UHMW,Grey PU,0.17
+UHMW,HIGH STRENGTH EC ACETAL,0.16
+UHMW,NYLON (FDA),0.16
+UHMW,NYLON (NON-FDA),0.16
+UHMW,PE Plastic,0.16
+UHMW,Plastic,0.1
+UHMW,Polyethylene,0.32
+UHMW,POLYETHYLENE,0.32
+UHMW,Polypropylene,0.17
+UHMW,POLYPROPYLENE,0.17
+UHMW,POLYPROPYLENE COMPOSITE,0.17
+UHMW,Polyurethane,0.17
+UHMW,Rollers,0.05
+UHMW,Rubber,0.6
+UHMW,S7000_DZ_ff,0.08
+UHMW,SELF EXTINGUISHING LOW MOISTURE,0.16
+UHMW,Steel,0.4
+UHMW,UHMW,0.1
+UHMW,UV RESISTANT PP,0.17
+UHMW,Wood,0.1
+UltraFreeRoller,"ff.15",0.15
+UV RESISTANT ACETAL,"ff.15",0.15
+UV RESISTANT PP,Aluminium,0.4
+UV RESISTANT PP,Bread,0.26
+UV RESISTANT PP,Corrugated,0.21
+UV RESISTANT PP,DZ_ff,0.08
+UV RESISTANT PP,"ff 0.05",0.05
+UV RESISTANT PP,"ff 0.1",0.1
+UV RESISTANT PP,"ff 0.2",0.2
+UV RESISTANT PP,"ff 0.3",0.3
+UV RESISTANT PP,"ff 0.4",0.4
+UV RESISTANT PP,"ff 0.5",0.5
+UV RESISTANT PP,"ff 0.6",0.6
+UV RESISTANT PP,"ff.15",0.15
+UV RESISTANT PP,Glue,1.5
+UV RESISTANT PP,PE Plastic,0.17
+UV RESISTANT PP,Rubber,0.6
+UV RESISTANT PP,S7000_DZ_ff,0.08
+UV RESISTANT PP,UV RESISTANT PP,0.32
+Vertibelt,Vertibelt,8
+VeryStickyCardboard,Corrugated,0.7
+VeryStickyCardboard,"ff 0.1",0.1
+VeryStickyCardboard,"ff.15",0.15
+water,"ff.15",0.15
+Wood,Acetal,0.3
+Wood,ACETAL,0.3
+Wood,AR NYLON,0.35
+Wood,BeltRollerARB,0.08
+Wood,BeltRollerS7000,0.08
+Wood,BigFrictionPlate,2
+Wood,Black PU,0.6
+Wood,Bread,0.34
+Wood,brev,1.5
+Wood,CardBoard,0.3
+Wood,Chain,2
+Wood,Concrete,1.2
+Wood,"ff 0,08",75
+Wood,"ff 0,8",8
+Wood,"ff 0.08",75
+Wood,"ff 1,0",1
+Wood,"ff.15",0.15
+Wood,"ff1.0",1
+Wood,Free Roller,0.05
+Wood,FreeTrack,-1
+Wood,Frictionless,0
+Wood,GavityRoller,0.02
+Wood,GravityRoller,2
+Wood,Grey PU,0.3
+Wood,HighFriction,9999
+Wood,LowAccum,0.1
+Wood,MRT Belting,1.5
+Wood,NewMaterial,1
+Wood,NYLON (FDA),0.35
+Wood,NYLON (NON-FDA),0.35
+Wood,Passive,0.05
+Wood,pbTest,0.6
+Wood,PE Plastic,0.3
+Wood,Polypropylene,0.35
+Wood,POLYPROPYLENE,0.35
+Wood,POLYPROPYLENE COMPOSITE,0.35
+Wood,Polyurethane,0.6
+Wood,PTFE,0.04
+Wood,"Roller 0,075",75
+Wood,Roller Track,-0.05
+Wood,RollerBelt,0.1
+Wood,Rollers,0.08
+Wood,Rubber,0.8
+Wood,Rubber_2,10
+Wood,S7000_DZ_ff,0.08
+Wood,SELF EXTINGUISHING LOW MOISTURE,0.35
+Wood,Soft Bag,0.6
+Wood,Steel,0.4
+Wood,Stickum,2
+Wood,sticky,2
+Wood,Sticky,0.4
+Wood,SuperStickyFloor,10
+Wood,TEMP,0
+Wood,Test,1
+Wood,UV RESISTANT PP,0.3
+Wood,Vertibelt,8
+Wood,Wood,0.4
+Wood,Wood 1,0.4
+Wood,Wood 2,0.4
+Wood 1,Wood 1,0.4
+Wood 1,Wood 2,0.4
+Wood 2,Wood 2,0.4
+woody,"ff.15",0.15
+Z,Z,1
+Zobbiness,Concrete,45
+Zobbiness,"ff 0.1",0.1
+Zobbiness,"ff.15",0.15
+Zobbiness,"ff1.0",1
