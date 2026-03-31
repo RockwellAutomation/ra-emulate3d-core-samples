@@ -1,0 +1,15 @@
+{
+  "Key": {
+    "Key": "88aeee8a-87ce-491c-9219-458b04a16f7d",
+    "IsNull": false
+  },
+  "DefaultLicense": null,
+  "NativeSourcePaths": [
+    "LoadCreator.cs",
+    "LoadCreatorDeleter.csproj",
+    "LoadDeleter.cs",
+    "LoadDescription.cs"
+  ],
+  "Created": "2026-02-05T07:10:20.0995877Z",
+  "Modified": "2026-03-13T12:03:05.2823582Z"
+}

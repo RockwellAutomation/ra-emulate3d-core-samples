@@ -1,0 +1,120 @@
+@* //==============================================================================  
+/// MIT License  
+///  
+/// Copyright (c) 2026 Rockwell Automation, Inc.  
+///  
+/// Permission is hereby granted, free of charge, to any person obtaining a copy  
+/// of this software and associated documentation files (the "Software"), to deal  
+/// in the Software without restriction, including without limitation the rights  
+/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell  
+/// copies of the Software, and to permit persons to whom the Software is  
+/// furnished to do so, subject to the following conditions:  
+///  
+/// The above copyright notice and this permission notice shall be included in all  
+/// copies or substantial portions of the Software.  
+///  
+/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  
+/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,  
+/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE  
+/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER  
+/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  
+/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  
+/// SOFTWARE.  
+///  
+//==============================================================================
+ *@
+@page "/VisualCount"
+@rendermode InteractiveServer
+
+@using Demo3D.Common
+@using Demo3D.Visuals
+@using System.Reflection
+
+@implements IDisposable
+
+@inject SelectedVisualService SelectedVisualService
+
+<PageTitle>Selected Visuals</PageTitle>
+
+<section class="visual-dashboard">
+    <header class="visual-dashboard__header">
+        <div>
+            <p class="eyebrow">Live selection</p>
+            <h1>Selected visuals</h1>
+        </div>
+        <p class="visual-dashboard__count">@SelectedVisualService.SelectedVisuals.Count
+            visual@(SelectedVisualService.SelectedVisuals.Count == 1 ? string.Empty : "s") selected</p>
+        </header>
+
+        @if (SelectedVisualService.SelectedVisuals.Count == 0)
+        {
+            <section class="empty-state">
+                <h2>No visuals selected</h2>
+                <p>Select one or more visuals in the scene to inspect their details here.</p>
+            </section>
+        }
+        else
+        {
+            <section class="visual-grid">
+                @foreach (var visual in SelectedVisualService.SelectedVisuals)
+                {
+                    <article class="visual-card" @key="visual">
+                        <div class="visual-card__summary">
+                            <div>
+                                <p class="visual-card__label">Name</p>
+                                <h2>@visual.Name</h2>
+                            </div>
+
+                            <div class="visual-card__location-block">
+                                <p class="visual-card__label">World location</p>
+                                <p class="visual-card__location">@FormatLocation(visual)</p>
+                            </div>
+                        </div>
+                    </article>
+                }
+            </section>
+        }
+    </section>
+
+@code {
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+        if (firstRender)
+        {
+            try
+            {
+                SelectedVisualService.SelectedVisualChanged += OnSelectedVisualChanged;
+            }
+            catch (Exception exception)
+            {
+                Demo3D.Common.Logger.Log("Error", "Failed to subscribe to SelectedVisualChanged.", exception);
+                throw;
+            }
+        }
+    }
+
+    private void OnSelectedVisualChanged()
+    {
+        _ = InvokeAsync(StateHasChanged);
+    }
+
+    private static string FormatLocation(Visual visual)
+    {
+        try
+        {
+            var worldLocation = visual.WorldLocation;
+            return $"X {worldLocation.X.ToString("0.##")}  Y {worldLocation.Y.ToString("0.##")}  Z {worldLocation.Z.ToString("0.##")}";
+        }
+        catch (Exception exception)
+        {
+            Demo3D.Common.Logger.Log("Error", $"Failed to format location for visual '{visual.Name}'.", exception);
+            return $"{exception.GetType().Name}: {exception.Message}";
+        }
+    }
+
+    public void Dispose()
+    {
+        SelectedVisualService.SelectedVisualChanged -= OnSelectedVisualChanged;
+    }
+}
