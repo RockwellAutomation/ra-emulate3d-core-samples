@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <Compile Include="MultiModelPhotoEyeAspect.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <AssemblyName>MultiModelPhotoEyeAspect</AssemblyName>
+    <RootNamespace>Demo3D.Components</RootNamespace>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <ProjectGuid>{800D5BF1-4F7D-4522-B1DF-50BD3EB090BE}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="Demo3D.targets" />
+</Project>

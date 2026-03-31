@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <Compile Include="PhotoEyeReceiverAspect.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <AssemblyName>PhotoEyeReceiverAspect</AssemblyName>
+    <RootNamespace>Demo3D.Components</RootNamespace>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <ProjectGuid>{75486CD8-271D-453D-A568-FB2AC5841A9F}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="Demo3D.targets" />
+</Project>
