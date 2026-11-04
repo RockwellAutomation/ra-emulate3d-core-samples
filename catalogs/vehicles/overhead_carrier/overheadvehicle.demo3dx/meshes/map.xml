@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<MeshMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>1</Version>
+  <Meshes>
+    <Mesh VertexBuffer="0" IndexBuffers="0" Sections="0" Id="1c8018f0-8c51-4ba2-a1b1-f6a83284ca0f" />
+    <Mesh VertexBuffer="1" IndexBuffers="1" Sections="1" Id="6c1b393f-a043-46ab-90d2-13c183848098" />
+  </Meshes>
+  <Vertices>
+    <VertexBuffer Path="v0.dat">
+      <Attribute Usage="Position" />
+      <Attribute Usage="Normal" />
+      <Attribute Usage="Texture" Type="Vector2" />
+    </VertexBuffer>
+    <VertexBuffer Path="v1.dat">
+      <Attribute Usage="Position" />
+      <Attribute Usage="Normal" />
+      <Attribute Usage="Texture" Type="Vector2" />
+    </VertexBuffer>
+  </Vertices>
+  <Indices>
+    <IndexBuffer Path="i0.dat" />
+    <IndexBuffer Path="i1.dat" />
+  </Indices>
+  <Subsets>
+    <int>0</int>
+    <int>1</int>
+  </Subsets>
+</MeshMap>

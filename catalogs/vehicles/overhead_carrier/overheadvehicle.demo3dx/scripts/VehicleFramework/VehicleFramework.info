@@ -1,0 +1,22 @@
+{
+  "Key": {
+    "Key": "5e32eb00-a6b6-4adb-a77e-949ceaa98d47",
+    "IsNull": false
+  },
+  "DefaultLicense": null,
+  "Aliases": [
+    {
+      "Name": "FlowControlFramework",
+      "Script": "FlowControlFramework",
+      "Key": "6ff6f69d-ef3a-4dcc-b6e7-554f43943715"
+    }
+  ],
+  "NativeSourcePaths": [
+    "VehicleFramework.csproj",
+    "VehicleFramework.dll",
+    "VehicleFramework.xml",
+    "doc"
+  ],
+  "Created": "2022-02-09T15:56:04.5503451Z",
+  "Modified": "2026-07-02T06:53:02.4994605Z"
+}

@@ -1,0 +1,1322 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FlowControlFramework</name>
+    </assembly>
+    <members>
+        <member name="T:Demo3D.FlowControl.Controller">
+            <summary>
+            A controller used to control the flow of loads through a system.
+            </summary>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.#ctor(Demo3D.Visuals.Visual)">
+            <summary>
+            Constructs a <see cref="T:Demo3D.FlowControl.Controller"/> for the given <see cref="T:Demo3D.Visuals.Visual"/>.
+            </summary>
+            <param name="visual">The <see cref="T:Demo3D.Visuals.Visual"/> to construct a <see cref="T:Demo3D.FlowControl.Controller"/> for.</param>
+        </member>
+        <member name="P:Demo3D.FlowControl.Controller.LoggingEnabled">
+            <summary>
+            Whether logging is enabled for this controller. If true, messages will be logged for debugging purposes. If false, no messages will be logged.
+            </summary>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.ConveyToOn(Demo3D.Visuals.Visual,System.Object,Demo3D.Visuals.Visual)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Conveys the given load to the given target, then the given station.
+            The load is automatically routed through the system to reach each target, if the necessary connections exist.
+            An exception is thrown if any target cannot be reached.</para>
+            </summary>
+            <param name="load">The load to convey.</param>
+            <param name="station">The final destination of the load.</param>
+            <param name="target">The intermediate target for the load.</param>
+            <returns>An <see cref="T:System.Collections.IEnumerable"/> that completes enumeration when the load arrives at the final target.</returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.ConveyTo(Demo3D.Visuals.Visual,Demo3D.Visuals.Visual)">
+            <summary>
+            Conveys the given load to the given target.
+            The load is automatically routed through the system to reach the target, if the necessary connections exist.
+            An exception is thrown if the target cannot be reached.
+            </summary>
+            <param name="load">The load to convey.</param>
+            <param name="target">The target for the load.</param>
+            <returns>An <see cref="T:System.Collections.IEnumerable"/> that completes enumeration when the load arrives at the target.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.CancelConveyTo(Demo3D.Visuals.Visual)">
+            <summary>
+            Cancels the current ConveyTo command for the load, if one exists.
+            </summary>
+            <param name="load">The load to cancel the current ConveyTo command for.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.NamedOrderList(System.String,Demo3D.Visuals.Visual,System.Boolean)">
+            <summary>
+            Returns the order list with the given name, on the given <see cref="T:Demo3D.Visuals.Visual"/>.
+            If <paramref name="autocreate"/> is true, an order list with the given name will be created and added to the <see cref="T:Demo3D.Visuals.Visual"/> if not found.
+            </summary>
+            <param name="name">The name of the order list to find/create.</param>
+            <param name="visual">The <see cref="T:Demo3D.Visuals.Visual"/> to find/create the order list on.</param>
+            <param name="autocreate">Should the order list be created if not found.</param>
+            <returns>The order list channel.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.Enstation(Demo3D.Visuals.Visual,Demo3D.Visuals.Visual)">
+            <summary>
+            Removes the load from its current station, and adds it to the target station. The load is then held at the target station.
+            </summary>
+            <param name="load">The load to enstation.</param>
+            <param name="target">The target station to add the load to.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.Unstation(Demo3D.Visuals.Visual)">
+            <summary>
+            Removes the load from its current station.
+            </summary>
+            <param name="load">The load to unstation.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.AddLoadToOrderList(Demo3D.Visuals.Visual,System.Object)">
+            <summary>
+            Adds the load to the given order list.
+            The order list may be a visual channel or a <see cref="T:Demo3D.Visuals.Visual"/>.
+            If a <see cref="T:Demo3D.Visuals.Visual"/> is specified, the default order list on the <see cref="T:Demo3D.Visuals.Visual"/> is used.
+            </summary>
+            <param name="load">The load to add to the order list.</param>
+            <param name="orderList">May be a visual channel or a <see cref="T:Demo3D.Visuals.Visual"/>.</param>
+            <returns>An <see cref="T:System.Collections.IEnumerable"/> that completes enumeration when the load is added to the order list.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.WaitToBeOrderedOn(Demo3D.Visuals.Visual,System.Object)">
+            <summary>
+            Adds the load to the given order list, and waits for the load to be ordered.
+            The order list may be a visual channel or a <see cref="T:Demo3D.Visuals.Visual"/>.
+            If a <see cref="T:Demo3D.Visuals.Visual"/> is specified, the default order list on the <see cref="T:Demo3D.Visuals.Visual"/> is used.
+            </summary>
+            <param name="load">The load to add to the order list and wait for the order of.</param>
+            <param name="orderList">May be a visual channel or a <see cref="T:Demo3D.Visuals.Visual"/>.</param>
+            <returns>An <see cref="T:System.Collections.IEnumerable"/> that completes enumeration when the load is ordered from the order list.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.WaitToBeOrdered(Demo3D.Visuals.Visual)">
+            <summary>
+            Waits for the load to be added to an order list if it does not belong to one already, then waits for the load to be ordered from its order list.
+            </summary>
+            <param name="load">The load to wait to be ordered from an order list.</param>
+            <returns>An <see cref="T:System.Collections.IEnumerable"/> that completes enumeration when the load is ordered from an order list.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.WaitForLoadToArrive(Demo3D.Visuals.Visual)">
+            <summary>
+            Waits for the load to arrive at its <see cref="P:Demo3D.Visuals.Visual.CurrentRoutingTarget"/>.
+            </summary>
+            <param name="load">The load to wait to arrive at its <see cref="P:Demo3D.Visuals.Visual.CurrentRoutingTarget"/>.</param>
+            <returns>An <see cref="T:System.Collections.IEnumerable"/> that completes enumeration when the load arrives at its <see cref="P:Demo3D.Visuals.Visual.CurrentRoutingTarget"/>.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.OrderListIsEmpty(System.Object)">
+            <summary>
+            Returns true if the order list is empty, false otherwise.
+            The order list may be a visual channel or a <see cref="T:Demo3D.Visuals.Visual"/>.
+            If a <see cref="T:Demo3D.Visuals.Visual"/> is specified, the default order list on the <see cref="T:Demo3D.Visuals.Visual"/> is used.
+            </summary>
+            <param name="orderList">The order list to check for items. May be a visual channel or a <see cref="T:Demo3D.Visuals.Visual"/>.</param>
+            <returns>True if the order list is empty, false otherwise.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.PeekAtOrderList(System.Object)">
+            <summary>
+            Peeks at the given order list.
+            <para>Returns a <see cref="T:Demo3D.Native.Result`1"/> immediately, without blocking. The <see cref="T:Demo3D.Native.Result`1"/> may be awaited, and the value will be set when a load is present in the order list and the peek is complete.</para>
+            <para>The order list may be a visual channel or a <see cref="T:Demo3D.Visuals.Visual"/>.
+            If a <see cref="T:Demo3D.Visuals.Visual"/> is specified, the default order list on the <see cref="T:Demo3D.Visuals.Visual"/> is used.</para>
+            </summary>
+            <param name="orderList">The order list to peek at. May be a visual channel or a <see cref="T:Demo3D.Visuals.Visual"/>.</param>
+            <returns>A result where the value will be set when a load is present on the order list, and the peek is complete.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.PeekAtOrderList(System.String,Demo3D.Visuals.Visual)">
+            <summary>
+            Peeks at the order list of the given name on the given <see cref="T:Demo3D.Visuals.Visual"/>.
+            <para>Returns a <see cref="T:Demo3D.Native.Result`1"/> immediately, without blocking. The <see cref="T:Demo3D.Native.Result`1"/> may be awaited, and the value will be set when a load is present in the order list and the peek is complete.</para>
+            </summary>
+            <param name="name">The name of the order list.</param>
+            <param name="visual">The <see cref="T:Demo3D.Visuals.Visual"/> to find/create the named order list on.</param>
+            <returns>A result where the value will be set when a load is present on the order list, and the peek is complete.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.HoldLoad(Demo3D.Visuals.Visual)">
+            <summary>
+            Holds the load at its current station. See <see cref="M:Demo3D.FlowControl.IStation.HoldLoad(Demo3D.Visuals.Visual)"/>.
+            </summary>
+            <param name="load">The load to hold at its current station.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.ReleaseLoad(Demo3D.Visuals.Visual)">
+            <summary>
+            Releases the load from its current station. See <see cref="M:Demo3D.FlowControl.IStation.ReleaseLoad(Demo3D.Visuals.Visual)"/>.
+            </summary>
+            <param name="load">The load to release from its current station.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.ToString``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <param name="list"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.StackItems(Demo3D.Visuals.Visual)">
+            <summary>
+            Orders the children of the given <see cref="T:Demo3D.Visuals.Visual"/> with physics body type <see cref="F:Demo3D.Visuals.PhysicsBodyType.VisualOnly"/> by their position along the y-axis (top to bottom).
+            </summary>
+            <param name="pallet">The <see cref="T:Demo3D.Visuals.Visual"/> to return the stack items of.</param>
+            <returns>The eligible children of <paramref name="pallet"/> ordered by their position along the Y-axis.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.Depalletize(Demo3D.Visuals.Visual,Demo3D.Visuals.Visual,System.Int32)">
+            <summary>
+            Transfers the given number of eligible children from the top of <paramref name="pallet"/> to <paramref name="device"/>.
+            Visuals with physics body type <see cref="F:Demo3D.Visuals.PhysicsBodyType.VisualOnly"/> are eligible, and ordered by their position along the y-axis (top to bottom).
+            </summary>
+            <param name="pallet">The <see cref="T:Demo3D.Visuals.Visual"/> to transfer children from.</param>
+            <param name="device">The <see cref="T:Demo3D.Visuals.Visual"/> to transfer the children of <paramref name="pallet"/> to.</param>
+            <param name="count">The number of children to transfer.</param>
+            <returns>An <see cref="T:System.Collections.IEnumerable"/> that completes enumeration when the given number of children have been transferred from <paramref name="pallet"/> to <paramref name="device"/>.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.DepalletizeItems(System.Collections.Generic.IEnumerable{Demo3D.Visuals.Visual},Demo3D.Visuals.Visual)">
+            <summary>
+            Transfers the elements of <paramref name="items"/> to <paramref name="device"/> in the order given.
+            </summary>
+            <param name="items">The Visuals to transfer to <paramref name="device"/>.</param>
+            <param name="device">The <see cref="T:Demo3D.Visuals.Visual"/> to transfer the elements of <paramref name="items"/> to.</param>
+            <returns>An <see cref="T:System.Collections.IEnumerable"/> that completes enumeration when the elements of <paramref name="items"/> have been transferred to <paramref name="device"/>.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.WaitUntilOrderListCount(System.Object,System.Int32)">
+            <summary>
+            Waits until the given order list has the given number of items.
+            <para>The order list may be a visual channel or a <see cref="T:Demo3D.Visuals.Visual"/>.
+            If a <see cref="T:Demo3D.Visuals.Visual"/> is specified, the default order list on the <see cref="T:Demo3D.Visuals.Visual"/> is used.</para>
+            </summary>
+            <param name="orderList">May be a visual channel or a <see cref="T:Demo3D.Visuals.Visual"/></param>
+            <param name="count">The number of items.</param>
+            <returns>An <see cref="T:System.Collections.IEnumerable"/> that completes enumeration when the given order list has the given number of items.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.TeleportTo(Demo3D.Visuals.Visual,Demo3D.Visuals.Visual)">
+            <summary>
+            Transfers the load from its current station to the target station, adjusting the matrix of the load accordingly.
+            </summary>
+            <param name="load">The load to teleport.</param>
+            <param name="target">The target to teleport the load to.</param>
+            <returns>An <see cref="T:System.Collections.IEnumerable"/> that completes enumeration when the load has been transferred to the given target.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.TransferFromNowhereTo(Demo3D.Visuals.Visual,Demo3D.Visuals.Visual)">
+            <summary>
+            Transfers the load to the target station. Assumes the load is not currently at a station.
+            </summary>
+            <param name="load">The load to transfer.</param>
+            <param name="device">The target to transfer the load to.</param>
+            <returns>An <see cref="T:Demo3D.EventQueue.ITask"/> that completes when the load has been transferred to the given target.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.DeleteLoad(Demo3D.Visuals.Visual)">
+            <summary>
+            Deletes the given load, removing it from its current station.
+            </summary>
+            <param name="load">The load to delete, and remove from its current station.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.OrderFrom(System.Object)">
+            <summary>
+            Orders a load from the <paramref name="source"/> and returns a <see cref="T:Demo3D.Native.Result`1"/> immediately, without blocking. The <see cref="T:Demo3D.Native.Result`1"/> may be awaited, and the value will be set when the order is complete.
+            <para>The <paramref name="source"/> may be a <see cref="T:Demo3D.Visuals.Visual"/> with an <see cref="T:Demo3D.FlowControl.IOrderLoad"/> aspect, a <see cref="T:Demo3D.Visuals.LoadCreatorVisual"/>, a visual channel, or a <see cref="T:Demo3D.Visuals.Visual"/> (default order list will be used).</para>
+            </summary>
+            <param name="source">The source to order the load from. May be a <see cref="T:Demo3D.Visuals.Visual"/> with an <see cref="T:Demo3D.FlowControl.IOrderLoad"/> aspect, a <see cref="T:Demo3D.Visuals.LoadCreatorVisual"/>, a visual channel, or a <see cref="T:Demo3D.Visuals.Visual"/> (default order list will be used).</param>
+            <returns>A result where the value will be set when the order is complete.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.PushLoadOnto(Demo3D.Visuals.Visual,Demo3D.Visuals.Visual,Demo3D.Visuals.SpeedProfile)">
+            <summary>
+            Disables physics for the load and animates it onto the target, then re-enables physics for the load. If the target is a <see cref="T:Demo3D.Visuals.ConveyorVisual"/>, first waits until the motor is on.
+            </summary>
+            <param name="load">The load to animate.</param>
+            <param name="target">The target to animate the load onto.</param>
+            <param name="speed">The <see cref="T:Demo3D.Visuals.SpeedProfile"/> to animate the load with.</param>
+            <returns>An <see cref="T:System.Collections.IEnumerable"/> that completes enumeration when the load has been animated onto the target.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.TransferLoadFromTo(Demo3D.Visuals.Visual,Demo3D.Visuals.Visual,Demo3D.Visuals.Visual)">
+            <summary>
+            Transfers the load from <paramref name="tx"/> to <paramref name="rx"/>.
+            </summary>
+            <param name="load">The load to transfer.</param>
+            <param name="tx">The <see cref="T:Demo3D.Visuals.Visual"/> to transfer the load from.</param>
+            <param name="rx">The <see cref="T:Demo3D.Visuals.Visual"/> to transfer the load to.</param>
+            <returns>An <see cref="T:System.Collections.IEnumerable"/> that completes enumeration when the load has been transferred from <paramref name="tx"/> to <paramref name="rx"/>.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.CombineLoadsToOne(Demo3D.Visuals.VisualList)">
+            <summary>
+            Combines the visuals in <paramref name="loads"/> into one new <see cref="T:Demo3D.Visuals.Visual"/>.
+            </summary>
+            <param name="loads">The loads to combine.</param>
+            <returns>A single <see cref="T:Demo3D.Visuals.Visual"/> containing the elements of <paramref name="loads"/>.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.ReadRecordsFrom(System.String)">
+            <summary>
+            Read records from a spreadsheet, located in the same directory as the current model.
+            </summary>
+            <param name="fileName">The path to the spreadsheet file.</param>
+            <returns>The rows from the spreadsheet.</returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:Demo3D.FlowControl.Controller.IsBlocked(Demo3D.Visuals.Visual)">
+            <summary>
+            Returns whether or not the target is blocked.
+            If the target is TransferStateEnabled, <see cref="P:Demo3D.Visuals.TransferState.ReadyForIncoming"/> will be evaluated.
+            Else if the target is a sensor, its <see cref="P:Demo3D.Visuals.ISensor.IsBlocked"/> status will be evaluated.
+            Else if any of the target's children are sensors, their <see cref="P:Demo3D.Visuals.ISensor.IsBlocked"/> status will be evaluated.
+            </summary>
+            <param name="target"></param>
+            <returns>Whether the target is blocked.</returns>
+        </member>
+        <member name="T:Demo3D.FlowControl.IConveyToControl">
+            <summary>
+            A ConveyToControl is an object with a cancellable task, associated with a ConveyTo command.
+            </summary>
+        </member>
+        <member name="P:Demo3D.FlowControl.IConveyToControl.Task">
+            <summary>
+            The task associated with the ConveyTo command.
+            </summary>
+        </member>
+        <member name="M:Demo3D.FlowControl.IConveyToControl.Cancel">
+            <summary>
+            Cancels the <see cref="P:Demo3D.FlowControl.IConveyToControl.Task"/>.
+            </summary>
+        </member>
+        <member name="E:Demo3D.FlowControl.IConveyToControl.Cancelled">
+            <summary>
+            Action fired when the <see cref="P:Demo3D.FlowControl.IConveyToControl.Task"/> is cancelled via <see cref="M:Demo3D.FlowControl.IConveyToControl.Cancel"/>.
+            </summary>
+        </member>
+        <member name="T:Demo3D.FlowControl.ConveyToControl">
+            <summary>
+            An implementation of <see cref="T:Demo3D.FlowControl.IConveyToControl"/>.
+            </summary>
+        </member>
+        <member name="M:Demo3D.FlowControl.ConveyToControl.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="P:Demo3D.FlowControl.ConveyToControl.Task">
+            <summary>
+            See <see cref="P:Demo3D.FlowControl.IConveyToControl.Task"/>.
+            </summary>
+        </member>
+        <member name="E:Demo3D.FlowControl.ConveyToControl.Cancelled">
+            <summary>
+            See <see cref="E:Demo3D.FlowControl.IConveyToControl.Cancelled"/>.
+            </summary>
+        </member>
+        <member name="M:Demo3D.FlowControl.ConveyToControl.Cancel">
+            <summary>
+            See <see cref="M:Demo3D.FlowControl.IConveyToControl.Cancel"/>.
+            </summary>
+        </member>
+        <member name="T:Demo3D.FlowControl.OrderListChannel">
+            <summary>
+            A channel compatible with both legacy JS components using object channels and new components using visual channels.
+            </summary>
+        </member>
+        <member name="M:Demo3D.FlowControl.OrderListChannel.#ctor(Demo3D.Visuals.Document,System.Int32)">
+            <summary>
+            Constructs an <see cref="T:Demo3D.FlowControl.OrderListChannel"/> on the given document with the given capacity.
+            </summary>
+            <param name="document">The document to construct the <see cref="T:Demo3D.FlowControl.OrderListChannel"/> on.</param>
+            <param name="capacity">The capacity to assign to the <see cref="T:Demo3D.FlowControl.OrderListChannel"/>.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.OrderListChannel.Write(Demo3D.Visuals.Visual)">
+            <summary>
+            Writes a <see cref="T:Demo3D.Visuals.Visual"/> to the channel.
+            </summary>
+            <param name="visual">The <see cref="T:Demo3D.Visuals.Visual"/> to write to the channel.</param>
+        </member>
+        <member name="T:Demo3D.FlowControl.DropFlowControlStationCS">
+            <summary>
+            An implementation of <see cref="T:Demo3D.FlowControl.IStation"/> to be used as a native object for a visual.
+            </summary>
+        </member>
+        <member name="M:Demo3D.FlowControl.DropFlowControlStationCS.#ctor(Demo3D.Visuals.Visual)">
+            <summary>
+            Constructs a <see cref="T:Demo3D.FlowControl.DropFlowControlStationCS"/> for the given <see cref="T:Demo3D.Visuals.Visual"/> and performs all necessary set up of properties/procedures.
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="M:Demo3D.FlowControl.DropFlowControlStationCS.OnReset(Demo3D.Visuals.Visual)">
+            <summary>
+            Auto-bound method executed when the document is reset.
+            </summary>
+            <param name="sender">The current <see cref="T:Demo3D.Visuals.Visual"/>.</param>
+        </member>
+        <member name="T:Demo3D.FlowControl.BinLocationWidgetProvider">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.BinLocationWidgetProvider.#ctor(Demo3D.FlowControl.Controller)">
+            <summary>
+            Creates an instance of <see cref="T:Demo3D.FlowControl.BinLocationWidgetProvider"/> for the <see cref="T:Demo3D.FlowControl.Controller"/>.
+            </summary>
+            <param name="controller"></param>
+        </member>
+        <member name="M:Demo3D.FlowControl.BinLocationWidgetProvider.Q_BinLocation(Demo3D.Visuals.Visual,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <param name="sender"></param>
+            <param name="rack"></param>
+            <param name="shelf"></param>
+            <param name="bay"></param>
+            <param name="bin"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.BinLocationWidgetProvider.Q_AssignBinLocation(Demo3D.Visuals.Visual,Demo3D.Visuals.BinLocation,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <param name="sender"></param>
+            <param name="bin"></param>
+            <param name="load"></param>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.BinLocationWidgetProvider.Q_ToBinLocation(Demo3D.Visuals.Visual,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <param name="sender"></param>
+            <param name="obj"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.BinLocationWidgetProvider.Q_HasBinLocation(Demo3D.Visuals.Visual,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <param name="sender"></param>
+            <param name="load"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="T:Demo3D.FlowControl.FlowControlWidgetProvider">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlWidgetProvider.#ctor(Demo3D.FlowControl.Controller)">
+            <summary>
+            Creates an instance of <see cref="T:Demo3D.FlowControl.FlowControlWidgetProvider"/> for the <see cref="T:Demo3D.FlowControl.Controller"/>.
+            </summary>
+            <param name="controller"></param>
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlWidgetProvider.Q_ConveyTo(Demo3D.Visuals.Visual,System.Object,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.ConveyTo(Demo3D.Visuals.Visual,Demo3D.Visuals.Visual)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="load"></param>
+            <param name="target"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlWidgetProvider.Q_CancelConvey(Demo3D.Visuals.Visual,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.CancelConveyTo(Demo3D.Visuals.Visual)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="load"></param>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlWidgetProvider.Q_IsBlocked(Demo3D.Visuals.Visual,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <param name="sender"></param>
+            <param name="target"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlWidgetProvider.Q_Enstation(Demo3D.Visuals.Visual,System.Object,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.Enstation(Demo3D.Visuals.Visual,Demo3D.Visuals.Visual)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="load"></param>
+            <param name="target"></param>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlWidgetProvider.Q_Unstation(Demo3D.Visuals.Visual,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.Unstation(Demo3D.Visuals.Visual)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="load"></param>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlWidgetProvider.Q_Warp(Demo3D.Visuals.Visual,System.Object,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.TeleportTo(Demo3D.Visuals.Visual,Demo3D.Visuals.Visual)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="load"></param>
+            <param name="station"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlWidgetProvider.Q_ReleaseLoad(Demo3D.Visuals.Visual,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.ReleaseLoad(Demo3D.Visuals.Visual)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="load"></param>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlWidgetProvider.Q_HoldLoad(Demo3D.Visuals.Visual,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.HoldLoad(Demo3D.Visuals.Visual)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="load"></param>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlWidgetProvider.Q_WaitForLoadToArrive(Demo3D.Visuals.Visual,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.WaitForLoadToArrive(Demo3D.Visuals.Visual)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="load"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlWidgetProvider.Q_AssignRoutingTarget(Demo3D.Visuals.Visual,System.Object,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <param name="sender"></param>
+            <param name="target"></param>
+            <param name="load"></param>
+            <exclude />
+        </member>
+        <member name="T:Demo3D.FlowControl.ControllerWidgetProviderBase">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Demo3D.FlowControl.ControllerWidgetProviderBase.Controller">
+            <summary>
+            The underlying <see cref="T:Demo3D.FlowControl.Controller"/> for the widgets.
+            </summary>
+        </member>
+        <member name="M:Demo3D.FlowControl.ControllerWidgetProviderBase.#ctor(Demo3D.FlowControl.Controller)">
+            <summary>
+            Creates an instance of <see cref="T:Demo3D.FlowControl.ControllerWidgetProviderBase"/> for the <see cref="T:Demo3D.FlowControl.Controller"/>.
+            </summary>
+            <param name="controller"></param>
+        </member>
+        <member name="T:Demo3D.FlowControl.DataTableWidgetProvider">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.DataTableWidgetProvider.#ctor(Demo3D.FlowControl.Controller)">
+            <summary>
+            Creates an instance of <see cref="T:Demo3D.FlowControl.DataTableWidgetProvider"/> for the <see cref="T:Demo3D.FlowControl.Controller"/>.
+            </summary>
+            <param name="controller"></param>
+        </member>
+        <member name="M:Demo3D.FlowControl.DataTableWidgetProvider.Q_ReadRecordsFrom(Demo3D.Visuals.Visual,System.String)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <param name="sender"></param>
+            <param name="fileName"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.DataTableWidgetProvider.Q_ImportRow(Demo3D.Visuals.Visual,System.Object,System.Data.DataTable)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <param name="sender"></param>
+            <param name="record"></param>
+            <param name="table"></param>
+            <exclude />
+        </member>
+        <member name="T:Demo3D.FlowControl.OrderListWidgetProvider">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.OrderListWidgetProvider.#ctor(Demo3D.FlowControl.Controller)">
+            <summary>
+            Creates an instance of <see cref="T:Demo3D.FlowControl.OrderListWidgetProvider"/> for the <see cref="T:Demo3D.FlowControl.Controller"/>.
+            </summary>
+            <param name="controller"></param>
+        </member>
+        <member name="M:Demo3D.FlowControl.OrderListWidgetProvider.Q_WaitUntilOrderListCount(Demo3D.Visuals.Visual,System.Object,System.Int32)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.WaitUntilOrderListCount(System.Object,System.Int32)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="orderList"></param>
+            <param name="count"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.OrderListWidgetProvider.Q_OrderFrom(Demo3D.Visuals.Visual,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.OrderFrom(System.Object)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="source"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.OrderListWidgetProvider.Q_OrderFrom(Demo3D.Visuals.Visual,System.Object,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.OrderFrom(System.Object)"/> and <see cref="M:Demo3D.FlowControl.Controller.NamedOrderList(System.String,Demo3D.Visuals.Visual,System.Boolean)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="name"></param>
+            <param name="visual"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.OrderListWidgetProvider.Q_PeekAtOrderList(Demo3D.Visuals.Visual,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.PeekAtOrderList(System.Object)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="orderList"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.OrderListWidgetProvider.Q_PeekAtOrderList(Demo3D.Visuals.Visual,System.Object,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.PeekAtOrderList(System.String,Demo3D.Visuals.Visual)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="name"></param>
+            <param name="visual"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.OrderListWidgetProvider.Q_AddLoadToOrderList(Demo3D.Visuals.Visual,System.Object,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.AddLoadToOrderList(Demo3D.Visuals.Visual,System.Object)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="load"></param>
+            <param name="orderList"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.OrderListWidgetProvider.Q_AddLoadToNamedOrderList(Demo3D.Visuals.Visual,System.Object,System.Object,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.AddLoadToOrderList(Demo3D.Visuals.Visual,System.Object)"/> and <see cref="M:Demo3D.FlowControl.Controller.NamedOrderList(System.String,Demo3D.Visuals.Visual,System.Boolean)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="load"></param>
+            <param name="name"></param>
+            <param name="visual"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.OrderListWidgetProvider.Q_OrderListIsEmpty(Demo3D.Visuals.Visual,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.OrderListIsEmpty(System.Object)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="orderList"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.OrderListWidgetProvider.Q_WaitToBeOrdered(Demo3D.Visuals.Visual,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.WaitToBeOrdered(Demo3D.Visuals.Visual)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="load"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.OrderListWidgetProvider.Q_WaitToBeOrderedOn(Demo3D.Visuals.Visual,System.Object,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.WaitToBeOrderedOn(Demo3D.Visuals.Visual,System.Object)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="load"></param>
+            <param name="orderList"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.OrderListWidgetProvider.Q_OrderList(Demo3D.Visuals.Visual,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.ToOrderList(System.Object,System.Boolean)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="visual"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.OrderListWidgetProvider.Q_NamedOrderList(Demo3D.Visuals.Visual,System.String,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.NamedOrderList(System.String,Demo3D.Visuals.Visual,System.Boolean)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="name"></param>
+            <param name="visual"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="T:Demo3D.FlowControl.TransferWidgetProvider">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.TransferWidgetProvider.#ctor(Demo3D.FlowControl.Controller)">
+            <summary>
+            Creates an instance of <see cref="T:Demo3D.FlowControl.TransferWidgetProvider"/> for the <see cref="T:Demo3D.FlowControl.Controller"/>.
+            </summary>
+            <param name="controller"></param>
+        </member>
+        <member name="M:Demo3D.FlowControl.TransferWidgetProvider.Q_TransferLoadFromTo(Demo3D.Visuals.Visual,System.Object,System.Object,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.TransferLoadFromTo(Demo3D.Visuals.Visual,Demo3D.Visuals.Visual,Demo3D.Visuals.Visual)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="load"></param>
+            <param name="tx"></param>
+            <param name="rx"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.TransferWidgetProvider.Q_TransferLoadTo(Demo3D.Visuals.Visual,System.Object,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.TransferLoadFromTo(Demo3D.Visuals.Visual,Demo3D.Visuals.Visual,Demo3D.Visuals.Visual)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="load"></param>
+            <param name="rx"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="T:Demo3D.FlowControl.FlowControlNativeObject">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <exclude />
+        </member>
+        <member name="F:Demo3D.FlowControl.FlowControlNativeObject.app">
+            <summary>
+            The application associated with the <see cref="T:Demo3D.FlowControl.FlowControlNativeObject"/>.
+            </summary>
+        </member>
+        <member name="F:Demo3D.FlowControl.FlowControlNativeObject.document">
+            <summary>
+            The <see cref="T:Demo3D.Visuals.Document"/> associated with the <see cref="T:Demo3D.FlowControl.FlowControlNativeObject"/>.
+            </summary>
+        </member>
+        <member name="F:Demo3D.FlowControl.FlowControlNativeObject.print">
+            <summary>
+            Delegate used to print statements to the message log.
+            </summary>
+        </member>
+        <member name="F:Demo3D.FlowControl.FlowControlNativeObject.vector">
+            <summary>
+            Delegate that produces a <see cref="T:Microsoft.DirectX.Vector3"/>.
+            </summary>
+        </member>
+        <member name="P:Demo3D.FlowControl.FlowControlNativeObject.Visual">
+            <summary>
+            The <see cref="T:Demo3D.Visuals.Visual"/> associated with the <see cref="T:Demo3D.FlowControl.FlowControlNativeObject"/>.
+            </summary>
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlNativeObject.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlNativeObject.#ctor(Demo3D.Visuals.Visual)">
+            <summary>
+            Constructs a <see cref="T:Demo3D.FlowControl.FlowControlNativeObject"/> for the given <see cref="T:Demo3D.Visuals.Visual"/>.
+            </summary>
+            <param name="sender">The <see cref="T:Demo3D.Visuals.Visual"/> to construct a <see cref="T:Demo3D.FlowControl.FlowControlNativeObject"/> for.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlNativeObject.Dispose">
+            <summary>
+            Disposes of the <see cref="T:Demo3D.FlowControl.FlowControlNativeObject"/>.
+            </summary>
+        </member>
+        <member name="T:Demo3D.FlowControl.FlowControlCS">
+            <summary>
+            A FlowControl controller native object, used to control the flow of loads through a system.
+            </summary>
+        </member>
+        <member name="F:Demo3D.FlowControl.FlowControlCS.ControlColor">
+            <summary>
+            The color of the controller mesh, when <see cref="F:Demo3D.FlowControl.FlowControlCS.MainProcedureEnabled"/> is true.
+            </summary>
+        </member>
+        <member name="F:Demo3D.FlowControl.FlowControlCS.MainProcedure">
+            <summary>
+            The procedure executed during <see cref="M:Demo3D.FlowControl.FlowControlCS.OnInitialize(Demo3D.Visuals.Visual)"/>, if <see cref="F:Demo3D.FlowControl.FlowControlCS.MainProcedureEnabled"/> is true.
+            </summary>
+        </member>
+        <member name="F:Demo3D.FlowControl.FlowControlCS.MainProcedureEnabled">
+            <summary>
+            If true, <see cref="F:Demo3D.FlowControl.FlowControlCS.MainProcedure"/> will be executed during <see cref="M:Demo3D.FlowControl.FlowControlCS.OnInitialize(Demo3D.Visuals.Visual)"/>.
+            </summary>
+        </member>
+        <member name="F:Demo3D.FlowControl.FlowControlCS.LoggingEnabled">
+            <summary>
+            If true, debugging information for the underlying <see cref="T:Demo3D.FlowControl.Controller"/> will be logged.
+            </summary>
+        </member>
+        <member name="F:Demo3D.FlowControl.FlowControlCS.fc">
+            <summary>
+            The underlying <see cref="T:Demo3D.FlowControl.Controller"/> associated with this native object.
+            </summary>
+        </member>
+        <member name="F:Demo3D.FlowControl.FlowControlCS.TransferWidgetProvider">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <exclude />
+        </member>
+        <member name="F:Demo3D.FlowControl.FlowControlCS.BinLocationWidgetProvider">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <exclude />
+        </member>
+        <member name="F:Demo3D.FlowControl.FlowControlCS.DataTableWidgetProvider">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <exclude />
+        </member>
+        <member name="F:Demo3D.FlowControl.FlowControlCS.OrderListWidgetProvider">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <exclude />
+        </member>
+        <member name="F:Demo3D.FlowControl.FlowControlCS.UtilityWidgetProvider">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <exclude />
+        </member>
+        <member name="F:Demo3D.FlowControl.FlowControlCS.FlowControlWidgetProvider">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlCS.#ctor(Demo3D.Visuals.Visual)">
+            <summary>
+            Constructs a <see cref="T:Demo3D.FlowControl.FlowControlCS"/> native object for the given <see cref="T:Demo3D.Visuals.Visual"/>.
+            </summary>
+            <param name="sender">The <see cref="T:Demo3D.Visuals.Visual"/> to construct the <see cref="T:Demo3D.FlowControl.FlowControlCS"/> native object for.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlCS.OnInitialize(Demo3D.Visuals.Visual)">
+            <summary>
+            An auto-bound method executed when the document is initialized.
+            </summary>
+            <param name="sender">The current <see cref="T:Demo3D.Visuals.Visual"/>.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlCS.OnMainProcedureEnabledUpdated(Demo3D.Visuals.Visual,System.Boolean,System.Boolean)">
+            <summary>
+            An auto-bound method executed when <see cref="F:Demo3D.FlowControl.FlowControlCS.MainProcedureEnabled"/> is updated.
+            </summary>
+            <param name="sender">The current <see cref="T:Demo3D.Visuals.Visual"/>.</param>
+            <param name="value">The new value.</param>
+            <param name="oldValue">The old value.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlCS.UpgradeLegacyComponents">
+            <summary>
+            Upgrades eligible legacy FlowControl controllers/stations in the current document to the respective type from the current assembly.
+            </summary>
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlCS.NameWithoutScriptVersion(System.String)">
+            <summary>
+            Strip any version number from script, i.e. given "Script.123" or "Script.1.2.3", return "Script".
+            </summary>
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlCS.Q_EnstationLegacy(Demo3D.Visuals.Visual,System.Object,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.Enstation(Demo3D.Visuals.Visual,Demo3D.Visuals.Visual)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="load"></param>
+            <param name="target"></param>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlCS.Q_Inject(Demo3D.Visuals.Visual,System.Object,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.TransferFromNowhereTo(Demo3D.Visuals.Visual,Demo3D.Visuals.Visual)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="load"></param>
+            <param name="target"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlCS.Q_Teleport(Demo3D.Visuals.Visual,System.Object,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.TeleportTo(Demo3D.Visuals.Visual,Demo3D.Visuals.Visual)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="load"></param>
+            <param name="target"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlCS.Q_PickupLoadUsingVehicleLegacy(Demo3D.Visuals.Visual,System.Object,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <param name="sender"></param>
+            <param name="load"></param>
+            <param name="vehicle"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="T:Demo3D.FlowControl.IOrderLoad">
+            <summary>
+            An interface for an object that a load may be ordered from.
+            </summary>
+        </member>
+        <member name="M:Demo3D.FlowControl.IOrderLoad.OrderLoad">
+            <summary>
+            Orders a load and returns a <see cref="T:Demo3D.Native.Result`1"/> immediately, without blocking. The <see cref="T:Demo3D.Native.Result`1"/> may be awaited, and the value will be set when the order is complete.
+            </summary>
+            <returns>A result where the value will be set when the order is complete.</returns>
+        </member>
+        <member name="T:Demo3D.FlowControl.OrderLoadFromLoadCreator">
+            <summary>
+            An implementation of <see cref="T:Demo3D.FlowControl.IOrderLoad"/> for load creators.
+            </summary>
+        </member>
+        <member name="M:Demo3D.FlowControl.OrderLoadFromLoadCreator.#ctor(Demo3D.Visuals.LoadCreatorVisual)">
+            <summary>
+            Constructs an <see cref="T:Demo3D.FlowControl.OrderLoadFromLoadCreator"/> for the given <see cref="T:Demo3D.Visuals.LoadCreatorVisual"/>.
+            </summary>
+            <param name="lc">The <see cref="T:Demo3D.Visuals.LoadCreatorVisual"/> to construct an <see cref="T:Demo3D.FlowControl.OrderLoadFromLoadCreator"/> for.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.OrderLoadFromLoadCreator.OrderLoad">
+            <summary>
+            Orders a load from the load creator. See <see cref="M:Demo3D.FlowControl.IOrderLoad.OrderLoad"/>.
+            </summary>
+            <returns>A result where the value will be set when the order is complete.</returns>
+        </member>
+        <member name="T:Demo3D.FlowControl.OrderLoadFromChannel">
+            <summary>
+            An implementation of <see cref="T:Demo3D.FlowControl.IOrderLoad"/> for channels.
+            </summary>
+        </member>
+        <member name="M:Demo3D.FlowControl.OrderLoadFromChannel.#ctor(Demo3D.EventQueue.IChannel{Demo3D.Visuals.Visual})">
+            <summary>
+            Constructs an <see cref="T:Demo3D.FlowControl.OrderLoadFromChannel"/> for a visual channel.
+            </summary>
+            <param name="c">The visual channel to construct an <see cref="T:Demo3D.FlowControl.OrderLoadFromChannel"/> for.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.OrderLoadFromChannel.#ctor(Demo3D.Script.Channel)">
+            <summary>
+            Constructs an <see cref="T:Demo3D.FlowControl.OrderLoadFromChannel"/> for a script channel.
+            </summary>
+            <param name="c">The script to construct an <see cref="T:Demo3D.FlowControl.OrderLoadFromChannel"/> for.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.OrderLoadFromChannel.OrderLoad">
+            <summary>
+            Orders a load from the channel. See <see cref="M:Demo3D.FlowControl.IOrderLoad.OrderLoad"/>.
+            </summary>
+            <returns>A result where the value will be set when the order is complete.</returns>
+        </member>
+        <member name="T:Demo3D.FlowControl.IStation">
+            <summary>
+            A station is a location where loads may be conveyed to, held at, and released from.
+            </summary>
+        </member>
+        <member name="P:Demo3D.FlowControl.IStation.RoutingVisual">
+            <summary>
+            The <see cref="T:Demo3D.Visuals.Visual"/> to be used when finding a route to this station. For example, control points on 
+            a track will have this set to the track controller, since that's the <see cref="T:Demo3D.Visuals.Visual"/> connected between
+            conveyors, itself managing the routing between control points.
+            </summary>
+        </member>
+        <member name="M:Demo3D.FlowControl.IStation.ReleaseLoad(Demo3D.Visuals.Visual)">
+            <summary>
+            Release the load held at this station. Allow the load to continue on its route.
+            </summary>
+            <param name="load">The load to release.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.IStation.HoldLoad(Demo3D.Visuals.Visual)">
+            <summary>
+            Hold the load at this station. Prevent it from continuing on its route.
+            </summary>
+            <param name="load">The load to hold.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.IStation.WaitForArrival(Demo3D.Visuals.Visual)">
+            <summary>
+            Block until the specified load arrives at this station.
+            </summary>
+            <param name="load">The load to wait for the arrival of.</param>
+            <returns>An <see cref="T:System.Collections.IEnumerable"/> that returns a value when the load arrives.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.IStation.RemoveLoad(Demo3D.Visuals.Visual)">
+            <summary>
+            Remove the load from this station. The load is not altered physically (moved or deleted).
+            </summary>
+            <param name="load">The load to remove.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.IStation.AddLoad(Demo3D.Visuals.Visual)">
+            <summary>
+            Add the load to this station. The load is not moved.
+            </summary>
+            <param name="load">The load to add.</param>
+        </member>
+        <member name="T:Demo3D.FlowControl.KinematicStation">
+            <summary>
+            Implementation of IStation for non-TransferStateEnabled visuals.
+            </summary>
+        </member>
+        <member name="P:Demo3D.FlowControl.KinematicStation.Visual">
+            <summary>
+            Returns the <see cref="T:Demo3D.Visuals.Visual"/> associated with this station.
+            </summary>
+        </member>
+        <member name="P:Demo3D.FlowControl.KinematicStation.RoutingVisual">
+            <summary>
+            See <see cref="P:Demo3D.FlowControl.IStation.RoutingVisual"/>.
+            </summary>
+        </member>
+        <member name="M:Demo3D.FlowControl.KinematicStation.RemoveLoad(Demo3D.Visuals.Visual)">
+            <summary>
+            A no-op for this station. See <see cref="M:Demo3D.FlowControl.IStation.RemoveLoad(Demo3D.Visuals.Visual)"/>.
+            </summary>
+            <param name="load">The load to remove.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.KinematicStation.AddLoad(Demo3D.Visuals.Visual)">
+            <summary>
+            A no-op for this station. See <see cref="M:Demo3D.FlowControl.IStation.AddLoad(Demo3D.Visuals.Visual)"/>.
+            </summary>
+            <param name="load">The load to add.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.KinematicStation.ReleaseLoad(Demo3D.Visuals.Visual)">
+            <summary>
+            Releases the load kinematically. See <see cref="M:Demo3D.FlowControl.IStation.ReleaseLoad(Demo3D.Visuals.Visual)"/>.
+            </summary>
+            <param name="load">The load to release.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.KinematicStation.HoldLoad(Demo3D.Visuals.Visual)">
+            <summary>
+            Holds the load kinematically. See <see cref="M:Demo3D.FlowControl.IStation.HoldLoad(Demo3D.Visuals.Visual)"/>.
+            </summary>
+            <param name="load">The load to hold.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.KinematicStation.WaitForArrival(Demo3D.Visuals.Visual)">
+            <summary>
+            See <see cref="M:Demo3D.FlowControl.IStation.WaitForArrival(Demo3D.Visuals.Visual)"/>.
+            </summary>
+            <param name="load">The load to wait for the arrival of.</param>
+            <returns>An <see cref="T:System.Collections.IEnumerable"/> that returns a value when the load arrives.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.KinematicStation.Get(Demo3D.Visuals.Visual)">
+            <summary>
+            Returns the current implementation of <see cref="T:Demo3D.FlowControl.IStation"/> for the given <see cref="T:Demo3D.Visuals.Visual"/>,
+            or a new <see cref="T:Demo3D.FlowControl.KinematicStation"/> added to the <see cref="T:Demo3D.Visuals.Visual"/> via an <see cref="T:Demo3D.FlowControl.IStation"/> aspect.
+            </summary>
+            <param name="visual">The <see cref="T:Demo3D.Visuals.Visual"/> to get an <see cref="T:Demo3D.FlowControl.IStation"/> for.</param>
+            <returns>The current <see cref="T:Demo3D.FlowControl.IStation"/> for the given <see cref="T:Demo3D.Visuals.Visual"/>, if one exists, or a new <see cref="T:Demo3D.FlowControl.KinematicStation"/>.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.KinematicStation.SetKinematic(Demo3D.Visuals.Visual,System.Boolean)">
+            <summary>
+            Sets the <see cref="P:Demo3D.Visuals.PhysicsObject.Kinematic"/> property on the load to the given value and when <paramref name="kinematic"/> is true resets the velocity of the load, if possible.
+            </summary>
+            <param name="load">The load to set the value of the <see cref="P:Demo3D.Visuals.PhysicsObject.Kinematic"/> property for.</param>
+            <param name="kinematic">The value to set the <see cref="P:Demo3D.Visuals.PhysicsObject.Kinematic"/> property to.</param>
+        </member>
+        <member name="T:Demo3D.FlowControl.FlowControlStationCS">
+            <summary>
+            An implementation of <see cref="T:Demo3D.FlowControl.IStation"/> to be used as a native object for a visual.
+            </summary>
+        </member>
+        <member name="F:Demo3D.FlowControl.FlowControlStationCS.ProcessLoadProcedure">
+            <summary>
+            The procedure that is executed when a load is processed at this station.
+            </summary>
+        </member>
+        <member name="F:Demo3D.FlowControl.FlowControlStationCS.ProcessLoadProcedureEnabled">
+            <summary>
+            Whether the <see cref="F:Demo3D.FlowControl.FlowControlStationCS.ProcessLoadProcedure"/> may be executed.
+            </summary>
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlStationCS.#ctor(Demo3D.Visuals.Visual)">
+            <summary>
+            Constructs a <see cref="T:Demo3D.FlowControl.FlowControlStationCS"/> for the given <see cref="T:Demo3D.Visuals.Visual"/> and performs all necessary set up of properties/procedures.
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlStationCS.OnReset(Demo3D.Visuals.Visual)">
+            <summary>
+            Auto-bound method executed when the document is reset.
+            </summary>
+            <param name="sender">The current <see cref="T:Demo3D.Visuals.Visual"/>.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlStationCS.OnBlocked(Demo3D.Visuals.PhysicsObject,Demo3D.Visuals.Visual)">
+            <summary>
+            Auto-bound method executed when the <see cref="P:Demo3D.Visuals.PhysicsObject.OnBlocked"/> event fires.
+            </summary>
+            <param name="sender">The current <see cref="T:Demo3D.Visuals.PhysicsObject"/>.</param>
+            <param name="load">The load that has blocked this station.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlStationCS.OnAttachToVisual(Demo3D.Visuals.Visual)">
+            <summary>
+            Auto-bound method executed when the <see cref="P:Demo3D.Visuals.PhysicsObject.OnAttachToVisual"/> event fires, for example when attached to a conveyor.
+            </summary>
+            <param name="sender">The current <see cref="T:Demo3D.Visuals.Visual"/>.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlStationCS.OnProcessLoadProcedureEnabledUpdated(Demo3D.Visuals.Visual,System.Boolean,System.Boolean)">
+            <summary>
+            Auto-bound method executed when the <see cref="F:Demo3D.FlowControl.FlowControlStationCS.ProcessLoadProcedureEnabled"/> property is updated.
+            </summary>
+            <param name="sender">The current <see cref="T:Demo3D.Visuals.Visual"/>.</param>
+            <param name="value">The new property value.</param>
+            <param name="oldValue">The old property value.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlStationCS.OnDispatchOut(Demo3D.Visuals.Visual)">
+            <summary>
+            Auto-bound method executed when when the <see cref="P:Demo3D.Visuals.TransferState.OnDispatchOut"/> event fires.
+            </summary>
+            <param name="sender">The current <see cref="T:Demo3D.Visuals.Visual"/>.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlStationCS.OnTxTransfer(Demo3D.Visuals.Visual,Demo3D.Visuals.Transfer)">
+            <summary>
+            Auto-bound method executed when when the <see cref="P:Demo3D.Visuals.TransferState.OnTxTransfer"/> event fires.
+            </summary>
+            <param name="sender">The current <see cref="T:Demo3D.Visuals.Visual"/>.</param>
+            <param name="transfer">The current <see cref="T:Demo3D.Visuals.Transfer"/></param>
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlStationCS.OnRxTransfer(Demo3D.Visuals.Visual,Demo3D.Visuals.Transfer)">
+            <summary>
+            Auto-bound method executed when when the <see cref="P:Demo3D.Visuals.TransferState.OnRxTransfer"/> event fires.
+            </summary>
+            <param name="sender">The current <see cref="T:Demo3D.Visuals.Visual"/>.</param>
+            <param name="transfer">The current <see cref="T:Demo3D.Visuals.Transfer"/></param>
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlStationCS.OnProcess(Demo3D.Visuals.Visual,Demo3D.Visuals.Transfer)">
+            <summary>
+            Auto-bound method executed when when the <see cref="P:Demo3D.Visuals.TransferState.OnProcess"/> event fires.
+            </summary>
+            <param name="sender">The current <see cref="T:Demo3D.Visuals.Visual"/>.</param>
+            <param name="transfer">The current <see cref="T:Demo3D.Visuals.Transfer"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlStationCS.Process(Demo3D.Visuals.Visual)">
+            <summary>
+            The logic to execute to process a load when it arrives at this station.
+            </summary>
+            <param name="load">The load to be processed.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Demo3D.FlowControl.FlowControlStationCS.RoutingVisual">
+            <summary>
+            See <see cref="P:Demo3D.FlowControl.IStation.RoutingVisual"/>.
+            </summary>
+        </member>
+        <member name="M:Demo3D.FlowControl.FlowControlStationCS.WaitForArrival(Demo3D.Visuals.Visual)">
+            <summary>
+            See <see cref="M:Demo3D.FlowControl.IStation.WaitForArrival(Demo3D.Visuals.Visual)"/>.
+            </summary>
+            <param name="load">The load to wait for the arrival of.</param>
+            <returns>An <see cref="T:System.Collections.IEnumerable"/> that returns a value when the load arrives.</returns>
+        </member>
+        <member name="T:Demo3D.FlowControl.TransferStation">
+            <summary>
+            An implementation of <see cref="T:Demo3D.FlowControl.IStation"/> for TransferStateEnabled components.
+            </summary>
+        </member>
+        <member name="P:Demo3D.FlowControl.TransferStation.Visual">
+            <summary>
+            Returns the <see cref="T:Demo3D.Visuals.Visual"/> associated with this station.
+            </summary>
+        </member>
+        <member name="P:Demo3D.FlowControl.TransferStation.RoutingVisual">
+            <summary>
+            See <see cref="P:Demo3D.FlowControl.IStation.RoutingVisual"/>.
+            </summary>
+        </member>
+        <member name="M:Demo3D.FlowControl.TransferStation.RemoveLoad(Demo3D.Visuals.Visual)">
+            <summary>
+            Removes the load from the <see cref="T:Demo3D.Visuals.TransferState"/> of the station <see cref="T:Demo3D.Visuals.Visual"/> and dispatches transfers in. See <see cref="M:Demo3D.FlowControl.IStation.RemoveLoad(Demo3D.Visuals.Visual)"/>.
+            </summary>
+            <param name="load">The load to remove.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.TransferStation.AddLoad(Demo3D.Visuals.Visual)">
+            <summary>
+            Places the load in the <see cref="T:Demo3D.Visuals.TransferState"/> of the station <see cref="T:Demo3D.Visuals.Visual"/>. See <see cref="M:Demo3D.FlowControl.IStation.AddLoad(Demo3D.Visuals.Visual)"/>.
+            </summary>
+            <param name="load">The load to add.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.TransferStation.ReleaseLoad(Demo3D.Visuals.Visual)">
+            <summary>
+            Releases the load kinematically and dispatches the load outwards from the <see cref="T:Demo3D.Visuals.TransferState"/> of the station <see cref="T:Demo3D.Visuals.Visual"/>. See <see cref="M:Demo3D.FlowControl.IStation.ReleaseLoad(Demo3D.Visuals.Visual)"/>.
+            </summary>
+            <param name="load">The load to release.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.TransferStation.HoldLoad(Demo3D.Visuals.Visual)">
+            <summary>
+            Prevents the load from being dispatched out of the <see cref="T:Demo3D.Visuals.TransferState"/> of the station <see cref="T:Demo3D.Visuals.Visual"/>. See <see cref="M:Demo3D.FlowControl.IStation.HoldLoad(Demo3D.Visuals.Visual)"/>.
+            </summary>
+            <param name="load">The load to hold.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.TransferStation.GetDispatchOutEnabled(Demo3D.Visuals.Visual)">
+            <summary>
+            Gets the value of the DispatchOutEnabled property on the load.
+            </summary>
+            <param name="load">The load to get the value of the DispatchOutEnabled property for.</param>
+            <returns>The value of the DispatchOutEnabled property on the load.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.TransferStation.SetDispatchOutEnabled(Demo3D.Visuals.Visual,System.Boolean)">
+            <summary>
+            If <paramref name="enabled"/> is true, removes the DispatchOutEnabled custom property from the given load.
+            If <paramref name="enabled"/> is false, adds a DispatchOutEnabled custom property to the given load with value false.
+            </summary>
+            <param name="load">The load to set the value of the DispatchOutEnabled property for.</param>
+            <param name="enabled">DispatchOut is enabled if true, disabled if false.</param>
+        </member>
+        <member name="M:Demo3D.FlowControl.TransferStation.WaitForArrival(Demo3D.Visuals.Visual)">
+            <summary>
+            See <see cref="M:Demo3D.FlowControl.IStation.WaitForArrival(Demo3D.Visuals.Visual)"/>.
+            </summary>
+            <param name="load">The load to wait for the arrival of.</param>
+            <returns>An <see cref="T:System.Collections.IEnumerable"/> that returns a value when the load arrives.</returns>
+        </member>
+        <member name="M:Demo3D.FlowControl.TransferStation.Get(Demo3D.Visuals.Visual)">
+            <summary>
+            Returns the current implementation of <see cref="T:Demo3D.FlowControl.IStation"/> for the given <see cref="T:Demo3D.Visuals.Visual"/>,
+            or a new <see cref="T:Demo3D.FlowControl.TransferStation"/> added to the <see cref="T:Demo3D.Visuals.Visual"/> via an <see cref="T:Demo3D.FlowControl.IStation"/> aspect.
+            </summary>
+            <param name="visual">The <see cref="T:Demo3D.Visuals.Visual"/> to get an <see cref="T:Demo3D.FlowControl.IStation"/> for.</param>
+            <returns>The current <see cref="T:Demo3D.FlowControl.IStation"/> for the given <see cref="T:Demo3D.Visuals.Visual"/>, if one exists, or a new <see cref="T:Demo3D.FlowControl.TransferStation"/>.</returns>
+        </member>
+        <member name="T:Demo3D.FlowControl.UtilityWidgetProvider">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.UtilityWidgetProvider.#ctor(Demo3D.FlowControl.Controller)">
+            <summary>
+            Creates an instance of <see cref="T:Demo3D.FlowControl.UtilityWidgetProvider"/> for the <see cref="T:Demo3D.FlowControl.Controller"/>.
+            </summary>
+            <param name="controller"></param>
+        </member>
+        <member name="M:Demo3D.FlowControl.UtilityWidgetProvider.Q_ParentOf(Demo3D.Visuals.Visual,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <param name="sender"></param>
+            <param name="visual"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.UtilityWidgetProvider.Q_MoveToImmediate(Demo3D.Visuals.Visual,System.Object,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <param name="sender"></param>
+            <param name="visual"></param>
+            <param name="target"></param>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.UtilityWidgetProvider.Q_StackItems(Demo3D.Visuals.Visual,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.StackItems(Demo3D.Visuals.Visual)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="pallet"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.UtilityWidgetProvider.Q_Depalletize(Demo3D.Visuals.Visual,System.Object,System.Object,System.Int32)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.Depalletize(Demo3D.Visuals.Visual,Demo3D.Visuals.Visual,System.Int32)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="pallet"></param>
+            <param name="device"></param>
+            <param name="count"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.UtilityWidgetProvider.DeleteLoad(Demo3D.Visuals.Visual,System.Object)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.DeleteLoad(Demo3D.Visuals.Visual)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="load"></param>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.UtilityWidgetProvider.StopModel(Demo3D.Visuals.Visual)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <param name="sender"></param>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.UtilityWidgetProvider.Q_PushLoadOnto(Demo3D.Visuals.Visual,System.Object,System.Object,Demo3D.Visuals.SpeedProfile)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.PushLoadOnto(Demo3D.Visuals.Visual,Demo3D.Visuals.Visual,Demo3D.Visuals.SpeedProfile)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="load"></param>
+            <param name="target"></param>
+            <param name="speed"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.FlowControl.UtilityWidgetProvider.CombineLoadsToOne(Demo3D.Visuals.Visual,Demo3D.Visuals.VisualList)">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="M:Demo3D.FlowControl.Controller.CombineLoadsToOne(Demo3D.Visuals.VisualList)"/> instead.</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="list"></param>
+            <returns></returns>
+            <exclude />
+        </member>
+    </members>
+</doc>

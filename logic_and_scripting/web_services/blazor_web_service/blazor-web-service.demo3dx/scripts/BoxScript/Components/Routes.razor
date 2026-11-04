@@ -1,0 +1,16 @@
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
+<Router AppAssembly="typeof(MyService).Assembly" NotFoundPage="typeof(Pages.NotFound)">
+    <Found Context="routeData">
+        <LoggingErrorBoundary @key="routeData.PageType" BoundaryName="@GetBoundaryName(routeData)">
+            <RouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)" />
+            <FocusOnNavigate RouteData="routeData" Selector="h1" />
+        </LoggingErrorBoundary>
+    </Found>
+</Router>
+
+@code {
+    private static string GetBoundaryName(RouteData routeData)
+    {
+        return routeData.PageType.FullName ?? routeData.PageType.Name;
+    }
+}

@@ -1,0 +1,10 @@
+Name,Visible,Color,Presets
+Controllers,True,#0000FF,{}
+Functional Elements,False,#FF0000,{}
+Load Creators,True,#FFFFFF,{}
+Load Deleters,True,#7F0000,{}
+Loads,True,#FF0000,{}
+SmartPEs,True,#FF7F7F,{}
+Track,True,#00FFFF,{}
+Vehicles,True,#00FF00,{}
+VisualElements,True,#FFFF00,{}

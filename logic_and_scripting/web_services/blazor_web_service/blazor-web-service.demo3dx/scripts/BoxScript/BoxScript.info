@@ -1,0 +1,24 @@
+{
+  "Key": {
+    "Key": "1b12c775-c5c6-4f7b-a41b-de519f7c86cc",
+    "IsNull": false
+  },
+  "DefaultLicense": null,
+  "Aliases": [
+    {
+      "Name": "NativeObject",
+      "Script": "NativeObject",
+      "Key": "34ba961e-c3f8-4090-9b3a-8bd37a95a796"
+    }
+  ],
+  "NativeSourcePaths": [
+    "BoxScript.csproj",
+    "SelectedVisualService.cs",
+    "AssemblyRemappingComponentActivator.cs",
+    "MyService.cs",
+    "wwwroot",
+    "Components"
+  ],
+  "Created": "2026-03-27T10:46:59.7722076Z",
+  "Modified": "2026-03-30T15:13:10.0237571Z"
+}

@@ -1,0 +1,20 @@
+{
+  "Key": {
+    "Key": "62c7ce02-990e-4d2d-ad8e-2b6b063e0bf5",
+    "IsNull": false
+  },
+  "DefaultLicense": null,
+  "NativeSourcePaths": [
+    "AssemblyInfo.cs",
+    "ControlledLoadCreator.cs",
+    "ControlledLoadDeleter.cs",
+    "DistanceLoadCreator.cs",
+    "GappingLoadCreator.cs",
+    "LoadCreator.cs",
+    "LoadCreatorsDeleters.csproj",
+    "LoadDeleter.cs",
+    "NativeObject.cs"
+  ],
+  "Created": "2023-05-15T19:06:07.0067586Z",
+  "Modified": "2025-07-09T19:21:49.5455775Z"
+}

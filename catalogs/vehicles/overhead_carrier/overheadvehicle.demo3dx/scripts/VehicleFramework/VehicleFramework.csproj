@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{5E32EB00-A6B6-4ADB-A77E-949CEAA98D47}</ProjectGuid>
+    <OutputPath>bin/Debug</OutputPath>
+    <RootNamespace>Demo3D.VehicleFramework</RootNamespace>
+    <AssemblyName>VehicleFramework</AssemblyName>
+    <DefaultItemExcludes>$(DefaultItemExcludes);.archive\**</DefaultItemExcludes>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <DocumentationFile>bin\Debug\VehicleFramework.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Demo3D.Shared">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Demo3D.XML" />
+    <Reference Include="SlimDX" />
+    <Reference Include="Troschuetz.Random" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="pe">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FlowControlFramework\FlowControlFramework.csproj">
+      <Project>{5a3d3f08-45d0-47a3-9fe6-70578617710c}</Project>
+      <Name>FlowControlFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="VehicleFramework.dll" />
+    <Content Include="VehicleFramework.xml" />
+  </ItemGroup>
+  <Import Project="..\Demo3D.targets" />
+  <PropertyGroup />
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Copy SourceFiles="$(ProjectDir)VehicleFramework.dll" DestinationFiles="$(TargetPath)" />
+    <Copy SourceFiles="$(ProjectDir)VehicleFramework.xml" DestinationFiles="$(TargetDir)$(TargetName).xml" Condition="Exists('$(ProjectDir)VehicleFramework.xml')" />
+  </Target>
+</Project>

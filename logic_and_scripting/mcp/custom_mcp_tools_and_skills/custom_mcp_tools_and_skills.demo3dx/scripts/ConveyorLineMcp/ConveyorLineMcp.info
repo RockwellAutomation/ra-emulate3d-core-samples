@@ -1,0 +1,15 @@
+{
+  "Key": {
+    "Key": "3e230a56-7a3d-4d10-a438-6056cc1596e5",
+    "IsNull": false
+  },
+  "DefaultLicense": null,
+  "NativeSourcePaths": [
+    "ConveyorLineMcp.cs",
+    "ConveyorLineMcp.csproj",
+    "Skills/conveyor-line/SKILL.md",
+    "Skills"
+  ],
+  "Created": "2026-11-03T09:54:08.0442687Z",
+  "Modified": "2026-11-03T10:05:39.1223004Z"
+}

@@ -1,0 +1,14 @@
+{
+  "Key": {
+    "Key": "b3109e41-12b4-457b-9c1e-d3d24439eaa4",
+    "IsNull": false
+  },
+  "DefaultLicense": null,
+  "NativeSourcePaths": [
+    "ProtocolFramework.csproj",
+    "ProtocolFramework.dll",
+    "ProtocolFramework.xml"
+  ],
+  "Created": "2021-05-27T10:03:14.2158351Z",
+  "Modified": "2026-06-13T17:21:32.3449976Z"
+}

@@ -1,0 +1,2846 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VehicleFramework</name>
+    </assembly>
+    <members>
+        <member name="T:Demo3D.Components.FlowControlCS">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="T:Demo3D.FlowControl.FlowControlCS"/> instead.</para>
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.Components.FlowControlCS.#ctor(Demo3D.Visuals.Visual)">
+            <summary>
+            Constructs an instance of <see cref="T:Demo3D.Components.FlowControlCS"/> for the given <see cref="T:Demo3D.Visuals.Visual"/>.
+            </summary>
+            <param name="sender">The <see cref="T:Demo3D.Visuals.Visual"/> to construct an instance of <see cref="T:Demo3D.Components.FlowControlCS"/> for.</param>
+        </member>
+        <member name="T:Demo3D.Components.FlowControlStationCS">
+            <summary>
+            FOR INTERNAL USE ONLY
+            <para>Use <see cref="T:Demo3D.FlowControl.FlowControlStationCS"/> instead.</para>
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Demo3D.Components.FlowControlStationCS.#ctor(Demo3D.Visuals.Visual)">
+            <summary>
+            Constructs an instance of <see cref="T:Demo3D.Components.FlowControlStationCS"/> for the given <see cref="T:Demo3D.Visuals.Visual"/>.
+            </summary>
+            <param name="sender">The <see cref="T:Demo3D.Visuals.Visual"/> to construct an instance of <see cref="T:Demo3D.Components.FlowControlStationCS"/> for.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ControlPointExt.NextTarget(Demo3D.VehicleFramework.IControlPoint)">
+            <summary>
+            Use control point's NextCP and BufferCP custom properties to find where the vehicle
+            should head to next. BufferCP will only be returned if it's set and has capacity
+            for another vehicle.
+            </summary>
+            <param name="point">A control point</param>
+            <returns>Control points visual to head towards</returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ControlPointExt.BufferCP(Demo3D.VehicleFramework.IControlPoint)">
+            <summary>
+            Control point visual pointed to by this control point's BufferCP custom property
+            </summary>
+            <param name="point">A control point</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ControlPointExt.NextCP(Demo3D.VehicleFramework.IControlPoint)">
+            <summary>
+            Control point visual pointed to by this control point's NextCP custom property
+            </summary>
+            <param name="point">A control point</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ControlPointExt.ToControlPoint(Demo3D.Visuals.Visual)">
+            <summary>
+            Retrieve IControlPoint aspect from this visual
+            </summary>
+            <param name="visual">A control point visual</param> 
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DispatchExt.CaseTypeOf``1(System.Object,System.Action{``0})">
+            <summary>
+            FP-style dispatching of objects by type. Equivalent to a series of casts and checking for null.
+            </summary>
+            <typeparam name="TCase"></typeparam>
+            <param name="self"></param>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.IControlPoint">
+            <summary>
+            Location on a track. A control point marks special locations on a track system.
+            Uses of control points include:
+            - being a target for conveying loads to (because a control point is also a station)
+            - being a target for drive commands
+            - being an allocatable resource
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IControlPoint.TransferVehicleController">
+            <summary>
+            The controller for the track system that we reside within
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IControlPoint.IsDirectional">
+            <summary>
+            If false, then this control point is visible from all directions. If true, then this control point is only visible to vehicles approach from the control point's positive X axis, so the 
+            vehicle would need to be approaching from the positive X axis.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IControlPoint.Resource">
+            <summary>
+            A general purpose resource. This resource is used to control what vehicles may approach 
+            the control point.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IControlPoint.CurrentVehicle">
+            <summary>
+            The vehicle currently waiting to depart this control point. Vehicles that pass a control
+            point without arriving do not change this property.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IControlPoint.JobList">
+            <summary>
+            Jobs assigned to this control point. 
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IControlPoint.VehicleList">
+            <summary>
+            Vehicles looking for work at this control point. Vehicles get added to this list as they
+            approach, or they may assign themselves explicitly.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IControlPoint.Vehicles">
+            <summary>
+            Vehicles that have allocated this control point
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IControlPoint.AllocatedSignal">
+            <summary>
+            Allocations in the form of a signal
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IControlPoint.DeallocatedSignal">
+            <summary>
+            Deallocations in the form of a signal
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IControlPoint.OnBlock(Demo3D.VehicleFramework.IVehicle)">
+            <summary>
+            Notification from track system that a vehicle is blocking this control point.
+            </summary>
+            <param name="vehicle">The vehicle blocking the control point</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IControlPoint.OnClear(Demo3D.VehicleFramework.IVehicle)">
+            <summary>
+            Notification from the track system that a vehicle is clearing this control point.
+            </summary>
+            <param name="vehicle">The vehicle clearing the control point</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IControlPoint.OnPass(Demo3D.VehicleFramework.IVehicle)">
+            <summary>
+            Notification from track system that a vehicle is passing the control point. This will result
+            in forward notification to the Pass event and PassSignal signal.
+            </summary>
+            <param name="vehicle">The vehicle passing the control point</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IControlPoint.OnApproach(Demo3D.VehicleFramework.IVehicle)">
+            <summary>
+            Notification from track system that a vehicle is approaching the control point. This will result
+            in forward notification to the Approach event and ApproachSignal signal.
+            </summary>
+            <param name="vehicle">The vehicle approaching the control point</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IControlPoint.OnArrive(Demo3D.VehicleFramework.IVehicle)">
+            <summary>
+            Notification from track system that a vehicle is arriving at the control point. This will result
+            in forward notification to the Arrive event and ArriveSignal signal.
+            </summary>
+            <param name="vehicle">The arriving vehicle</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IControlPoint.OnDepart(Demo3D.VehicleFramework.IVehicle)">
+            <summary>
+            Notification from track system that a vehicle is departing the control point. This will result
+            in forward notification to the Depart event and DepartSignal signal.
+            </summary>
+            <param name="vehicle">The departing vehicle</param>
+        </member>
+        <member name="E:Demo3D.VehicleFramework.IControlPoint.Block">
+            <summary>
+            Notification to custom user code that a vehicle is blocking the control point
+            </summary>
+        </member>
+        <member name="E:Demo3D.VehicleFramework.IControlPoint.Clear">
+            <summary>
+            Notification to custom user code that a vehicle is clearing the control point
+            </summary>
+        </member>
+        <member name="E:Demo3D.VehicleFramework.IControlPoint.Pass">
+            <summary>
+            Notification to custom user code that a vehicle is passing the control point
+            </summary>
+        </member>
+        <member name="E:Demo3D.VehicleFramework.IControlPoint.Approach">
+            <summary>
+            Notification to custom user code that a vehicle is approaching the control point
+            </summary>
+        </member>
+        <member name="E:Demo3D.VehicleFramework.IControlPoint.Arrive">
+            <summary>
+            Notification to custom user code that a vehicle is arriving at the control point
+            </summary>
+        </member>
+        <member name="E:Demo3D.VehicleFramework.IControlPoint.Depart">
+            <summary>
+            Notification to custom user code that a vehicle is departing the control point
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IControlPoint.BlockSignal">
+            <summary>
+            A signal of block events
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IControlPoint.ClearSignal">
+            <summary>
+            A signal of clear events
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IControlPoint.PassSignal">
+            <summary>
+            A signal of Pass events
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IControlPoint.ApproachSignal">
+            <summary>
+            A signal of Approach events
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IControlPoint.ArriveSignal">
+            <summary>
+            A signal of Arrive events
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IControlPoint.DepartSignal">
+            <summary>
+            A signal of Depart events
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.IDropApproachEvent">
+            <summary>
+            Marker interface to specify that the Approach event for the <see cref="T:Demo3D.VehicleFramework.IControlPoint"/> should be dropped.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.IDropPassEvent">
+            <summary>
+            Marker interface to specify that the Pass event for the <see cref="T:Demo3D.VehicleFramework.IControlPoint"/> should be dropped.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.IMotorController">
+            <summary>
+            An interface for a motor.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IMotorController.Name">
+            <summary>
+            The name of the motor.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IMotorController.MotorEnabled">
+            <summary>
+            Is the motor running.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IMotorController.MotorSpeed">
+            <summary>
+            The target speed of the motor.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IMotorController.MotorAcceleration">
+            <summary>
+            The acceleration of the motor.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IMotorController.MotorDeceleration">
+            <summary>
+            The deceleration of the motor.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.ResourceExt">
+            <summary>
+            Helper methods for resources
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.CustomLHD.Vehicle">
+            <summary>
+            The <see cref="T:Demo3D.VehicleFramework.IVehicle"/> associated with this <see cref="T:Demo3D.VehicleFramework.CustomLHD"/>.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.CustomLHD.ToDriveTarget(System.Object,System.Nullable{Microsoft.DirectX.Vector3})">
+            <summary>
+            Creates a <see cref="T:Demo3D.VehicleFramework.DriveTarget"/> from the given target and approach.
+            </summary>
+            <param name="target">The target may be a <see cref="T:Demo3D.Visuals.Visual"/> or location type (related types such as <see cref="T:Demo3D.Visuals.VisualReference"/> are supported).</param>
+            <param name="approach">The vector to approach the target on.</param>
+            <returns>A <see cref="T:Demo3D.VehicleFramework.DriveTarget"/> constructed from the given target and approach.</returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.CustomLHD.OnPreInitialize(Demo3D.Visuals.Visual)">
+            <summary>
+            <para>Binds to the <see cref="P:Demo3D.Visuals.Visual.OnPreInitialize"/> event on <see cref="P:Demo3D.VehicleFramework.FrameworkNativeObject.Visual"/>.</para>
+            <para>Sets up the charge rate property by default.</para>
+            <para>Do not use <see cref="T:Demo3D.Visuals.AutoAttribute"/> on overrides.</para>
+            </summary>
+            <param name="sender">The Visual being pre-initialized.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.CustomLHD.OnInitialize(Demo3D.Visuals.Visual)">
+            <summary>
+            <para>Binds to the <see cref="P:Demo3D.Visuals.Visual.OnInitialize"/> event on <see cref="P:Demo3D.VehicleFramework.FrameworkNativeObject.Visual"/>.</para>
+            <para>Runs the Initialize procedure by default.</para>
+            <para>Do not use <see cref="T:Demo3D.Visuals.AutoAttribute"/> on overrides.</para>
+            </summary>
+            <param name="sender">The Visual being initialized.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.CustomLHD.OnRxBeforeTransfer(Demo3D.Visuals.Visual,Demo3D.Visuals.Transfer)">
+            <summary>
+            <para>Binds to the <see cref="P:Demo3D.Visuals.TransferState.OnRxBeforeTransfer"/> event on <see cref="P:Demo3D.VehicleFramework.FrameworkNativeObject.Visual"/>.</para>
+            <para>Runs the MoveToPickup procedure by default.</para>
+            <para>Do not use <see cref="T:Demo3D.Visuals.AutoAttribute"/> on overrides.</para>
+            </summary>
+            <param name="sender">The <see cref="P:Demo3D.Visuals.TransferState.ControllerVisual"/>.</param>
+            <param name="transfer">The current transfer.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.CustomLHD.OnRxTransfer(Demo3D.Visuals.Visual,Demo3D.Visuals.Transfer)">
+            <summary>
+            <para>Binds to the <see cref="P:Demo3D.Visuals.TransferState.OnRxTransfer"/> event on <see cref="P:Demo3D.VehicleFramework.FrameworkNativeObject.Visual"/>.</para>
+            <para>Runs the Pickup procedure by default.</para>
+            <para>Do not use <see cref="T:Demo3D.Visuals.AutoAttribute"/> on overrides.</para>
+            </summary>
+            <param name="sender">The <see cref="P:Demo3D.Visuals.TransferState.ControllerVisual"/>.</param>
+            <param name="transfer">The current transfer.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.CustomLHD.OnRxAfterTransfer(Demo3D.Visuals.Visual,Demo3D.Visuals.Transfer)">
+            <summary>
+            <para>Binds to the <see cref="P:Demo3D.Visuals.TransferState.OnRxAfterTransfer"/> event on <see cref="P:Demo3D.VehicleFramework.FrameworkNativeObject.Visual"/>.</para>
+            <para>Runs the MoveFromPickup procedure by default.</para>
+            <para>Do not use <see cref="T:Demo3D.Visuals.AutoAttribute"/> on overrides.</para>
+            </summary>
+            <param name="sender">The <see cref="P:Demo3D.Visuals.TransferState.ControllerVisual"/>.</param>
+            <param name="transfer">The current transfer.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.CustomLHD.OnTxBeforeTransfer(Demo3D.Visuals.Visual,Demo3D.Visuals.Transfer)">
+            <summary>
+            <para>Binds to the <see cref="P:Demo3D.Visuals.TransferState.OnTxBeforeTransfer"/> event on <see cref="P:Demo3D.VehicleFramework.FrameworkNativeObject.Visual"/>.</para>
+            <para>Runs the MoveToDropoff procedure by default.</para>
+            <para>Do not use <see cref="T:Demo3D.Visuals.AutoAttribute"/> on overrides.</para>
+            </summary>
+            <param name="sender">The <see cref="P:Demo3D.Visuals.TransferState.ControllerVisual"/>.</param>
+            <param name="transfer">The current transfer.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.CustomLHD.OnTxTransfer(Demo3D.Visuals.Visual,Demo3D.Visuals.Transfer)">
+            <summary>
+            <para>Binds to the <see cref="P:Demo3D.Visuals.TransferState.OnTxTransfer"/> event on <see cref="P:Demo3D.VehicleFramework.FrameworkNativeObject.Visual"/>.</para>
+            <para>Runs the Dropoff procedure by default.</para>
+            <para>Do not use <see cref="T:Demo3D.Visuals.AutoAttribute"/> on overrides.</para>
+            </summary>
+            <param name="sender">The <see cref="P:Demo3D.Visuals.TransferState.ControllerVisual"/>.</param>
+            <param name="transfer">The current transfer.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.CustomLHD.OnTxAfterTransfer(Demo3D.Visuals.Visual,Demo3D.Visuals.Transfer)">
+            <summary>
+            <para>Binds to the <see cref="P:Demo3D.Visuals.TransferState.OnTxAfterTransfer"/> event on <see cref="P:Demo3D.VehicleFramework.FrameworkNativeObject.Visual"/>.</para>
+            <para>Runs the MoveFromDropoff procedure by default.</para>
+            <para>Do not use <see cref="T:Demo3D.Visuals.AutoAttribute"/> on overrides.</para>
+            </summary>
+            <param name="sender">The <see cref="P:Demo3D.Visuals.TransferState.ControllerVisual"/>.</param>
+            <param name="transfer">The current transfer.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.CustomLHD.OnTxTransferComplete(Demo3D.Visuals.Visual,Demo3D.Visuals.Transfer)">
+            <summary>
+            <para>Binds to the <see cref="P:Demo3D.Visuals.TransferState.OnTxTransferComplete"/> event on <see cref="P:Demo3D.VehicleFramework.FrameworkNativeObject.Visual"/>.</para>
+            <para>Sets the vehicle status to idle by default.</para>
+            <para>Do not use <see cref="T:Demo3D.Visuals.AutoAttribute"/> on overrides.</para>
+            </summary>
+            <param name="sender">The <see cref="P:Demo3D.Visuals.TransferState.ControllerVisual"/>.</param>
+            <param name="transfer">The current transfer.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.CustomLHD.OnTransferCreated(Demo3D.Visuals.Visual,Demo3D.Visuals.Transfer)">
+            <summary>
+            <para>Binds to the <see cref="P:Demo3D.Visuals.TransferState.OnTransferCreated"/> event on <see cref="P:Demo3D.VehicleFramework.FrameworkNativeObject.Visual"/>.</para>
+            <para>If the vehicle is on track, drives between loop control points until the transfer can be started by default.</para>
+            <para>Do not use <see cref="T:Demo3D.Visuals.AutoAttribute"/> on overrides.</para>
+            </summary>
+            <param name="sender">The <see cref="P:Demo3D.Visuals.TransferState.ControllerVisual"/>.</param>
+            <param name="transfer">The current transfer.</param>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.MagneMotion.EffectiveZone">
+            <summary>
+            Handles the space between QuickSticks. Mostly a zone maps to the physical devices,
+            but the space before the first zone in the next stick is considered to start at the
+            end of the previous stick. Same number of actual zones, but occasionally applying
+            an offset to the physical zone.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.MagneMotion.MagneMoverLiteStraight">
+            <summary>
+            MagneMoverLite straight motor group.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.MagneMotion.MagneMoverLiteCurve">
+            <summary>
+            MagneMoverLite curved motor group.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.MagneMotion.MotionRestriction">
+            <summary>
+            Used to inhibit the Async motion of a vehicle until conditions allow the vehicle to move freely.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MagneMotion.MotionRestriction.Vehicle">
+            <summary>
+            The vehicle under control.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MagneMotion.MotionRestriction.WorldLocation">
+            <summary>
+            The target while inhibited.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MagneMotion.MotionRestriction.Position">
+            <summary>
+            The target position on the path while inhibited.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MagneMotion.MotionRestriction.WaitAtTarget">
+            <summary>
+            Should the vehicle stop at the target.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.MagneMotion.MotionRestriction.GetDriveOptions">
+            <summary>
+            Get drive options for the vehicle specific to this restriction.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.MagneMotion.MotionRestriction.WaitForClear">
+            <summary>
+            Wait for the conditions required to remove the restriction.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.MagneMotion.ZoneRestriction">
+            <summary>
+            Used to inhibit the Async motion of a vehicle while waiting for a blocked zone to clear.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MagneMotion.ZoneRestriction.BlockedZone">
+            <summary>
+            The zone to wait to be cleared.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MagneMotion.ZoneRestriction.WaitingZone">
+            <summary>
+            The zone to wait in.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.MagneMotion.ZoneRestriction.WaitForClear">
+            <summary>
+            Wait for the blocked zone to clear.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.MagneMotion.GateRestriction">
+            <summary>
+            Used to inhibit the Async motion of a vehicle while waiting for conditions to enter a gate.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MagneMotion.GateRestriction.Gate">
+            <summary>
+            The gate to wait to enter.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MagneMotion.GateRestriction.GateEntry">
+            <summary>
+            The GateControlPoint the vehicle will use to enter the gate.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MagneMotion.GateRestriction.GateExit">
+            <summary>
+            The GateControlPoint the vehicle will use to exit the gate;
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.MagneMotion.GateRestriction.WaitForClear">
+            <summary>
+            Wait for sufficient conditions to enter the gate.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.MagneMotion.SpeedLimitRestriction">
+            <summary>
+            Used to inhibit the Async motion of a vehicle by limiting vehicle speed, when not stopping at the target.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MagneMotion.SpeedLimitRestriction.WaitAtTarget">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MagneMotion.SpeedLimitRestriction.BlockedZone">
+            <summary>
+            The zone to wait to be cleared.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.MagneMotion.SpeedLimitRestriction.WaitForClear">
+            <summary>
+            Wait for the blocked zone to clear or for the vehicle to arrive at the target.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.MagneMotion.QS100">
+            <summary>
+            QS 100 1 meter variant.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.MagneMotion.QS100_Half">
+            <summary>
+            QS 100 0.5 meter variant.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.MagneMotion.QuickStickStraight">
+            <summary>
+            Straight array of motor blocks.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.MagneMotion.QuickStickCurve">
+            <summary>
+            Curved array of motor blocks.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.MagneMotion.QuickStick">
+            <summary>
+            Array of motor blocks.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MagneMotion.QuickStickControlPoint.UpstreamZone">
+            <summary>
+            Next zone on the QuickStick, along the -ve x-axis of the control point.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MagneMotion.QuickStickControlPoint.DownstreamZone">
+            <summary>
+            Next zone on the QuickStick, along the +ve x-axis of the control point.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.MagneMotion.VehicleControlBlock">
+            <summary>
+            Information about a vehicle being driven under Async control.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MagneMotion.VehicleControlBlock.Vehicle">
+            <summary>
+            The Vehicle being controlled.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MagneMotion.VehicleControlBlock.Path">
+            <summary>
+            The path associated with the Async drive task.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MagneMotion.VehicleControlBlock.IsWaiting">
+            <summary>
+            Is the vehicle's motion is currently impeded.
+            True if waiting for a zone resource or a vehicle is restricting motion along the current path.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MagneMotion.VehicleControlBlock.Target">
+            <summary>
+            The main target.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MagneMotion.VehicleControlBlock.Zones">
+            <summary>
+            The list of zones on the Vehicle's current path.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MagneMotion.VehicleControlBlock.LargestZone">
+            <summary>
+            The largest zone in the Vehicle's current path.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MagneMotion.VehicleControlBlock.ClaimedZones">
+            <summary>
+            The list of zones the vehicle has claimed.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MagneMotion.VehicleControlBlock.CurrentIndex">
+            <summary>
+            The index of the zone currently occupied by the vehicle.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MagneMotion.VehicleControlBlock.CurrentFrontIndex">
+            <summary>
+            The index of the zone currently occupied by the front of the vehicle.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.NativeObjects.NamespaceDoc">
+            <summary>
+            Classes used as native objects for Vehicle Framework catalog components.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.NativeObjects.ControlPointAspect">
+            <summary>
+            Implementation of IControlPoint suitable for use as an aspect attached to any visual. It specifically avoids
+            adding custom properties, and tries to be unintrusive. See class ControlPoint.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.NativeObjects.ControlPointBase">
+            <summary>
+            A base implementation of IControlPoint. May have an associated Visual, but one is not required.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.NativeObjects.ControlPoint">
+            <summary>
+            Implementation of ControlPointAspect suitable for use as a native object. This is used by the ControlPoint components
+            in the vehicle framework catalog.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.NativeObjects.SingleTrackerVehicle">
+            <summary>
+             Compatibility
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.NativeObjects.CarrierBodyAnimator">
+            <summary>
+            This animator updates the relevant vehicle matrices, which will trigger the OnMoved event
+            which updates the carrier body. The OnMoved event is still used so that updates take place
+            when the model is not running. Perhaps the OnMoved event should only be used when the model
+            isn't running, and this animator could then do 'proper' updates when the model is running.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.NativeObjects.S_CurveCS">
+            <exclude/>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.NativeObjects.TrackDriveController">
+            <summary>
+            A native object for a Visual that is a motor powering a drive path.
+            The default native object for the Drive Controller components.
+            </summary>
+        </member>
+        <member name="E:Demo3D.VehicleFramework.NativeObjects.TrackDriveController.PropertyChanged">
+            <inheritdoc />
+        </member>
+        <member name="M:Demo3D.VehicleFramework.NativeObjects.TrackDriveController.Notify(System.String)">
+            <summary>
+            Invokes <see cref="E:Demo3D.VehicleFramework.NativeObjects.TrackDriveController.PropertyChanged"/> for the given property name.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.NativeObjects.TrackDriveController.Notify``1(System.String,``0)">
+            <summary>
+            Invokes <see cref="E:Demo3D.VehicleFramework.NativeObjects.TrackDriveController.PropertyChanged"/> for the given property name.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.NativeObjects.TrackDriveController.#ctor(Demo3D.Visuals.Visual)">
+            <summary>
+            Constructs a <see cref="T:Demo3D.VehicleFramework.NativeObjects.TrackDriveController"/> on the given Visual.
+            Adds an <see cref="T:Demo3D.VehicleFramework.ITrackDriveController"/> aspect to the Visual.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.NativeObjects.TrackDriveController.DriveDirection">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.NativeObjects.TrackDriveController.CarrierPitch">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.NativeObjects.TrackDriveController.CarrierOffset">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.NativeObjects.TrackDriveController.DriveDirectionEnabled">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.NativeObjects.TrackDriveController.Segment">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.NativeObjects.TrackDriveController.Track">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.NativeObjects.TrackDriveController.WorldMatrix">
+            <inheritdoc />
+        </member>
+        <member name="M:Demo3D.VehicleFramework.NativeObjects.TrackDriveController.NotifyTrackChanged">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.NativeObjects.TrackDriveController.MotorEnabled">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.NativeObjects.TrackDriveController.MotorSpeed">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.NativeObjects.TrackDriveController.MotorAcceleration">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.NativeObjects.TrackDriveController.MotorDeceleration">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.NativeObjects.TrackDriveController.Name">
+            <inheritdoc />
+        </member>
+        <member name="M:Demo3D.VehicleFramework.NativeObjects.TrackDriveController.ToString">
+            <summary>
+            Returns <see cref="P:Demo3D.VehicleFramework.NativeObjects.TrackDriveController.Name"/>.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.NativeObjects.TrackSection.VirtualControlPoints">
+            <summary>
+            The list of IControlPoints (without Visuals) to be considered
+            when building a VisualTrackSystem containing this TrackSection.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.PathSystem.NamespaceDoc">
+            <summary>
+            Classes related to the track system, route finding and vehicle animation.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.PathSystem.DriveOptions">
+            <summary>
+            Options used to drive a vehicle.
+            </summary>
+        </member>
+        <member name="F:Demo3D.VehicleFramework.PathSystem.DriveOptions.UsePureAnimator">
+            <exclude/>
+        </member>
+        <member name="F:Demo3D.VehicleFramework.PathSystem.DriveOptions.DefaultTolerance">
+            <summary>
+            Default target tolerance.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.PathSystem.DriveOptions.TargetTolerance">
+            <summary>
+            If the vehicle is within this distance to the target, driving to the target is a no-op. <br/>
+            I.e within this distance the vehicle is considered to be at the target. <br/>
+            Default is <see cref="F:Demo3D.VehicleFramework.PathSystem.DriveOptions.DefaultTolerance"/> if no vehicle specified, <see cref="P:Demo3D.VehicleFramework.IDriveModule.TargetTolerance"/> otherwise.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.PathSystem.DriveOptions.ClosestItemOptions">
+            <summary>
+            The options to use when finding the closest track segment to the start/end point of the path.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.PathSystem.DriveOptions.TargetOffset">
+            <summary>
+            The target will be offset by this distance from its position in the track system. (Track only)
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.PathSystem.DriveOptions.ForceFreeRange">
+            <summary>
+            If true, the vehicle will take an off-track path to the target. <br/>
+            Default is false.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.PathSystem.DriveOptions.PathFindingPreference">
+            <summary>
+            The option to be used for pathfinding. Either the shortest or the fastest path will be found. <br/>
+            Default is <see cref="F:Demo3D.VehicleFramework.PathSystem.TrackPathFinder.FindOption.ShortestRoute"/>.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.PathSystem.DriveOptions.DirectionOption">
+            <summary>
+            <para>The direction in which to attempt to traverse the paths in the track system.</para>
+            <para>The option specified is relative to the direction of travel along each animation segment (a full segment, or a section of a segment from a drive path).</para>
+            <para>The default function returns <see cref="F:Demo3D.VehicleFramework.PathSystem.TrackPathFinder.DirectionOption.Any"/>.</para>
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.PathSystem.DriveOptions.#ctor">
+            <summary>
+            Default constructor. Consider using <see cref="M:Demo3D.VehicleFramework.PathSystem.DriveOptions.#ctor(Demo3D.VehicleFramework.IVehicle)"/> where possible.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.PathSystem.DriveOptions.#ctor(Demo3D.VehicleFramework.IVehicle)">
+            <summary>
+            Construct drive options using any overrides on the vehicle. E.g. use <see cref="P:Demo3D.VehicleFramework.IDriveModule.TargetTolerance"/>.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.PathSystem.IAnimationSegment">
+            <summary>
+            Minimal interface required for animation along a path segment
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.PathSystem.IAnimationExt.IsAnimationForwards(Demo3D.VehicleFramework.PathSystem.IAnimationSegment)">
+            <summary>
+            Is the IAnimationSegment forwards relative to its ITrackSegment
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.PathSystem.IAnimationExt.MotionDirectionOf(Demo3D.VehicleFramework.PathSystem.IAnimationSegment,System.Double)">
+            <summary>
+            The direction of motion at the given position on the segment when travelling from the start node to the end node.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.PathSystem.IAnimationExt.MotionDirectionOf(Demo3D.VehicleFramework.PathSystem.IAnimationPath,System.Double)">
+            <summary>
+            The direction of motion at the given position on the path when travelling from the start to the end.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.PathSystem.IAnimationExt.EntryVector(Demo3D.VehicleFramework.PathSystem.IAnimationPath)">
+            <summary>
+            The direction of travel at the start of the path.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.PathSystem.IAnimationExt.ExitVector(Demo3D.VehicleFramework.PathSystem.IAnimationPath)">
+            <summary>
+            The direction of travel at the end of the path.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.PathSystem.IConnectionControlPoint">
+            <summary>
+            An interface for a control point that resides on a connection node, not on a segment.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.PathSystem.IConnectionControlPoint.ConnectionNode">
+            <summary>
+            The connection track node the control point resides on.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.PathSystem.ITrackSegment">
+            <summary>
+            A section of real track. All ITrackItems (which includes IVehicles) are located on an ITrackSegment
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.PathSystem.ITrackSpace">
+            <summary>
+            An extended definition of track space to include entry and exit details, intersection capability and creation of subspaces.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.PathSystem.ITrackSpace.Intersect(Microsoft.DirectX.Vector3,System.Double)">
+            <summary>
+            Find all intersection points of the given sphere with this space.
+            </summary>
+            <param name="sphereCentre">World location of the sphere origin</param>
+            <param name="sphereRadius">Radius of the sphere</param>
+            <returns>Array of position in this space where the sphere intersects. Will have length = 0 if no intersection found.</returns>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.PathSystem.ITrackSpace.EntryVector">
+            <summary>
+            The world direction vector at the start of the space
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.PathSystem.ITrackSpace.ExitVector">
+            <summary>
+            The world direction vector at the end of the space
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.PathSystem.ITrackSpace.Start">
+            <summary>
+            The world location of the start of the space
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.PathSystem.ITrackSpace.End">
+            <summary>
+            The world location of the end of the space.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.PathSystem.ITrackSpace.Subspace(System.Double,System.Double)">
+            <summary>
+            Create a new space that is a subsection of this space
+            </summary>
+            <example>
+            // Create a space that runs backwards
+            var reversed = space.Subspace( space.Length, 0 );
+            </example>
+            <param name="from">The start position of the subspace</param>
+            <param name="to">The end position of the subspace</param>
+            <returns>A new space whose position=0 is located at 'from' and whose length is 'from - to'</returns>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.PathSystem.ITrackSpaceMapping">
+            <summary>
+            The most basic expression of track space. This interface allows us to minimalize the
+            dependencies from the framework animators to the rest of the framework. This is all it needs to
+            do animation.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.PathSystem.ITrackSpaceMapping.MatrixOf(System.Double)">
+            <summary>
+            Convert a position in this space into a world matrix
+            </summary>
+            <param name="position">Position to convert</param>
+            <returns>Equivalent world matrix</returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.PathSystem.ITrackSpaceMapping.LocationOf(System.Double)">
+            <summary>
+            Convert a position in this space into a world location
+            </summary>
+            <param name="position">Position to convert</param>
+            <returns>Equivalent world location</returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.PathSystem.ITrackSpaceMapping.PositionOf(Microsoft.DirectX.Vector3)">
+            <summary>
+            Find the position in this space of the given world location
+            </summary>
+            <param name="world">Location in world space</param>
+            <returns>Equivalent position in this space</returns>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.PathSystem.ITrackSpaceMapping.Length">
+            <summary>
+            The length of this space. Strictly, any position parameter passed to MatrixOf() should be between 0 and Length
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.PathSystem.PathSimulator.CalculateTravellingForwards">
+            <summary>
+            Is the path direction the same as the track direction? Vehicle orientation is ignored.
+            Tells us whether we should be looking for collisions with NextVehicle or PrevVehicle
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.PathSystem.PathSimulator.SwapOffsets(System.Double@,System.Double@)">
+            <summary>
+            Swaps front/rear offsets and reverses their sign.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.PathSystem.PathSimulator.IsMovingBackwards(Demo3D.VehicleFramework.IVehicle)">
+            <summary>
+            Is the vehicle reversing? 
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.PathSystem.PureAnimator.Stop">
+            <summary>
+            Stop animating this vehicle. Doesn't necessarily mean that the 
+            vehicle has zero velocity.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.PathSystem.TrackPathFinder.DirectionOption">
+            <summary>
+            The direction of travel permitted along a track segment, for path finding purposes.
+            </summary>
+        </member>
+        <member name="F:Demo3D.VehicleFramework.PathSystem.TrackPathFinder.DirectionOption.Any">
+            <summary>
+            Both the forwards and reverse direction are permitted.
+            </summary>
+        </member>
+        <member name="F:Demo3D.VehicleFramework.PathSystem.TrackPathFinder.DirectionOption.Forwards">
+            <summary>
+            Only the forwards direction is permitted.
+            </summary>
+        </member>
+        <member name="F:Demo3D.VehicleFramework.PathSystem.TrackPathFinder.DirectionOption.Reverse">
+            <summary>
+            Only the reverse direction is permitted.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.PathSystem.TrackPathFinder.FindSegments(Demo3D.VehicleFramework.PathSystem.ITrackSegment,System.Double,System.Double,System.Boolean)">
+            <summary>
+            Walks the track system past the given track segment and returns a list of segments that are encountered within the specified distance.
+            Note that the furthest node of the last segment will likely be such that the specified distance is not sufficient to reach it.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.PathSystem.TrackPathFinder.Distance(Demo3D.VehicleFramework.PathSystem.ITrackNode,Demo3D.VehicleFramework.PathSystem.ITrackNode)">
+            <summary>
+            Returns the physical distance between two adjacent track nodes on their connecting segment.
+            </summary>
+            <param name="a">The start node.</param>
+            <param name="b">The end node.</param>
+            <returns>The distance between the two nodes.</returns>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.PathSystem.TrackDriveController">
+            <summary>
+            A <see cref="T:Demo3D.VehicleFramework.MotorController"/> that powers a drive path.
+            Has no associated Visual.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.PathSystem.TrackDriveController.CarrierPitch">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.PathSystem.TrackDriveController.CarrierOffset">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.PathSystem.TrackDriveController.DriveDirection">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.PathSystem.TrackDriveController.DriveDirectionEnabled">
+            <inheritdoc />
+        </member>
+        <member name="M:Demo3D.VehicleFramework.PathSystem.TrackDriveController.#ctor(System.String)">
+            <summary>
+            Constructs a <see cref="T:Demo3D.VehicleFramework.PathSystem.TrackDriveController"/> with the given name.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.PathSystem.TrackDirection">
+            <summary>
+            Specifies allowed track direction.
+            </summary>
+        </member>
+        <member name="F:Demo3D.VehicleFramework.PathSystem.TrackDirection.Both">
+            <summary>
+            Track is bi-directional
+            </summary>
+        </member>
+        <member name="F:Demo3D.VehicleFramework.PathSystem.TrackDirection.StartToEnd">
+            <summary>
+            Vehicles are allowed to run from the start to the end of the track visual
+            </summary>
+        </member>
+        <member name="F:Demo3D.VehicleFramework.PathSystem.TrackDirection.EndToStart">
+            <summary>
+            Vehicles are allowed to run from the end to the start of the track visual 
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.PathSystem.ITrackSystem">
+             <summary>
+             Interface for a track system. Tracks consist of connected segments, and segments
+             may have control points and sensors mounted on them.
+             A track is a graph of segments.
+            </summary> 
+        </member>
+        <member name="P:Demo3D.VehicleFramework.PathSystem.ITrackSystem.Segments">
+            <summary>
+            The segments that make up the traversable parts of the track system
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.PathSystem.ITrackSystem.Nodes">
+            <summary>
+            The nodes where segments meet. Adding a control point to a track section
+            splits the section into two segments, with the control point as the connecting node
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.PathSystem.ITrackSystem.Items">
+            <summary>
+            All items that are considered to be on the track, including vehicles and control points.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.PathSystem.ITrackSystem.Animator">
+            <summary>
+            Animation controller for track-driven vehicles (such as Power &amp; Free trollies)
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.PathSystem.ITrackSystem.NeedsRebuild">
+            <summary>
+            Indicates that the track visuals or properties have changed, and so the ITrackSystem needs to be recompiled.
+            </summary>
+        </member>
+        <member name="E:Demo3D.VehicleFramework.PathSystem.ITrackSystem.TrackChanged">
+            <summary>
+            Notification of changes to the track system; triggered whenever NeedsRebuild is set to True
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.PathSystem.TrackSystem">
+            Reusable storage base class for implementations of ITrackSystem
+        </member>
+        <member name="P:Demo3D.VehicleFramework.PathSystem.TrolleyAnimator.TravellingForwards">
+            <summary>
+            Is the path direction the same as the track direction? Vehicle orientation is ignored.
+            Tells us whether we should be looking for collisions with NextVehicle or PrevVehicle
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.PathSystem.TrolleyAnimator.BuildSpeedGraph(System.Double)">
+            <summary>
+            Assigns "graph" and "startPosition"
+            </summary>
+            <param name="initialSpeed"></param>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.PathSystem.IVehicleAnimationController">
+            <summary>
+            How vehicles are animated, including handling collisions, sensors, accumulation etc
+            The only vehicles that should be registered here are those that must be considered
+            as obstacles.
+            This intends to create a sandbox for PathAnimator. Ideally, if we wanted to used a different
+            animation mechanism, then we'd just implement a new IVehicleAnimationController. 
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.PathSystem.VisualTrackSystem">
+             <summary>
+             Builds a track system made from connected visuals. A segment is recognised by having
+             a property named "TrackType". A control point is a segment child with property 
+             named "OnVehicleApproaching". A sensor is a segment child with BodyType set to Sensor.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.NamespaceDoc">
+            <summary>
+            Classes related to vehicles and job management.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.NamespaceGroupDoc">
+            <summary>
+            The Demo3D.VehicleFramework is an implementation of a vehicle movement system for Demo3D. It is coded entirely 
+            in C# as a Demo3D catalog. It is designed to be optimized for simulation, and to automatically upgrade models.
+            These are the Demo3D.VehicleFramework namespaces.
+            </summary>
+            
+            <remarks>
+            <h2>C# Design Approach</h2>
+            Here are some of the approaches used in the design of the C# class structure.
+            <list type="definition">
+              <item>
+                <term>Interfaces</term>
+                <description>
+                    Interfaces are used extensively to maintain a separation between an intended API and the implementation.
+               </description>
+              </item>
+              <item>
+                <term>Aspects</term>
+                <description>
+                    Aspects were introduced into the Demo3D.Visuals.Visual class to support extensions like the vehicle framework.
+                    For example, vehicles are defined to be visuals that have the IVehicle aspect, and control points are defined
+                    to be visuals that have the IControlPoint aspect.
+               </description>
+              </item>
+              <item>
+                <term>Signals</term>
+                <description>
+                    Signals were also introduced into the core of the Demo3D framework to support functional behaviour related to
+                    events produced by the framework.
+                    For example, this a signal for idle vehicles passing a control point:
+                    <code>var idleVehicles = controlPoint.PassSignal.KeepIf( e => e.Vehicle.JobModule().IsLookingForWork )</code>
+               </description>
+              </item>
+            </list>
+            
+            <h2>Vehicle Framework Concepts</h2>
+            The following explains the basic concepts used in the vehicle framework, and its theory of operation.
+            
+            <list type="definition">
+              <item>
+                <term>Vehicles</term>
+                <description>
+                    Every vehicle is an implementation of the interface IVehicle. A 
+                    vehicle is something that moves from one part of the model to 
+                    another, and not necessarily on a (predefined) track. If a vehicle 
+                    is not attached to a track then it is considered to be driving along 
+                    a temporary track, made from the passable spaces between obstacles. 
+                    In that sense, it is still driving on a track.
+                    A vehicle may have its own onboard motor, or it may be driven by the
+                    track itself. For example, AGVs and trucks have their own motor, and
+                    a power &amp; free carrier is driven by the track.
+                    A vehicle may have its own onboard motor, or it may be driven by the
+                    track itself. For example, AGVs and trucks have their own motor, and
+                    a power &amp; free carrier is driven by the track.
+                </description>
+              </item>
+              <item>
+                <term>Track</term>
+                <description>
+                    A track can be built from interconnected track segments. These are visuals with
+                    Demo3D.VehicleFramework.NativeObjects.TrackSegment as their native object.
+                    Track may merge, split and connect back to itself to create loops.
+                    Track sections may include speed and direction constraints. Track is connected using
+                    Demo3D connectors.
+                </description>
+              </item>
+              <item>
+                <term>Track System</term>
+                <description>
+                    The TrackSystem is a combination of two visuals. The main parent visual's native object
+                    implements ITransferVehicleController, and it has two basic jobs. The first is to compile
+                    the track segments into an ITrackSystem, and the second is to provide basic job dispatching.
+                    The second visual is a child, and contains default logic for vehicle behaviour. The logic component
+                    implements the ITransferVehicleLogic. Originally, it was intended that ITransferVehicleController would
+                    communicate with ITransferVehicleLogic for all events, but over time the associated logic component
+                    installs listeners for the events that it is interested in, and so requires less assistance from the
+                    main controller than originally intended.
+                </description>
+              </item>
+              <item>
+                <term>Control Points</term>
+                <description>
+                    Control points can be added to a track to detect vehicle events. A control point can be 
+                    configured to detect events from one direction only. See section below on what control point 
+                    events can be detected.
+                </description>
+              </item>
+              <item>
+                <term>Motor Controllers</term>
+                <description>
+                    For Power &amp; Free type systems, motor controllers can be attached to the track to define
+                    the various sections of driven track, along with speed and direction.
+                </description>
+              </item>
+              <item>
+                <term>Lifts &amp; Shuttles</term>
+                <description>
+                    Lifts and shuttles are implemented as movable track sections. The framework includes support for
+                    defining and operating lifts and shuttles.
+                </description>
+              </item>
+              <item>
+                <term>Collision Detection</term>
+                <description>
+                    All collisions are calculated as future events using equations of motion, taking into account relative speed and acceleration. 
+                </description>
+              </item>
+              <item>
+                <term>Accumulation</term>
+                <description>
+                    By default, all vehicles will accumulate automatically. Control flags are used on the vehicle to detect vehicle presence and
+                    inhibit motion accordingly.
+                </description>
+              </item>
+              <item>
+                <term>Route Finding</term>
+                <description>
+                    All routes are calculated using the A* path finding algorithm. Certain track sections may be given higher weightings
+                    to influence the way routes are found. By default, the route finder automatically gives a high weighting to track sections
+                    that contain stationary vehicles, so that detours can be found. In addition, control points are available that can
+                    force a recalculation so that changes in weighting, vehicle location etc can be accounted for when getting closer to a target.
+                </description>
+              </item>
+              <item>
+                <term>Catalog</term>
+                <description>
+                    The framework is contained entirely in a catalog, and is written in C#. The catalog is versioned, so that newer releases of the
+                    catalog can automatically update existing models.
+                </description>
+              </item>
+            </list>
+            
+            </remarks>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.BatteryChargeIndicator.OnInitialize(Demo3D.Visuals.Visual)">
+            <summary>
+            Events that need to block return IEnumerable and yield return Wait.XXX(...) to pause.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.BatteryChargeIndicator.OnReset(Demo3D.Visuals.Visual)">
+            <summary>
+            Events that don't block return void.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.VehicleCreator">
+            <summary>
+            Native object for visuals that can create vehicles. This visual both implements IVehicleCreator and installs the
+            IVehicleCreator aspect on the owning visual. The visual snaps to a track section to show where the vehicle should
+            be created.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.ClosestItemOptions">
+            <summary>
+            The options to use when finding the closest track item (usually a track segment) to a given location.
+            </summary>
+        </member>
+        <member name="F:Demo3D.VehicleFramework.ClosestItemOptions.DefaultYTolerance">
+            <summary>
+            The default Y tolerance, see <see cref="P:Demo3D.VehicleFramework.ClosestItemOptions.YTolerance"/>.
+            </summary>
+        </member>
+        <member name="F:Demo3D.VehicleFramework.ClosestItemOptions.DefaultRadius">
+            <summary>
+            The default radius, see <see cref="P:Demo3D.VehicleFramework.ClosestItemOptions.Radius"/>.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.ClosestItemOptions.YTolerance">
+            <summary>
+            When finding the closest segment to the start/end point of a path, segments where the distance
+            along the world Y-axis of the closest point on the segment to the start/end point is within this
+            tolerance are preferentially considered over other segments.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.ClosestItemOptions.Radius">
+            <summary>
+            When finding the closest segment to the start/end point of a path, segments where the distance
+            in the X-Z plane from the closest point on the segment to the start/end point is lower than this
+            value are preferentially considered over other segments.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.ITrackDriveController">
+            <summary>
+            An <see cref="T:Demo3D.VehicleFramework.IMotorController"/> that powers a drive path.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.ITrackDriveController.DriveDirectionEnabled">
+            <summary>
+            Set this to false to allow physical navigation of the drive path (defined as Forwards).
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.ITrackDriveController.DriveDirection">
+            <summary>
+            Motor direction for the drive path.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.ITrackDriveController.CarrierPitch">
+            <summary>
+            The spacing between dogs on the drive path.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.ITrackDriveController.CarrierOffset">
+            <summary>
+            The offset of the first dog from the start of the first track section on the drive path.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.MotorController">
+            <summary>
+            A basic implementation of <see cref="T:Demo3D.VehicleFramework.IMotorController"/>.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.MotorController.#ctor(System.String)">
+            <summary>
+            Constructs a <see cref="T:Demo3D.VehicleFramework.MotorController"/> with the given name.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MotorController.MotorSpeed">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MotorController.MotorAcceleration">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MotorController.MotorDeceleration">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MotorController.MotorEnabled">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.MotorController.Name">
+            <inheritdoc />
+        </member>
+        <member name="E:Demo3D.VehicleFramework.MotorController.PropertyChanged">
+            <inheritdoc />
+        </member>
+        <member name="M:Demo3D.VehicleFramework.MotorController.Notify``1(System.String,``0)">
+            <summary>
+            Invokes <see cref="E:Demo3D.VehicleFramework.MotorController.PropertyChanged"/> for the given property name.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.MotorController.ToString">
+            <summary>
+            Returns <see cref="P:Demo3D.VehicleFramework.MotorController.Name"/>.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.TrackSystemExt">
+            <summary>
+            Extension methods for track systems and track items.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TrackSystemExt.DistanceToTarget(Demo3D.Visuals.Visual,Microsoft.DirectX.Vector3)">
+            <summary>
+            Finds the distance from the vehicle to the target. <br/>
+            See <see cref="M:Demo3D.VehicleFramework.TrackSystemExt.DistanceToTarget(Demo3D.VehicleFramework.IVehicle,Demo3D.VehicleFramework.DriveTarget)"/>.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TrackSystemExt.DistanceToTarget(Demo3D.Visuals.Visual,Demo3D.Visuals.Visual)">
+            <summary>
+            Finds the distance from the vehicle to the target. <br/>
+            See <see cref="M:Demo3D.VehicleFramework.TrackSystemExt.DistanceToTarget(Demo3D.VehicleFramework.IVehicle,Demo3D.VehicleFramework.DriveTarget)"/>.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TrackSystemExt.DistanceToTarget(Demo3D.VehicleFramework.IVehicle,Demo3D.VehicleFramework.DriveTarget)">
+            <summary>
+            If the vehicle's track is set, returns the weighted distance of the shortest path between the vehicle and the target. <br/>
+            Otherwise returns the length of the vector between the vehicle and the target. <br/>
+            See <see cref="M:Demo3D.VehicleFramework.TrackSystemExt.DistanceToTarget(Demo3D.VehicleFramework.PathSystem.ITrackSystem,Demo3D.VehicleFramework.IVehicle,Demo3D.VehicleFramework.DriveTarget)"/> for details on the weighted distance.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TrackSystemExt.DistanceToTarget(Demo3D.Visuals.Visual,Demo3D.VehicleFramework.DriveTarget)">
+            <summary>
+            Finds the distance from the vehicle to the target. <br/>
+            See <see cref="M:Demo3D.VehicleFramework.TrackSystemExt.DistanceToTarget(Demo3D.VehicleFramework.IVehicle,Demo3D.VehicleFramework.DriveTarget)"/>.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TrackSystemExt.MatrixAtTarget(Demo3D.VehicleFramework.IVehicle,Demo3D.VehicleFramework.DriveTarget)">
+            <summary>
+            Finds the world matrix of the vehicle after driving to the target.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TrackSystemExt.IsMovingForwardsAtTarget(Demo3D.VehicleFramework.IVehicle,Demo3D.VehicleFramework.DriveTarget)">
+            <summary>
+            Whether the vehicle will be moving with or against its local x-axis at the target.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TrackSystemExt.ClosestControlPoint(Demo3D.VehicleFramework.PathSystem.ITrackSystem,Demo3D.VehicleFramework.IVehicle,System.Collections.Generic.IEnumerable{Demo3D.VehicleFramework.IControlPoint})">
+            <summary>
+            Finds the control point with the shortest path from the vehicle.
+            </summary>
+            <param name="track">The track system the vehicle and control points are on.</param>
+            <param name="vehicle">The vehicle to use as the start location.</param>
+            <param name="controlPoints">The candidate control points.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TrackSystemExt.FindClosestTarget(Demo3D.VehicleFramework.PathSystem.ITrackSystem,Demo3D.VehicleFramework.IVehicle,System.Collections.Generic.IEnumerable{Demo3D.Visuals.Visual})">
+            <summary>
+            Finds the closest target to the vehicle, on the track system. <br/>
+            Chooses the target with the shortest weighted path from the vehicle to the closest track location of the target. <br/>
+            See <see cref="M:Demo3D.VehicleFramework.TrackSystemExt.DistanceToTarget(Demo3D.VehicleFramework.IVehicle,Demo3D.VehicleFramework.DriveTarget)"/>.
+            </summary>
+            <param name="trackSystem">The track system.</param>
+            <param name="vehicle">The vehicle.</param>
+            <param name="targets">The candidate targets.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TrackSystemExt.FindClosestVehicle``1(Demo3D.VehicleFramework.PathSystem.ITrackSystem,System.Collections.Generic.IEnumerable{``0},Demo3D.VehicleFramework.DriveTarget)">
+            <summary>
+            Finds the closest vehicle to the target, on the track system. <br/>
+            Chooses the vehicle with the shortest weighted path to the closest track location of the target. <br/>
+            See <see cref="M:Demo3D.VehicleFramework.TrackSystemExt.DistanceToTarget(Demo3D.VehicleFramework.IVehicle,Demo3D.VehicleFramework.DriveTarget)"/>.
+            </summary>
+            <param name="trackSystem">The track system.</param>
+            <param name="vehicles">The candidate vehicles.</param>
+            <param name="target">The target.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TrackSystemExt.DistanceToTarget(Demo3D.VehicleFramework.PathSystem.ITrackSystem,Demo3D.VehicleFramework.IVehicle,Demo3D.VehicleFramework.DriveTarget)">
+            <summary>
+            Finds the weighted distance of the shortest path from the vehicle to the target. <br/>
+            A weighting factor is applied to the length of segments occupied with vehicles. <br/>
+            For true distance, use <see cref="M:Demo3D.VehicleFramework.TrackSystemExt.PhysicalDistanceToTarget(Demo3D.VehicleFramework.PathSystem.ITrackSystem,Microsoft.DirectX.Vector3,Microsoft.DirectX.Vector3)"/>
+            </summary>
+            <param name="trackSystem">The track system the vehicle is on.</param>
+            <param name="vehicle">The vehicle to use as the start location.</param>
+            <param name="target">The target.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TrackSystemExt.PhysicalDistanceToTarget(Demo3D.VehicleFramework.PathSystem.ITrackSystem,Microsoft.DirectX.Vector3,Microsoft.DirectX.Vector3)">
+            <summary>
+            Finds the true distance of the shortest path between the locations. <br/>
+            If either location does not lie on the track system, the closest track location is used.
+            </summary>
+            <param name="trackSystem">The track system to find a path on.</param>
+            <param name="start">The start location.</param>
+            <param name="end">The target location.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TrackSystemExt.PhysicalDistanceToTarget(Demo3D.VehicleFramework.PathSystem.ITrackSystem,Microsoft.DirectX.Vector3,Microsoft.DirectX.Vector3,Demo3D.VehicleFramework.PathSystem.DriveOptions)">
+            <summary>
+            Finds the true distance of the shortest path between the locations. <br/>
+            If either location does not lie on the track system, the closest track location is used.
+            </summary>
+            <param name="trackSystem">The track system to find a path on.</param>
+            <param name="start">The start location.</param>
+            <param name="end">The target location.</param>
+            <param name="driveOptions">The <see cref="T:Demo3D.VehicleFramework.PathSystem.DriveOptions"/> to use when finding the path between the locations.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TrackSystemExt.IsBlocked(Demo3D.VehicleFramework.PathSystem.AnimationPath,Demo3D.VehicleFramework.IVehicle)">
+            <summary>
+            Whether there is any vehicle, excluding the specified vehicle, on the specified path.
+            </summary>
+            <param name="path">The path to find blocking vehicles on.</param>
+            <param name="vehicle">The vehicle to ignore.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TrackSystemExt.IsBlocked(Demo3D.PathFinding.MapPath{Demo3D.VehicleFramework.PathSystem.ITrackNode},Demo3D.VehicleFramework.IVehicle)">
+            <summary>
+            Whether there is any vehicle, excluding the specified vehicle, on the specified route.
+            </summary>
+            <param name="route">The path to find blocking vehicles on.</param>
+            <param name="vehicle">The vehicle to ignore.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TrackSystemExt.TrackItems``1(Demo3D.VehicleFramework.PathSystem.ITrackSystem)">
+            <summary>
+            The track items of type <typeparamref name="T"/> on the track system.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TrackSystemExt.ControlPoints(Demo3D.VehicleFramework.PathSystem.ITrackSystem)">
+            <summary>
+            The control points on the track system.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TrackSystemExt.SegmentPositionOf(Demo3D.VehicleFramework.PathSystem.ITrackSegment,Microsoft.DirectX.Vector3)">
+            <summary>
+            Returns the segment position of the given world location.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TrackSystemExt.Next(Demo3D.VehicleFramework.PathSystem.ITrackSegment)">
+            <summary>
+            Returns the first segment attached to the end node of <paramref name="segment"/>.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TrackSystemExt.Nodes(Demo3D.VehicleFramework.PathSystem.ITrackSegment)">
+            <summary>
+            The start and end nodes of the segment.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TrackSystemExt.Neighbours(Demo3D.VehicleFramework.PathSystem.ITrackSegment,Demo3D.VehicleFramework.PathSystem.ITrackNode)">
+            <summary>
+            If <paramref name="node"/> is on <paramref name="segment"/>, returns the other node on <paramref name="segment"/>. <br/>
+            Otherwise returns null.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TrackSystemExt.Start(Demo3D.VehicleFramework.PathSystem.ITrackSegment)">
+            <summary>
+            The world location of the start node of the segment.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TrackSystemExt.End(Demo3D.VehicleFramework.PathSystem.ITrackSegment)">
+            <summary>
+            The world location of the end node of the segment.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.IPositionSimulator">
+            <summary>
+            Vehicles are simulated via their position on a track (DrivePosition). A VFW model 
+            will run without ever having been rendered. IPositionSimulator allows us to get the
+            updated position of a vehicle without having to force the IAnimator to call UpdateMatrix()
+            which can be very expensive.
+            DrivePosition is cached in AnimationState so that when a vehicle is not being animated,
+            we can still find its last calculated drive position (when PositionSimulator is null).
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IPositionSimulator.PathPosition">
+            <summary>
+            The position of the vehicle on its current route. This is used by vehicles like AGVs
+            that are considered to be able to make their own routing decisions at junctions.
+            The PathPosition changes over [0..Path.Length] as the vehicle drives to its new target.
+            Carriers and trolleys don't use PathPosition.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IPositionSimulator.DrivePosition">
+            <summary>
+            The physical position of any vehicle on a driven section of track. A full track system
+            will often be a network of interconnected driven sections.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.AnimationState.SpeedLimitSegment">
+            <summary>
+            The current segment applying its speed limit to the vehicle.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.AnimationState.BlockedSpeedLimitSegments">
+            <summary>
+            The speed limit track segments the vehicle is currently blocking.
+            One of these will be applying its speed limit (the lowest) to the vehicle if <see cref="P:Demo3D.VehicleFramework.AnimationState.SpeedLimitMode"/> is set to <see cref="F:Demo3D.VehicleFramework.SpeedLimitMode.Strict"/>.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.AnimationState.MotionState">
+            <summary>
+            SpeedGraph is used for moves on track by ground vehicles only, by extension so is MotionState.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.AnimationStateView">
+            <summary>
+            FOR INTERNAL USE ONLY
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.ControlPointEvent">
+            <summary>
+            An event involving an IVehicle and an IControlPoint. 
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.ControlPointEvent.ControlPoint">
+            <summary>
+            The control point involved in the event
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.ControlPointEvent.Vehicle">
+            <summary>
+            The vehicle involved in the event
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ControlPointEvent.ToString">
+            <summary>
+            Formats the event as "[ vehicle, control-point ]"
+            </summary>
+            <returns>The event formatted as a string</returns>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.DriveModule">
+            <summary>
+            A standard implementation of <see cref="T:Demo3D.VehicleFramework.IDriveModule"/>.
+            </summary>
+        </member>
+        <member name="E:Demo3D.VehicleFramework.DriveModule.PropertyChanged">
+            <summary>
+            See <see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged"/>.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DriveModule.#ctor(Demo3D.VehicleFramework.IVehicle)">
+            <summary>
+            <para>Constructs a <see cref="T:Demo3D.VehicleFramework.DriveModule"/> for the vehicle.</para>
+            <para>Does not install the drive module on the vehicle.</para>
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DriveModule.Dispose">
+            <summary>
+            Disposes of the <see cref="T:Demo3D.VehicleFramework.DriveModule"/>, freeing any claimed resources for <see cref="P:Demo3D.VehicleFramework.IDriveModule.ControlPoint"/>.
+            </summary>
+        </member>
+        <member name="E:Demo3D.VehicleFramework.DriveModule.TaskChanged">
+            <summary>
+            See <see cref="E:Demo3D.VehicleFramework.IDriveModule.TaskChanged"/>.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.DriveModule.Vehicle">
+            <summary>
+            See <see cref="P:Demo3D.VehicleFramework.IDriveModule.Vehicle"/>.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.DriveModule.ControlPoint">
+            <summary>
+            See <see cref="P:Demo3D.VehicleFramework.IDriveModule.ControlPoint"/>.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.DriveModule.PositionNotifiers">
+            <summary>
+            See <see cref="P:Demo3D.VehicleFramework.IDriveModule.PositionNotifiers"/>.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.DriveModule.CurrentDriveTask">
+            <summary>
+            See <see cref="P:Demo3D.VehicleFramework.IDriveModule.CurrentDriveTask"/>.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.DriveModule.TargetTolerance">
+            <summary>
+            See <see cref="P:Demo3D.VehicleFramework.IDriveModule.TargetTolerance"/>.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DriveModule.FindRoute(Demo3D.VehicleFramework.DriveTarget,Demo3D.VehicleFramework.PathSystem.DriveOptions)">
+            <summary>
+            See <see cref="M:Demo3D.VehicleFramework.IDriveModule.FindRoute(Demo3D.VehicleFramework.DriveTarget,Demo3D.VehicleFramework.PathSystem.DriveOptions)"/>.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DriveModule.AddPositionNotifier(System.Double,System.Action)">
+            <summary>
+            See <see cref="M:Demo3D.VehicleFramework.IDriveModule.AddPositionNotifier(System.Double,System.Action)"/>.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DriveModule.CancelDriveTo">
+            <summary>
+            <para>Cancels the current DriveTo command.</para>
+            <para>Clears <see cref="P:Demo3D.VehicleFramework.DriveModule.CurrentDriveTask"/>.</para>
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DriveModule.Ignore(System.Exception)">
+            <summary>
+            Logs a diagnostic message to indicate the exception is being ignored.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DriveModule.ClearTask(Demo3D.VehicleFramework.DriveTask)">
+            <summary>
+            See <see cref="M:Demo3D.VehicleFramework.IDriveModule.ClearTask(Demo3D.VehicleFramework.DriveTask)"/>.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DriveModule.NewTask(Demo3D.VehicleFramework.DriveTarget,Demo3D.VehicleFramework.PathSystem.DriveOptions)">
+            <summary>
+            See <see cref="M:Demo3D.VehicleFramework.IDriveModule.NewTask(Demo3D.VehicleFramework.DriveTarget,Demo3D.VehicleFramework.PathSystem.DriveOptions)"/>.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DriveModule.DriveTo(Demo3D.VehicleFramework.DriveTarget,Demo3D.VehicleFramework.PathSystem.DriveOptions)">
+            <summary>
+            See <see cref="M:Demo3D.VehicleFramework.IDriveModule.DriveTo(Demo3D.VehicleFramework.DriveTarget,Demo3D.VehicleFramework.PathSystem.DriveOptions)"/>.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DriveModule.ArriveControlPoint(Demo3D.VehicleFramework.IControlPoint)">
+            <summary>
+            Sets <see cref="P:Demo3D.VehicleFramework.IDriveModule.ControlPoint"/> and invokes <see cref="M:Demo3D.VehicleFramework.IVehicle.OnArrive(Demo3D.VehicleFramework.IControlPoint)"/>.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DriveModule.DepartControlPoint">
+            <summary>
+            <para>Clears <see cref="P:Demo3D.VehicleFramework.IDriveModule.ControlPoint"/> and frees any resources claimed.</para>
+            <para>Invokes <see cref="M:Demo3D.VehicleFramework.IControlPoint.OnDepart(Demo3D.VehicleFramework.IVehicle)"/> and <see cref="M:Demo3D.VehicleFramework.IVehicle.OnDepart(Demo3D.VehicleFramework.IControlPoint)"/>.</para>
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DriveModule.Notify(System.String)">
+            <summary>
+            Notify that the property with the given name has changed.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.DriveTarget">
+            <summary>
+            A target that may be driven to.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.DriveTarget.TargetApproach">
+            <summary>
+            The approach vector for the target.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.DriveTarget.TargetAsLocation">
+            <summary>
+            The location of the target.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.DriveTarget.TargetAsVisual">
+            <summary>
+            The <see cref="T:Demo3D.Visuals.Visual"/> target, if one was specified in the constructor.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.DriveTarget.TargetAsControlPoint">
+            <summary>
+            The <see cref="T:Demo3D.VehicleFramework.IControlPoint"/> target, if one was specified in the constructor.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DriveTarget.#ctor(Demo3D.Visuals.VisualLocation)">
+            <summary>
+            Constructs a new <see cref="T:Demo3D.VehicleFramework.DriveTarget"/> for a <see cref="T:Demo3D.Visuals.VisualLocation"/> target.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DriveTarget.#ctor(Microsoft.DirectX.Vector3)">
+            <summary>
+            Constructs a new <see cref="T:Demo3D.VehicleFramework.DriveTarget"/> for a <see cref="T:Microsoft.DirectX.Vector3"/> target.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DriveTarget.#ctor(Microsoft.DirectX.Vector3,Microsoft.DirectX.Vector3)">
+            <summary>
+            Constructs a new <see cref="T:Demo3D.VehicleFramework.DriveTarget"/> for a <see cref="T:Microsoft.DirectX.Vector3"/> target with the specified approach direction.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DriveTarget.#ctor(Demo3D.Visuals.Visual)">
+            <summary>
+            Constructs a new <see cref="T:Demo3D.VehicleFramework.DriveTarget"/> for a <see cref="T:Demo3D.Visuals.Visual"/> target.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DriveTarget.#ctor(Demo3D.VehicleFramework.IControlPoint)">
+            <summary>
+            Constructs a new <see cref="T:Demo3D.VehicleFramework.DriveTarget"/> for an <see cref="T:Demo3D.VehicleFramework.IControlPoint"/> target.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DriveTarget.ToString">
+            <summary>
+            A string representing the target.
+            </summary>
+        </member>
+        <member name="F:Demo3D.VehicleFramework.DriveTask.directionChanging">
+            <summary>
+            Whether the vehicle will change its motion direction after reaching the current target.
+            I.e. true if when starting the next path the vehicle will change from driving forwards to
+            driving backwards relative to the vehicle's x-axis, or vice versa.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DriveTask.RecalculateDirectionChanging">
+            <summary>
+            <para>Updates <see cref="F:Demo3D.VehicleFramework.DriveTask.directionChanging"/>.</para>
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.DriveTask.NextTarget">
+            <summary>
+            The next target after the current target.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.DriveTask.Path">
+            <summary>
+            The path the vehicle is animating along to <see cref="P:Demo3D.VehicleFramework.DriveTask.Target"/>.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.DriveTask.NextPath">
+            <summary>
+            The next path the vehicle will animate along. It is calculated at the same time as the current path
+            and will be recalculated when the current target is reached. It's used as a best-guess by the
+            path simulator for what the vehicle will do next, rather than walking ahead past the target.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DriveTask.CalculatePathFromCurrentLocation">
+            <summary>
+            Calculates the path from the current location to the current target.
+            </summary>
+            <returns>The path from the current location to the current target</returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DriveTask.CalculateNextPath">
+            <summary>
+            <para>Calculates the path from the current target to the next target, if it exists.</para>
+            <para>Note that the next path is calculated at the same time as the current, and is subject to change.</para>
+            </summary>
+            <returns>The path from the current target to the next target, if it exists. Null otherwise.</returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.EoM.toAcc(System.Double)">
+            <summary>
+            Reinterpret 0 as maximum acceleration
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.IChargeSystem">
+            <summary>
+            Interface for vehicles that can be recharged. The vehicle framework will look for aspects of this type
+            on a vehicle and then automatically discharge the vehicle while driving, and attempt to dispatch 
+            recharging jobs when idle.
+            <para>The charge rate used in this interface is a "C-rate" (see https://batteryuniversity.com/learn/article/what_is_the_c_rate).
+            A value of 1 for C-rate (named "crate" in the interface) means that the battery will recharge from empty to full in 1 hour.
+            A value of 2 for C-rate means the batter will recharge from empty to full in 30 mins.
+            Therefore, a full recharge will take (60 / crate) minutes.
+            </para>
+            <para>
+            The rate of discharge depends on the base implementation of IChargeSystem that is chosen. The framework currently includes
+            one simple implementation for discharging linearly based on distance travelled (see <see cref="T:Demo3D.VehicleFramework.DistanceChargeSystem"/> for example usage)
+            </para>
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IChargeSystem.ChargeLevel">
+            <summary>
+            A value from 0.0 to 1.0, indicating charge level.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IChargeSystem.ChargeUntil(System.Double,System.Double)">
+            <summary>
+            A recharge task that attempts to reach a given charge level. This task may be cancelled.
+            </summary>
+            <param name="level">Target charge level</param>
+            <param name="crate">Rate of recharge. A value of 1 will perform a full recharge in 1 hour, 2 will take 30 minutes, etc.</param>
+            <returns>A task enumerable, that should be "yield return"ed to a caller task, or converted to a task with .ToTask()</returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IChargeSystem.ChargeForDuration(System.Double,System.Double)">
+            <summary>
+            A recharge task that attempts to recharge for the given duration. If a full recharge occurs in less than the given
+            duration then the task completes early. The task may be cancelled.
+            </summary>
+            <param name="duration">The maximum duration to spend recharging</param>
+            <param name="crate">Rate of recharge. A value of 1 will perform a full recharge in 1 hour, 2 will take 30 minutes, etc.</param>
+            <returns>A task enumerable, that should be "yield return"ed to a caller task, or converted to a task with .ToTask()</returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IChargeSystem.StartDischarge">
+            <summary>
+            Start the discharge task. This doesn't necessarily mean that the battery starts discharging immediately. It will however
+            start monitoring the vehicle's activity to discharge according to the scheme it implements. This will be called 
+            by the framework automatically.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IChargeSystem.Reset">
+            <summary>
+            Reset the charge system and charge tasks. This will be called by the framework automatically.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.IChargeSystemViewController">
+            <summary>
+            Allows vehicle to see that it is configured with a battery and will then
+            install an IChargeSystem, and assign it to us via this interface. This should be added as an aspect
+            to the vehicle. This allows the vehicle to choose what type of IChargeSystem to install.
+            <see cref="T:Demo3D.VehicleFramework.BatteryChargeIndicator"/>
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IChargeSystemViewController.ChargeSystem">
+            <summary>
+            The charge system
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.ChargeBase">
+            <summary>
+            A base implementation of IChargeSystem to make it easier to create new charge systems. 
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ChargeBase.Reset">
+            <summary>
+            Reset the charge system.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.ChargeBase.ChargeLevel">
+            <summary>
+            The charge level of this system. This should be a value from 0 to 1.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ChargeBase.Update">
+            <summary>
+            Update the charge level according to the simulation time and the vehicle's status
+            </summary>
+        </member>
+        <member name="E:Demo3D.VehicleFramework.ChargeBase.PropertyChanged">
+            <summary>
+            Notification of changes to properties. You can use this event to see when ChargeLevel changes.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ChargeBase.StartDischarge">
+            <summary>
+            Start the discharge task. Note that charge level will not change unless the vehicle
+            is active and using charge.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ChargeBase.SetDischarger(System.Func{System.Double})">
+            <summary>
+            Set the charge system into discharge mode, according to the given discharge function.
+            </summary>
+            <param name="discharger">A function that returns the current charge level</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ChargeBase.SetCharger(System.Func{System.Double})">
+            <summary>
+            Set the charge system into charge mode, using the given charge function.
+            </summary>
+            <param name="charger">A function that returns the current charge level</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ChargeBase.ChargeUntil(System.Double,System.Double)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ChargeBase.ChargeForDuration(System.Double,System.Double)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.DistanceChargeSystem">
+            <summary>
+            A charge system that monitors the vehicle's distance travelled, and applies a linear discharge.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DistanceChargeSystem.#ctor(Demo3D.VehicleFramework.IVehicle,System.Func{System.Double})">
+            <summary>
+            Constructor for DistanceChargeSystem, requiring a vehicle and a discharge rate per distance
+            </summary>
+            <param name="vehicle">The vehicle owning the charge system</param>
+            <param name="distancePerCharge">Function returning the rate of discharge. Passed as a function so we can respond to updates the vehicle visual's properties</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DistanceChargeSystem.Dispose">
+            <summary>
+            Dispose of this charge system
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.DistanceChargeSystem.StartDischarge">
+            <summary>
+            Start discharging based on the vehicle's distance travelled. This will be a simple linear calculation.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.IDriveModule">
+            <summary>
+            An interface used to drive a vehicle.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IDriveModule.Vehicle">
+            <summary>
+            The vehicle being driven.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IDriveModule.ControlPoint">
+            <summary>
+            <para>The <see cref="T:Demo3D.VehicleFramework.IControlPoint"/> the vehicle is occupying.</para>
+            <para>Set when the vehicle arrives at a control point, and cleared when it departs.</para>
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IDriveModule.FindRoute(Demo3D.VehicleFramework.DriveTarget,Demo3D.VehicleFramework.PathSystem.DriveOptions)">
+            <summary>
+            Finds a route to the target using the specified <see cref="T:Demo3D.VehicleFramework.PathSystem.DriveOptions"/>, if any.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IDriveModule.DriveTo(Demo3D.VehicleFramework.DriveTarget,Demo3D.VehicleFramework.PathSystem.DriveOptions)">
+            <summary>
+            <para>Drives the vehicle to the target using the specified <see cref="T:Demo3D.VehicleFramework.PathSystem.DriveOptions"/>, if any.</para>
+            <para>Cancels the previous DriveTo command for the vehicle, if one exists.</para>
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IDriveModule.PositionNotifiers">
+            <summary>
+            <para>Notifiers that are invoked at specific track positions on the current drive path.</para>
+            <para>Note: Used only for trolley vehicles (i.e. <see cref="T:Demo3D.VehicleFramework.NativeObjects.TrolleyVehicle"/>).</para>
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IDriveModule.AddPositionNotifier(System.Double,System.Action)">
+            <summary>
+            Adds a position notifier to <see cref="P:Demo3D.VehicleFramework.IDriveModule.PositionNotifiers"/>.
+            </summary>
+            <param name="position">The position on the current drive path to notify at.</param>
+            <param name="action">The action to perform when the specified position is reached.</param>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IDriveModule.CurrentDriveTask">
+            <summary>
+            <para>The current <see cref="T:Demo3D.VehicleFramework.DriveTask"/> for the vehicle.</para>
+            <para>There may only be one drive task in progress at any one time.</para>
+            <para>A new drive task may be started using <see cref="M:Demo3D.VehicleFramework.IDriveModule.DriveTo(Demo3D.VehicleFramework.DriveTarget,Demo3D.VehicleFramework.PathSystem.DriveOptions)"/>.</para>
+            </summary>
+        </member>
+        <member name="E:Demo3D.VehicleFramework.IDriveModule.TaskChanged">
+            <summary>
+            An event that fires when <see cref="P:Demo3D.VehicleFramework.IDriveModule.CurrentDriveTask"/> changes.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IDriveModule.NewTask(Demo3D.VehicleFramework.DriveTarget,Demo3D.VehicleFramework.PathSystem.DriveOptions)">
+            <summary>
+            <para>Creates a new <see cref="T:Demo3D.VehicleFramework.DriveTask"/> using the given target and options, and sets <see cref="P:Demo3D.VehicleFramework.IDriveModule.CurrentDriveTask"/>.</para>
+            <para>Note that this will not drive the vehicle to the target, and will not affect the current DriveTo command.</para>
+            <para>Should only be used in custom drive module implementations.</para>
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IDriveModule.ClearTask(Demo3D.VehicleFramework.DriveTask)">
+            <summary>
+            <para>Clears <see cref="P:Demo3D.VehicleFramework.IDriveModule.CurrentDriveTask"/> if it is equal to <paramref name="task"/>.</para>
+            <para>Should only be used in custom drive module implementations.</para>
+            </summary>
+            <param name="task">The task to clear.</param>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IDriveModule.TargetTolerance">
+            <summary>
+            If the vehicle is within this distance to the target, any DriveTo commands will be a no-op.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.IJobModule">
+            <summary>
+            Manages jobs for a vehicle. <see cref="T:Demo3D.VehicleFramework.JobModule"/> provides a standard implementation.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IJobModule.Initialize(Demo3D.VehicleFramework.IVehicleList)">
+            <summary>
+            Initialize using the supplied vehicle list.
+            </summary>
+            <param name="defaultVehicleList">The vehicle list to use for initialization.</param>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IJobModule.Vehicle">
+            <summary>
+            The vehicle jobs are being managed for.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IJobModule.CurrentJob">
+            <summary>
+            The job currently being carried out.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IJobModule.JobList">
+            <summary>
+            All jobs, in order of arrival.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IJobModule.VehicleList">
+            <summary>
+            The vehicle list the vehicle belongs to.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IJobModule.Assign(Demo3D.VehicleFramework.IVehicleJob)">
+            <summary>
+            Assign a job to this job module.
+            </summary>
+            <param name="job">The job to be assigned.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IJobModule.Release(Demo3D.VehicleFramework.IVehicleJob)">
+            <summary>
+            Release a job from this job module that has not been started.
+            </summary>
+            <param name="job">The job to be released</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IJobModule.Start(Demo3D.VehicleFramework.IVehicleJob)">
+            <summary>
+            Start a job assigned to this job module.
+            </summary>
+            <param name="job">The job to start.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IJobModule.Complete(Demo3D.VehicleFramework.IVehicleJob)">
+            <summary>
+            Complete a job assigned to this job module.
+            </summary>
+            <param name="job">The job to be completed.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IJobModule.CanAssign(Demo3D.VehicleFramework.IVehicleJob)">
+            <summary>
+            Can the job module be assigned a given job.
+            </summary>
+            <param name="job">The job to query.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IJobModule.DispatchList">
+            <summary>
+            Jobs that can be dispatched, in preferred order.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IJobModule.DispatchJobs">
+            <summary>
+            Dispatch jobs assigned to the job module. The next job is found and started. 
+            If there is no eligible next job, idle processes are started.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IJobModule.DispatchJobsEnabled">
+            <summary>
+            If false, no jobs may be started by <see cref="M:Demo3D.VehicleFramework.IJobModule.DispatchJobs"/>.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IJobModule.Idle">
+            <summary>
+            Start idle processes for the vehicle.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IJobModule.ReleaseCurrentJob">
+            <summary>
+            Releases <see cref="P:Demo3D.VehicleFramework.IJobModule.CurrentJob"/>, resetting it to a fresh state.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IJobModule.IsLookingForWork">
+            <summary>
+            Is the job module currently looking for more jobs to be assigned.
+            </summary>
+        </member>
+        <member name="E:Demo3D.VehicleFramework.IJobModule.JobStarted">
+            <summary>
+            Event fires after a job is started via <see cref="M:Demo3D.VehicleFramework.IJobModule.Start(Demo3D.VehicleFramework.IVehicleJob)"/>.
+            </summary>
+        </member>
+        <member name="E:Demo3D.VehicleFramework.IJobModule.JobCompleted">
+            <summary>
+            Event fires after a job is completed via <see cref="M:Demo3D.VehicleFramework.IJobModule.Complete(Demo3D.VehicleFramework.IVehicleJob)"/>.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.IPositionNotifier">
+            <summary>
+            A notifier to be invoked at a specific position on a drive path.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IPositionNotifier.Cancel">
+            <summary>
+            Cancels the notifier.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IPositionNotifier.Position">
+            <summary>
+            The position the notifier is to be invoked at.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IPositionNotifier.Invoke">
+            <summary>
+            Invokes the notifier.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.ITrackItem">
+            <summary>
+            Components that live on a track. These will either be IControlPoints or IVehicles. IControlPoints are not expected to move...
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ITrackItem.NotifyTrackChanged">
+            <summary>
+            Track was modified in some way. For example, segments connected/disconnected by a track switch
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.ITrackItem.Track">
+            <summary>
+            The track system this component belongs to.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.ITrackItem.WorldMatrix">
+            <summary>
+            The Location and Rotation of this component in Matrix form.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.ITrackSegmentItem">
+            <summary>
+            An <see cref="T:Demo3D.VehicleFramework.ITrackItem"/> that lives on a track segment.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.ITrackSegmentItem.Segment">
+            <summary>
+            The track segment of this component.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.ITrackNodeItem">
+            <summary>
+            An <see cref="T:Demo3D.VehicleFramework.ITrackItem"/> that has an associated track node in the track system.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.ITrackNodeItem.Node">
+            <summary>
+            The track node of this component.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.ITransferModule">
+            <summary>
+            An <see cref="T:Demo3D.VehicleFramework.IJobModule"/> that handles pickup and delivery jobs for TransferStateEnabled conveyors.
+            <see cref="T:Demo3D.VehicleFramework.TransferModule"/> provides a standard implementation.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ITransferModule.Deliver(Demo3D.VehicleFramework.DeliveryJob)">
+            <summary>
+            Enumerates the tasks required to perform a delivery for each assignment in the <see cref="T:Demo3D.VehicleFramework.DeliveryJob"/>.
+            </summary>
+            <param name="job">The <see cref="T:Demo3D.VehicleFramework.DeliveryJob"/> to carry out.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ITransferModule.Pickup(Demo3D.VehicleFramework.PickupJob)">
+            <summary>
+            Enumerates the tasks required to perform a pickup for each assignment in the <see cref="T:Demo3D.VehicleFramework.PickupJob"/>.
+            </summary>
+            <param name="job">The <see cref="T:Demo3D.VehicleFramework.PickupJob"/> to carry out.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.ITransferModule.LoadHandlingDevices">
+            <summary>
+            The load handling devices associated with the vehicle, used for pickup and delivery.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.ITransferModuleExt">
+            <summary>
+            Extension methods for use on transfer vehicles.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ITransferModuleExt.JobModule(Demo3D.Visuals.Visual)">
+            <summary>
+            Finds and returns an <see cref="T:Demo3D.VehicleFramework.IJobModule"/> if an aspect of this type exists on the given Visual.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ITransferModuleExt.JobModule(Demo3D.VehicleFramework.IVehicle)">
+            <summary>
+            Finds and returns an <see cref="T:Demo3D.VehicleFramework.IJobModule"/> if an aspect of this type exists on the given vehicle.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ITransferModuleExt.RequireJobModule(Demo3D.VehicleFramework.IVehicle)">
+            <exclude/>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ITransferModuleExt.TransferModule(Demo3D.VehicleFramework.IVehicle)">
+            <summary>
+            Finds and returns an <see cref="T:Demo3D.VehicleFramework.ITransferModule"/> if an aspect of this type exists on the given Visual.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ITransferModuleExt.RequireTransferModule(Demo3D.VehicleFramework.IVehicle)">
+            <exclude/>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ITransferModuleExt.Loads(Demo3D.VehicleFramework.ITransferModule)">
+            <summary>
+            Returns the loads on board all load handling devices associated with the transfer module.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ITransferModuleExt.TrackPosition(Demo3D.VehicleFramework.IVehicle)">
+            <exclude/>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ITransferModuleExt.StoppingDistance(Demo3D.VehicleFramework.IVehicle,System.Double)">
+            <summary>
+            Returns the stopping distance of the vehicle from the given speed.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.IDriveCoupling">
+            <summary>
+            A physical interface between a vehicle and the track
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IDriveCoupling.IsTrolley">
+            <summary>
+            Trollies have no motor and are driven by a track motor
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IDriveCoupling.IsFixed">
+            <summary>
+            A trolley that is not power and free, but is fixed to the track and moves when the track motor is running (like a tilt-tray sorter)
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IDriveCoupling.HangVertically">
+            <summary>
+            When true, the vehicle will always align itself with the world Y axis, so that hanging garments (for example) hang correctly on
+            sloped track sections
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.IVehicle">
+            <summary>
+            An abstraction for all track system vehicles. 
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IVehicle.Drive">
+            <summary>
+            The current track drive for the vehicle.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IVehicle.DriveModule">
+            <summary>
+            This vehicle's drive module
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IVehicle.AnimationState">
+            <summary>
+             This vehicle's animation state
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IVehicle.Controller">
+            <summary>
+            Shortcut to main controller (the TrackSystem visual)
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IVehicle.Resource">
+            <summary>
+            Default resource for this vehicle. Allows vehicle to provide
+            basic resource capabilities
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Demo3D.VehicleFramework.IVehicle.Motor" -->
+        <member name="P:Demo3D.VehicleFramework.IVehicle.DriveCoupling">
+            <summary>
+            This vehicle's physical interface to the track.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IVehicle.NotifyMotorChanged(System.String)">
+            <summary>
+            Used internally to notify listeners that the motor has changed in some way.
+            </summary>
+            <param name="propertyName">The name of the motor property that changed</param>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IVehicle.TotalDistanceTravelled">
+            <summary>
+            The total distance that this vehicle has travelled.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IVehicle.TotalDurationTravelled">
+            <summary>
+            The total duration that this vehicle has been travelling for.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IVehicle.CurrentSpeed">
+            <summary>
+            Current speed of this vehicle
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IVehicle.CurrentDirection">
+            <summary>
+            Current direction of this vehicle in world coordinates
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IVehicle.BlockSignal">
+            <summary>
+            Signal for block events.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IVehicle.ClearSignal">
+            <summary>
+            Signal for clear events.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IVehicle.PassSignal">
+            <summary>
+            Signal for pass events.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IVehicle.ApproachSignal">
+            <summary>
+            Signal for approach events.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IVehicle.ArriveSignal">
+            <summary>
+            Signal for arrive events
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IVehicle.EnterSignal">
+            <summary>
+            Signal for enter events
+            </summary>
+        </member>
+        <member name="E:Demo3D.VehicleFramework.IVehicle.OnMotorChanged">
+            <summary>
+            Event for changes to the motor (e.g., speed, acceleration)
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IVehicle.IsLeading">
+            <summary>
+            Indicates whether this is a lead vehicle in dual-tracker arrangement. Non-dual-tracker vehicles
+            will report true.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IVehicle.IsTrailing">
+            <summary>
+            Indicates whether this is a trailing vehicle in dual-tracker arrangement. Non-dual-tracker vehicles
+            will report true.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IVehicle.ControlVehicle">
+            <summary>
+            The parent vehicle in a vehicle hierarchy such as a dual-tracker. One use of this is to allow child
+            vehicles to determine if they part of the same hierarchy.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IVehicle.LoggingFlags">
+            <summary>
+            For internal use only - scheduled for removal from public API
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IVehicle.OnBlock(Demo3D.VehicleFramework.IControlPoint)">
+            <summary>
+            Internal use only. Notify listeners that a block event has occurred
+            </summary>
+            <param name="controlPoint">The control point being blocked</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IVehicle.OnClear(Demo3D.VehicleFramework.IControlPoint)">
+            <summary>
+            Internal use only. Notify listeners that a clear event has occurred.
+            </summary>
+            <param name="controlPoint">The control point beig cleared</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IVehicle.OnApproach(Demo3D.VehicleFramework.IControlPoint)">
+            <summary>
+            Internal use only. Notify listeners that an approach event has occurred.
+            </summary>
+            <param name="controlPoint">The control point being approached</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IVehicle.OnPass(Demo3D.VehicleFramework.IControlPoint)">
+            <summary>
+            Internal use only. Notify listeners that a pass event has occurred.
+            </summary>
+            <param name="controlPoint">The control point being passed.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IVehicle.OnArrive(Demo3D.VehicleFramework.IControlPoint)">
+            <summary>
+            Internal use only. Notify listeners that an arrive event has occurred.
+            </summary>
+            <param name="controlPoint">The control point being arrived at</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IVehicle.OnDepart(Demo3D.VehicleFramework.IControlPoint)">
+            <summary>
+            Internal use only. Notify listeners that a depart event has occurred.
+            </summary>
+            <param name="controlPoint">The control point being departed from</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IVehicle.OnEnter(Demo3D.VehicleFramework.PathSystem.ITrackSegment)">
+            <summary>
+            Internal use only. Notify listeners that the vehicle is entering a track segment.
+            </summary>
+            <param name="segment">The track segment being entered.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IVehicle.OnLeave(Demo3D.VehicleFramework.PathSystem.ITrackSegment)">
+            <summary>
+            Internal use only. Notify listeners that the vehicle is leaving a track segment.
+            </summary>
+            <param name="segment">The track segment being left</param>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.IVehicleCreator">
+            <summary>
+            Aspect interface for creation on vehicles. The QuickLogic widget "[create vehicle from]" will look for 
+            this aspect
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IVehicleCreator.CreateVehicle">
+            <summary>
+            Create a vehicle
+            </summary>
+            <returns>Visual containing the IVehicle aspect</returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IVehicleExt.WaitUntilStationary(Demo3D.VehicleFramework.IVehicle)">
+            <summary>
+            Waits until the vehicle is stationary.
+            </summary>
+            <param name="vehicle">The vehicle to wait to become stationary.</param>
+            <returns>An <see cref="T:System.Collections.IEnumerable"/> that completes when the vehicle is stationary.</returns>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.IDeviceAssignment">
+            <summary>
+            An aspect assigned to loads to indicate how they've been assigned to a vehicle's load handling devices.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IDeviceAssignment.Vehicle">
+            <summary>
+            The vehicle that owns the load handling device
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IDeviceAssignment.Controller">
+            <summary>
+            The transfer controller of the load handling device
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.DeviceAssignment">
+            <summary>
+            A default implementation of IDeviceAssignment. The vehicle framework prefers to assign only interfaces
+            as aspects, which is why we have the separation of DeviceAssignment and IDeviceAssignment.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.ChargeJob.MinChargeLevel">
+            <summary>
+            Minimum working charge level. Anything below this level will require the vehicle to seek
+            a recharge station at highest priority.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.ChargeJob.RestartChargeLevel">
+            <summary>
+            When charging, level that must be reached before searching for work.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.JobModule">
+            <summary>
+            Standard implementation of <see cref="T:Demo3D.VehicleFramework.IJobModule"/>.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.JobModule.JobStartedSignal">
+            <summary>
+            Signal that updates when a job is started via <see cref="M:Demo3D.VehicleFramework.JobModule.Start(Demo3D.VehicleFramework.IVehicleJob)"/>.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.JobModule.JobCompletedSignal">
+            <summary>
+            Signal that updates when a job is completed via <see cref="M:Demo3D.VehicleFramework.JobModule.Complete(Demo3D.VehicleFramework.IVehicleJob)"/>.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.JobModule.JobAssignedSignal">
+            <summary>
+            Signal that updates when a job is assigned via <see cref="M:Demo3D.VehicleFramework.JobModule.Assign(Demo3D.VehicleFramework.IVehicleJob)"/>.
+            </summary>
+        </member>
+        <member name="E:Demo3D.VehicleFramework.JobModule.JobStarted">
+            <inheritdoc />
+        </member>
+        <member name="E:Demo3D.VehicleFramework.JobModule.JobCompleted">
+            <inheritdoc />
+        </member>
+        <member name="E:Demo3D.VehicleFramework.JobModule.JobAssigned">
+            <summary>
+            Event fires after a job is assigned via <see cref="M:Demo3D.VehicleFramework.JobModule.Assign(Demo3D.VehicleFramework.IVehicleJob)"/>.
+            </summary>
+        </member>
+        <member name="E:Demo3D.VehicleFramework.JobModule.PropertyChanged">
+            <inheritdoc />
+        </member>
+        <member name="M:Demo3D.VehicleFramework.JobModule.#ctor(Demo3D.Visuals.Visual)">
+            <summary>
+            Create a JobModule and install it on the given Visual.
+            </summary>
+            <param name="visual">The Visual to install the JobModule on.</param>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.JobModule.JobList">
+            <summary>
+            Jobs are added to this job list when assigned to this job module.
+            Jobs are removed when marked as completed or cancelled.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.JobModule.Initialize(Demo3D.VehicleFramework.IVehicleList)">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.JobModule.VehicleList">
+            <inheritdoc />
+        </member>
+        <member name="M:Demo3D.VehicleFramework.JobModule.DispatchJobs">
+            <summary>
+            Determines the next job eligible for starting, and starts it.
+            If there is no current or eligible job, idle procedures are started.
+            Merges equal priority delivery jobs.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.JobModule.DispatchJobsEnabled">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.JobModule.DispatchList">
+            <summary>
+            Pending jobs on the job list, ordered by priority.
+            Lowest integer value is highest priority.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.JobModule.Idle">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.JobModule.IsLookingForWork">
+            <summary>
+            Returns true if there is no current job and no jobs on the job list.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.JobModule.Vehicle">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.JobModule.CurrentJob">
+            <inheritdoc />
+        </member>
+        <member name="M:Demo3D.VehicleFramework.JobModule.Notify(System.String)">
+            <summary>
+            Notify that a property has changed.
+            </summary>
+            <param name="name">The name of the property that has changed.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.JobModule.ClearCurrentJob">
+            <summary>
+            Clears the current job and dispatches jobs.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.JobModule.ReleaseCurrentJob">
+            <inheritdoc />
+        </member>
+        <member name="M:Demo3D.VehicleFramework.JobModule.Start(Demo3D.VehicleFramework.IVehicleJob)">
+            <inheritdoc />
+        </member>
+        <member name="M:Demo3D.VehicleFramework.JobModule.Complete(Demo3D.VehicleFramework.IVehicleJob)">
+            <inheritdoc />
+        </member>
+        <member name="M:Demo3D.VehicleFramework.JobModule.Assign(Demo3D.VehicleFramework.IVehicleJob)">
+            <inheritdoc />
+        </member>
+        <member name="M:Demo3D.VehicleFramework.JobModule.Release(Demo3D.VehicleFramework.IVehicleJob)">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.JobModule.CurrentJobName">
+            <summary>
+            Returns the name of the current job.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.JobModule.Visual">
+            <summary>
+            The visual the JobModule is installed on.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.JobModule.CanAssign(Demo3D.VehicleFramework.IVehicleJob)">
+            <summary>
+            Returns true if <see cref="P:Demo3D.VehicleFramework.JobModule.CurrentJob"/> is null.
+            </summary>
+            <param name="job">The job to query.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.JobModuleEvent">
+            <summary>
+            An event involving an <see cref="T:Demo3D.VehicleFramework.IJobModule"/> and an <see cref="T:Demo3D.VehicleFramework.IVehicleJob"/>.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.JobModuleEvent.JobModule">
+            <summary>
+            The <see cref="T:Demo3D.VehicleFramework.IJobModule"/> involved in the event.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.JobModuleEvent.Job">
+            <summary>
+            The <see cref="T:Demo3D.VehicleFramework.IVehicleJob"/> involved in the event.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.SpeedLimitMode">
+            <summary>
+            The mode of speed limit enforcement to be used by vehicles.
+            </summary>
+        </member>
+        <member name="F:Demo3D.VehicleFramework.SpeedLimitMode.Default">
+            <summary>
+            The default mode of speed limit enforcement. A track section will apply its speed limit
+            to the vehicle once the vehicle's origin enters the track section, and it will not be cleared
+            until the vehicle's origin leaves the track section.
+            </summary>
+        </member>
+        <member name="F:Demo3D.VehicleFramework.SpeedLimitMode.Strict">
+            <summary>
+            The vehicle will decelerate to obey the speed limit of track segments ahead of time.
+            When the vehicle's front edge reaches the segment it will already be obeying the speed limit
+            and when the rear edge of the vehicle clears the segment it will stop obeying the speed limit.
+            Vehicles will travel at or below track section speed limits when any part of the vehicle is
+            within a speed limit segment on the current path.
+            </summary>
+        </member>
+        <member name="F:Demo3D.VehicleFramework.SpeedLimitMode.Manual">
+            <summary>
+            Speed limits from track sections will not be applied to vehicles. Speed limits may be set
+            via scripting without being overriden by internal Vehicle Framework behaviours.
+            </summary>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.TransferModule">
+            <summary>
+            Manages jobs for vehicles with TransferStateEnabled load handling devices.
+            When starting pickup and delivery jobs, the vehicle is driven to the transfer locations and the necessary transfers are created.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.#ctor(Demo3D.Visuals.Visual)">
+            <summary>
+            Create a TransferModule and install it on the given Visual.
+            </summary>
+            <param name="visual">The Visual to install this TransferModule on.</param>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.TransferModule.IsLookingForWork">
+            <inheritdoc />
+        </member>
+        <member name="P:Demo3D.VehicleFramework.TransferModule.DispatchList">
+            <summary>
+            Overrides <see cref="P:Demo3D.VehicleFramework.JobModule.DispatchList"/> to only show pickup jobs if there is space available on a load handling device.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.Start(Demo3D.VehicleFramework.IVehicleJob)">
+            <inheritdoc />
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.Charge(Demo3D.VehicleFramework.ChargeJob)">
+            <summary>
+            Assign a <see cref="T:Demo3D.VehicleFramework.TransferModule.ChargeTask"/> to the given <see cref="T:Demo3D.VehicleFramework.ChargeJob"/> and start it.
+            </summary>
+            <param name="job">The <see cref="T:Demo3D.VehicleFramework.ChargeJob"/> to create and start a task for.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.Idle">
+            <summary>
+            Starts idle processes for the vehicle, if <see cref="P:Demo3D.VehicleFramework.TransferModule.IsLookingForWork"/> is true.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.Complete(Demo3D.VehicleFramework.IVehicleJob)">
+            <inheritdoc />
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.CanAssign(Demo3D.VehicleFramework.IVehicleJob)">
+            <summary>
+            Returns true if <paramref name="job"/> is a <see cref="T:Demo3D.VehicleFramework.TransferVehicleJob"/> and <see cref="P:Demo3D.VehicleFramework.JobModule.CurrentJob"/> is null.
+            </summary>
+            <param name="job"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.TrailerVisuals(Demo3D.VehicleFramework.IHitch)">
+            <summary>
+            The trailer visuals as discovered by searching from <paramref name="hitch"/>.
+            </summary>
+            <param name="hitch">The hitch to start the search from.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.TransferModule.LoadHandlingDevices">
+            <summary>
+            The load handling devices found by first searching the descendants of <see cref="P:Demo3D.VehicleFramework.JobModule.Visual"/>, then each trailer visual.
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.WithDescendants(Demo3D.Visuals.Visual)">
+            <summary>
+            The Visual <paramref name="v"/> with all descendants.
+            </summary>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.Deliver(Demo3D.VehicleFramework.DeliveryJob)">
+            <summary>
+            Carries out each assignment in the <see cref="T:Demo3D.VehicleFramework.DeliveryJob"/>.
+            <para>When all deliveries are completed, attempts to charge the vehicle.</para>
+            Calls <see cref="M:Demo3D.VehicleFramework.TransferModule.Complete(Demo3D.VehicleFramework.IVehicleJob)"/> if all loads are delivered.
+            </summary>
+            <param name="job">The <see cref="T:Demo3D.VehicleFramework.DeliveryJob"/> to carry out.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.ConveySingle(Demo3D.VehicleFramework.TransferAssignment)">
+            <summary>
+            Conveys the load to the Visual specified in <paramref name="assignment"/>.
+            Should be used when <see cref="P:Demo3D.VehicleFramework.TransferAssignment.IsConvey"/> is true, e.g. when conveying to a control point.
+            </summary>
+            <param name="assignment">The assignment containing the load to convey.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.DeliverOne(Demo3D.VehicleFramework.DeliveryJob,Demo3D.VehicleFramework.TransferAssignment)">
+            <summary>
+            Delivers the load to the destination specified in <paramref name="lda"/>.
+            Creates and returns the transfer required for delivery.
+            <para></para>
+            Does not explicitly drive the vehicle to the delivery location.
+            Vehicles with a <see cref="T:Demo3D.VehicleFramework.VehicleTransferControllerAdapter"/> installed will automatically drive to the delivery location OnTxBeforeTransfer.
+            </summary>
+            <param name="job">The job the <see cref="T:Demo3D.VehicleFramework.TransferAssignment"/> belongs to.</param>
+            <param name="lda">The <see cref="T:Demo3D.VehicleFramework.TransferAssignment"/> containing the load for delivery.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.DeliverSideBySide(Demo3D.VehicleFramework.DeliveryJob)">
+            <summary>
+            Used for vehicles with load handling devices in parallel.
+            Performs deliveries in an optimized order to avoid recirculation.
+            </summary>
+            <param name="job">The job containing the assignments to deliver.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.OrderedDeliveries(System.Collections.Generic.IEnumerable{Demo3D.VehicleFramework.TransferAssignment})">
+            <summary>
+            Returns an ordered list of assignments. Closest delivery location first by default (using the distance on track to where the load handling device will be aligned).
+            </summary>
+            <param name="assignments">The input assignments.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.WaitForLoad(Demo3D.Visuals.ITransferPort,Demo3D.Visuals.Visual)">
+            <summary>
+            If <see cref="P:Demo3D.Visuals.TransferState.Processed"/> on the Visual of <paramref name="tx"/> does not already contain <paramref name="load"/>, waits for OnProcessComplete to fire for <paramref name="load"/>.
+            </summary>
+            <param name="tx">The port on the target Visual.</param>
+            <param name="load">The load to wait on.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.WaitForLoads(Demo3D.Visuals.ITransferPort,System.Collections.Generic.IEnumerable{Demo3D.Visuals.Visual})">
+            <summary>
+            Waits for each load in <paramref name="loads"/> to be processed.
+            See <see cref="M:Demo3D.VehicleFramework.TransferModule.WaitForLoad(Demo3D.Visuals.ITransferPort,Demo3D.Visuals.Visual)"/>.
+            </summary>
+            <param name="tx">The port on the target Visual.</param>
+            <param name="loads">The loads to wait on.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.ShowTask(System.String)">
+            <summary>
+            Sets the text on the child TextVisual named TaskLabel to <paramref name="s"/>.
+            </summary>
+            <param name="s">The string to show on the TaskLabel.</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.InAlignment(Demo3D.Visuals.ITransferPort,Demo3D.Visuals.ITransferPort)">
+            <summary>
+            Check that the conveyor X-Axes are aligned.
+            </summary>
+            <param name="p1">The transfer port of the first conveyor.</param>
+            <param name="p2">The transfer port of the second conveyor.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.Ordered(System.Collections.Generic.IEnumerable{Demo3D.Visuals.ITransferController},System.Boolean)">
+            <summary>
+            The load handling devices from <paramref name="devices"/> where no loads are on board.
+            Order reversed if <paramref name="reverse"/> is true.
+            </summary>
+            <param name="devices">The load handling devices to filter.</param>
+            <param name="reverse">Should the order be reversed.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.FirstRx(Demo3D.Visuals.ITransferController)">
+            <summary>
+            Returns the first Rx <see cref="T:Demo3D.Visuals.ITransferPort"/> on the load handling device.
+            </summary>
+            <param name="device">The load handling device.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.FirstTx(Demo3D.Visuals.ITransferController)">
+            <summary>
+            Returns the first Tx <see cref="T:Demo3D.Visuals.ITransferPort"/> on the load handling device.
+            </summary>
+            <param name="device">The load handling device.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.ClosestPort(Demo3D.Visuals.ITransferController,Demo3D.Visuals.ITransferPort)">
+            <summary>
+            Returns the closest <see cref="T:Demo3D.Visuals.ITransferPort"/> to <paramref name="other"/> on the load handling device.
+            </summary>
+            <param name="device">The load handling device.</param>
+            <param name="other">The reference <see cref="T:Demo3D.Visuals.ITransferPort"/>.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.Pickup(Demo3D.VehicleFramework.PickupJob)">
+            <summary>
+            Carries out each assignment in the <see cref="T:Demo3D.VehicleFramework.PickupJob"/>.
+            Notifies arrival for each load before calling <see cref="M:Demo3D.VehicleFramework.TransferModule.Complete(Demo3D.VehicleFramework.IVehicleJob)"/>.
+            </summary>
+            <param name="job">The <see cref="T:Demo3D.VehicleFramework.PickupJob"/> to carry out.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.PickupSideBySide(Demo3D.VehicleFramework.PickupJob)">
+            <summary>
+            Used for vehicles with load handling devices in parallel.
+            Performs pickups in an optimized order to avoid recirculation.
+            </summary>
+            <param name="job">The <see cref="T:Demo3D.VehicleFramework.PickupJob"/> to carry out.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.OrderedPickups(System.Collections.Generic.IEnumerable{Demo3D.VehicleFramework.TransferAssignment})">
+            <summary>
+            Returns an ordered list of assignments. Closest pickup location first by default. Sets the Rx <see cref="T:Demo3D.Visuals.ITransferPort"/> for each assignment.
+            </summary>
+            <param name="assignments">The input assignments to set the <see cref="T:Demo3D.Visuals.ITransferPort"/> for.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.PickupOne(Demo3D.VehicleFramework.PickupJob,Demo3D.VehicleFramework.TransferAssignment)">
+            <summary>
+            Picks up the load from the destination specified in <paramref name="lda"/>.
+            Creates and returns the transfer required for pickup.
+            <para></para>
+            Does not explicitly drive the vehicle to the pickup location.
+            Vehicles with a <see cref="T:Demo3D.VehicleFramework.VehicleTransferControllerAdapter"/> installed will automatically drive to the pickup location OnRxBeforeTransfer.
+            </summary>
+            <param name="job">The job the <see cref="T:Demo3D.VehicleFramework.TransferAssignment"/> belongs to.</param>
+            <param name="lda">The <see cref="T:Demo3D.VehicleFramework.TransferAssignment"/> containing the load for pickup.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.TransferModule.LoadOnBoard(Demo3D.Visuals.Visual)">
+            <summary>
+            Returns true if the load is on board any load handling device in <see cref="P:Demo3D.VehicleFramework.TransferModule.LoadHandlingDevices"/>.
+            </summary>
+            <param name="load">The load to check for.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Demo3D.VehicleFramework.IVehicleList">
+            <summary>
+            A collection of IVehicles that can be named and provide notification when vehicles are added.
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IVehicleList.Name">
+            <summary>
+            The name of this list
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IVehicleList.AddVehicle(Demo3D.VehicleFramework.IVehicle)">
+            <summary>
+            Add a vehicle to the list. This will generate an update to the VehicleAdded signal
+            </summary>
+            <param name="vehicle">The vehicle being added</param>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IVehicleList.RemoveVehicle(Demo3D.VehicleFramework.IVehicle)">
+            <summary>
+            Remove a vehicle from the list. There is currently no event or signal for this action.
+            </summary>
+            <param name="vehicle"></param>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IVehicleList.Vehicles">
+            <summary>
+            Enumerator for all the vehicles in this list
+            </summary>
+        </member>
+        <member name="P:Demo3D.VehicleFramework.IVehicleList.VehicleAdded">
+            <summary>
+            A signal for vehicles being added to the list
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.IVehicleList.Reset">
+            <summary>
+            Clear all vehicles from the list and reset the VehicleAdded signal
+            </summary>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ZoneBlockUtilities.Intersections.Cross(Microsoft.DirectX.Vector2,Microsoft.DirectX.Vector2)">
+            <summary>
+            Cross-product of two 2D vectors, defined as the magnitude of the 3D cross product.
+            </summary>
+            <remarks>
+            Note that this is somewhat of a mathematical hack. The cross product is not really
+            defined for 2D vectors.
+            </remarks>
+            <param name="a">The first vector.</param>
+            <param name="b">The second vector.</param>
+            <returns>The cross-product of the two vectors.</returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ZoneBlockUtilities.Intersections.IntersectLineLineSegment(Microsoft.DirectX.Vector2,Microsoft.DirectX.Vector2,Microsoft.DirectX.Vector2,Microsoft.DirectX.Vector2,Microsoft.DirectX.Vector2@,System.Double@)">
+            <summary>
+            Takes a line, defined by a point <paramref name="p"/> and a direction
+            <paramref name="d"/>, and a line segment, defined by two points <paramref name="a"/> and
+            <paramref name="b"/>, and returns whether the line intersects the line segment. The
+            output variable <paramref name="intersection"/> is set to the point of intersection.
+            </summary>
+            <param name="p">A point on the line.</param>
+            <param name="d">The direction of the line (must be a unit vector).</param>
+            <param name="a">The first point that defines the line segment.</param>
+            <param name="b">The second point that defines the line segment.</param>
+            <param name="intersection">The point of intersection.</param>
+            <param name="distance">The distance along the direction of the line that the intersection occurs.</param>
+            <returns>True if the line intersects the line segment, false otherwise.</returns>
+        </member>
+        <member name="M:Demo3D.VehicleFramework.ZoneBlockUtilities.Intersections.IntersectLineRectangle(Microsoft.DirectX.Vector2,Microsoft.DirectX.Vector2,Microsoft.DirectX.Vector2,Microsoft.DirectX.Matrix)">
+            <summary>
+            Intersects an infinite line with a rectangle
+            </summary>
+            <param name="linePoint">The point on the line.</param>
+            <param name="lineDirection">The direction of the line.</param>
+            <param name="rectangleHalfExtents">The half-extents </param>
+            <param name="rectangleTransform">The transformation matrix for the rectangle.</param>
+            <param name="forward">True if <paramref name="lineDirection"/> points into the rectangle, false otherwise.</param>
+            <returns>The intersection points.</returns>
+        </member>
+    </members>
+</doc>

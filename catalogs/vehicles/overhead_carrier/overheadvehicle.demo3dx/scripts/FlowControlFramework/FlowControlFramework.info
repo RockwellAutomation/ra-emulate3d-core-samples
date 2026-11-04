@@ -1,0 +1,15 @@
+{
+  "Key": {
+    "Key": "6ff6f69d-ef3a-4dcc-b6e7-554f43943715",
+    "IsNull": false
+  },
+  "DefaultLicense": null,
+  "NativeSourcePaths": [
+    "FlowControlFramework.csproj",
+    "FlowControlFramework.dll",
+    "FlowControlFramework.xml",
+    "doc"
+  ],
+  "Created": "2021-05-10T07:28:17.3792196Z",
+  "Modified": "2026-07-02T06:53:02.1768974Z"
+}
