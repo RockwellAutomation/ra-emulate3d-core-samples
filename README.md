@@ -6,6 +6,7 @@ For more information visit [Emulate3D](https://www.emulate3d.com/) and for acces
 ## Folder Structure
 | Folder | Description |
 | - | - |
+| [Catalogs](catalogs)| Contains examples demonstrating the use of various catalog components.|
 | [Logic and Scripting](logic_and_scripting)|Contains a general collection of examples which use the core Emulate3D API.|
 | [Simulation and Data Collection](simulation_and_data_collection)|Contains examples showing different aspects of simulation and data collection.|
 | [Emulation and External Connectivity](emulation_and_external_connectivity)|Contains examples which show how to communicate with external connections.|

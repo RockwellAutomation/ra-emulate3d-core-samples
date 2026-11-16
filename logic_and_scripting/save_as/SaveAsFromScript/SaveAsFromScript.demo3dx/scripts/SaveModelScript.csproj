@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <Compile Include="SaveModelScript.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="NativeObject.csproj">
+      <Project>{34BA961E-C3F8-4090-9B3A-8BD37A95A796}</Project>
+      <Name>NativeObject</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <AssemblyName>SaveModelScript</AssemblyName>
+    <RootNamespace>Demo3D.Components</RootNamespace>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <ProjectGuid>{75ACDDEB-CA7C-498D-BD7E-4EA7BEBD1E8A}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="Demo3D.targets" />
+</Project>

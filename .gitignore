@@ -1,4 +1,5 @@
 **/Demo3D.sln
 **/Demo3D.targets
 /*.sln
+/.build
 obj

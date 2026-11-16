@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>LoadCreatorsDeleters</AssemblyName>
+    <RootNamespace>Demo3D.Components</RootNamespace>
+    <OutputPath>.\.build\bin\</OutputPath>
+    <DefaultItemExcludes>$(DefaultItemExcludes);.archive\**</DefaultItemExcludes>
+    <ProjectGuid>{62C7CE02-990E-4D2D-AD8E-2B6B063E0BF5}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Demo3D.Shared">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SoftPLC">
+      <Private>False</Private>
+      <ImplicitlyAdded>True</ImplicitlyAdded>
+    </Reference>
+  </ItemGroup>
+  <Import Project="..\Demo3D.targets" />
+</Project>

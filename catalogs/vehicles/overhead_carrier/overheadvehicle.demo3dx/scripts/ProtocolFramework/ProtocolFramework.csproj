@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>ProtocolFramework</AssemblyName>
+    <RootNamespace>Demo3D.Components</RootNamespace>
+    <ProjectGuid>{B3109E41-12B4-457B-9C1E-D3D24439EAA4}</ProjectGuid>
+    <TargetFrameworkProfile />
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <DefaultItemExcludes>$(DefaultItemExcludes);.archive\**</DefaultItemExcludes>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Demo3D.Shared">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Demo3D.Shared">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Demo3D.Xml, Version=14.0.0.10474, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Emulate3D 2020\Demo3D.Xml.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ProtocolFramework.dll" />
+    <Content Include="ProtocolFramework.xml" />
+  </ItemGroup>
+  <Import Project="..\Demo3D.targets" />
+  <PropertyGroup />
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Copy SourceFiles="$(ProjectDir)ProtocolFramework.dll" DestinationFiles="$(TargetPath)" />
+    <Copy SourceFiles="$(ProjectDir)ProtocolFramework.xml" DestinationFiles="$(TargetDir)$(TargetName).xml" Condition="Exists('$(ProjectDir)ProtocolFramework.xml')" />
+  </Target>
+</Project>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>ConveyorLineMcp</AssemblyName>
+    <RootNamespace>Demo3D.Components</RootNamespace>
+    <Nullable>enable</Nullable>
+    <DefaultItemExcludes>$(DefaultItemExcludes);.archive\**</DefaultItemExcludes>
+    <ProjectGuid>{3E230A56-7A3D-4D10-A438-6056CC1596E5}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="ModelContextProtocol" Version="2.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Skills\**\*" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <Import Project="..\Demo3D.targets" />
+</Project>
