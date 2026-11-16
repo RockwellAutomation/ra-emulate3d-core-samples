@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" Sdk="Microsoft.NET.Sdk">
+  <Sdk Name="Microsoft.NET.Sdk.Web" />
+  <PropertyGroup>
+    <AssemblyName>BoxScript</AssemblyName>
+    <RootNamespace>Demo3D.Components</RootNamespace>
+    <DefaultItemExcludes>$(DefaultItemExcludes);.archive\**</DefaultItemExcludes>
+    <ProjectGuid>{120B52D7-881F-4FC2-A743-E1490F92EA8F}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="..\Demo3D.targets" />
+</Project>
